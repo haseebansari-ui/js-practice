@@ -1,13 +1,74 @@
 *{
     margin: 0;
     padding: 0;
+    outline: 0;
     box-sizing: border-box;
     font-size: 1rem;
 }
+
 
 
 h1{
     text-align: center;
     margin: 2rem 0 2rem 0;
     font-size: 1.5rem;
+}
+
+.container{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.container p{
+    margin-bottom: 1rem;
+}
+#btn-1{
+    cursor: pointer;
+}
+button:focus{
+    outline: 0;
+}
+
+
+/* --- Meme Section ---- */
+
+.mem-sec{
+    padding: 100px 0;
+    background: #121212;
+    color: #fff;
+}
+
+/* .content{
+    color: #fff;
+} */
+
+.side-bar{
+    color: #fff;
+}
+
+.btn{
+    color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #fff;
+    margin-bottom: 1rem;
+    display: block;
+    width: 210px;
+}
+
+.reveal-me.btn{
+    border: none;
+    text-decoration: underline;
+}
+
+.btn:hover{
+    color: #fff;
+}
+
+.meme-content img{
+    width: 300px;
+}
+
+.content h4, .content h2{
+    margin-bottom: 1.5rem;
 }

@@ -4,10 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Js Practice</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
     <h1>JS</h1>
+
+    <section style ="padding: 100px 0; background: #121212; color: #fff;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="content">
+                        <h2>Output</h2>
+                        <h4>Programmer Memes</h4>
+                        <div class="meme-content mb-3">
+
+                        </div>
+                        <h4>Tell Me Somthig Funny</h4>
+                        <div class="joke-content mb-3">
+                            
+                        </div>
+                        <h4>Give Me Wisdom</h3>
+                        <div class="quote-content mb-3">
+                            
+                        </div>
+                        <h4>I Want a Riddle</h4>
+                        <div class="riddle-content mb-3">
+                            
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="side-bar">
+                        <button class="btn" onclick="showMeme()">Show Meme</button>
+                        <button class="btn" onclick="showJoke()">Tell me a Joke</button>
+                        <button class="btn" onclick="showQuote()">Ramdom Quote</button>
+                        <button class="btn" onclick="showRiddle()">Riddle Me</button>
+                        <button class="reveal-me btn" onclick="revealAnswers()">Reveal Riddle Answer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script src="js/script.js"></script>
 </body>
