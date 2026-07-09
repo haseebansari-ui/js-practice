@@ -72,3 +72,7 @@ button:focus{
 .content h4, .content h2{
     margin-bottom: 1.5rem;
 }
+
+.meme-content2  img{
+    width: 300px;
+}
