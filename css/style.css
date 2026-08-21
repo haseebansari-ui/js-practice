@@ -1,3 +1,11 @@
+
+:root{
+    --accent-color:#8672FF;
+    --base-color:#fff;
+    --text-color:#2E2B41;
+    --input-color:#F3F0FF;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -6,73 +14,214 @@
     font-size: 1rem;
 }
 
-
-
-h1{
-    text-align: center;
-    margin: 2rem 0 2rem 0;
-    font-size: 1.5rem;
+body{
+    background: #f5efe6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Rubik", sans-serif;
+    min-height: 100vh;
+    padding: 1rem;
 }
 
 .container{
-    max-width: 1140px;
-    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    position: relative;
 }
 
-.container p{
+
+
+
+
+/* ---- Quiz Game Section ---- */
+
+
+/* --- Screen --- */
+
+.screen{
+    display: none;
+    padding: 2rem;
+    text-align: center;
+}
+
+.screen.active{
+    display: block;
+}
+
+/* --- Start Screen --- */
+
+#start-screen h1{
+    font-size: 2.5rem;
+    color: #e86a33;
+    margin-bottom: 20px;
+}
+
+#start-screen p{
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.quiz-header{
+    margin-bottom: 2rem;
+}
+
+#question-text{
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.quiz-info{
+    display: flex;
+    justify-content: space-between;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.answers-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.answer-btn{
+    background: #f8f0e5;
+    color: #333;
+    border: 2px solid #eadbc8;
+    border-radius: 10px;
+    padding: 1rem;
+    cursor: pointer;
+    text-align: left;
+}
+
+.answer-btn:hover{
+    background: #eadbc8;
+    border-color: #dac0ae ;
+}
+
+.answer-btn.correct{
+    background: #e6fff0;
+    border-color: #a3f0c4;
+    color: #28a745;
+}
+
+.answer-btn.incorrect{
+    background: #fff0f0;
+    border-color: #ffbdbd;
+    color: #dc3545;
+}
+
+.progress-bar{
+    height: 10px;
+    background: #f8f0e5;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 20px;
+    padding: 0 2.5rem;
+}
+
+.progress{
+    height: 100%;
+    background: #e86a33;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* ---- Result Screen ---- */
+
+.result-info{
+    background: #f8f0e5;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.result-info p{
+    font-size: 1.2rem;
+    color: #333;
     margin-bottom: 1rem;
 }
-#btn-1{
+
+#result-message{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #e86a33;
+}
+
+button{
+    background: #e86a33;
+    color: #fff;
+    border: none;
+    outline: 0;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover{
+    background: #d45b28;
+}
+
+
+/* ======================
+        Sign Up Form
+========================= */
+.signup-wrapper{
+    width: 600px;
+    background: var(--base-color);
+    padding: 50px;
+    border-radius: 1rem;
+}
+
+.input-field-bx input{
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 1rem 3rem 1rem 1rem;
+}
+
+.input-field-bx p{
+    color: rgba(255, 0, 0, 0.856);
+}
+
+.pss-bx{
+    position: relative;
+}
+
+.eye-icon-bx{
+    position: absolute;
+    top:0;
+    right: 0;   
+    height: 100%;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
 }
-button:focus{
-    outline: 0;
+
+.close-eye-icon i, .open-eye-icon i{
+    font-size: 1.2rem;
 }
 
-
-/* --- Meme Section ---- */
-
-.mem-sec{
-    padding: 100px 0;
-    background: #121212;
-    color: #fff;
+.close-eye-icon.active{
+    display: none;
 }
 
-/* .content{
-    color: #fff;
-} */
-
-.side-bar{
-    color: #fff;
+.open-eye-icon{
+    display: none;
 }
 
-.btn{
-    color: #fff;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    border: 1px solid #fff;
-    margin-bottom: 1rem;
+.open-eye-icon.active{
     display: block;
-    width: 210px;
-}
-
-.reveal-me.btn{
-    border: none;
-    text-decoration: underline;
-}
-
-.btn:hover{
-    color: #fff;
-}
-
-.meme-content img{
-    width: 300px;
-}
-
-.content h4, .content h2{
-    margin-bottom: 1.5rem;
-}
-
-.meme-content2  img{
-    width: 300px;
 }

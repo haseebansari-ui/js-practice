@@ -5,92 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Js Practice</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <h1>JS</h1>
+    <div><a href="loging.html">Login</a></div>
+    <div><a href="signup.html">Signup</a></div>
+    <div><a href="utensil.html">Utensil</a></div>
+     
+    
+    <div class="container">
+        <div class="screen active" id="start-screen">
+            <h1>Quiz Time!</h1>
+            <p>Test Your Konwledge with these fun Questions</p>
+            <button id="start-btn">Start Quiz</button>
+        </div>
 
-    <section style ="padding: 100px 0; background: #121212; color: #fff;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="content">
-                        <h2>Output</h2>
-                        <h4>Programmer Memes</h4>
-                        <div class="meme-content mb-3">
+        <div class="screen" id="quiz-screen">
+            <div class="quiz-header">
 
-                        </div>
-                        <h4>Tell Me Somthig Funny</h4>
-                        <div class="joke-content mb-3">
-                            
-                        </div>
-                        <h4>Give Me Wisdom</h3>
-                        <div class="quote-content mb-3">
-                            
-                        </div>
-                        <h4>I Want a Riddle</h4>
-                        <div class="riddle-content mb-3">
-                            
-                        </div>
+                <h2 class="question-text">Question goes here</h2>
+                <div class="quiz-info">
+                    <p>
+                        question <span id="current-question">1</span> of <span id="total-questions">5</span>
+                    </p>
 
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="side-bar">
-                        <button class="btn" onclick="showMeme()">Show Meme</button>
-                        <button class="btn" onclick="showJoke()">Tell me a Joke</button>
-                        <button class="btn" onclick="showQuote()">Ramdom Quote</button>
-                        <button class="btn" onclick="showRiddle()">Riddle Me</button>
-                        <button class="reveal-me btn" onclick="revealAnswers()">Reveal Riddle Answer</button>
-                    </div>
+                    <p>score: <span id="score">0</span></p>
                 </div>
             </div>
-        </div>
-    </section>
 
+            <div id="answers-container" class="answers-container">
 
-    <section style ="padding: 100px 0; background: #ebeb; color: #121212;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="content">
-                        <h2>Output</h2>
-                        <h4>Programmer Memes</h4>
-                        <div class="meme-content2 mb-3">
+            </div>
 
-                        </div>
-                        <h4>Tell Me Somthig Funny</h4>
-                        <div class="joke-content2 mb-3">
-                            
-                        </div>
-                        <h4>Give Me Wisdom</h3>
-                        <div class="quote-content2 mb-3">
-                            
-                        </div>
-                        <h4>I Want a Riddle</h4>
-                        <div class="riddle-content2 mb-3">
-                            
-                        </div>
+            <div class="progress-bar">
+                <div id="progress" class="progress">
 
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="side-bar">
-                        <button style="color: #121212; border: 1px solid #121212; font-weight: bold;" class="btn" onclick="reset()">Reset</button>
-                        <button style="color: #121212; border: 1px solid #121212; font-weight: bold;" class="btn" onclick="showMeme2()">Show Meme</button>
-                        <button style="color: #121212; border: 1px solid #121212; font-weight: bold;" class="btn" onclick="showJoke2()">Tell me a Joke</button>
-                        <button style="color: #121212; border: 1px solid #121212; font-weight: bold;" class="btn" onclick="showQuote2()">Ramdom Quote</button>
-                        <button style="color: #121212; border: 1px solid #121212; font-weight: bold;" class="btn" onclick="showRiddle2()">Riddle Me</button>
-                        <button style="color: #121212; border: none; text-decoration: underline; font-weight: bold;" class="reveal-me btn" onclick="revealAnswers2()">Reveal Riddle Answer</button>
-                    </div>
                 </div>
             </div>
+            
         </div>
-    </section>
 
+        <div id="result-screen" class="screen">
+            <h1>Quiz Results</h1>
+            <div class="result-info">
+                <p>You Scored <span id="final-score">0</span> out of <span id="max-score">5</span></p>
+                <div id="result-message">Good Job!</div>
+            </div>
+            <button id="restart-btn">Restart Quiz</button>
+        </div>
 
-
-
+    </div>
 
     <script src="js/script.js"></script>
 </body>

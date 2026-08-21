@@ -1,322 +1,448 @@
 "use strict"
 
-function clearAll(){
-const memeContainer = document.querySelector('.meme-content');
-const jokeContainer = document.querySelector('.joke-content');
-const quoteContainer = document.querySelector('.quote-content');
-const riddleContainer = document.querySelector('.riddle-content');
+// const startScreen = document.getElementById('start-screen');
+// const quizScreen = document.getElementById('quiz-screen');
+// const resultScreen = document.getElementById('result-screen');
+// const startButton = document.getElementById('start-btn');
+// const questionText = document. getElementById('question-text');
+// const answersContainer = document.getElementById('answers-container');
+// const currentQuestionSpan = document.getElementById('current-question');
+// const totalQuestionSpan = document.getElementById('total-questions');
+// const scoreSpan = document.getElementById('score');
+// const finalScoreSpan = document.getElementById('final-score');
+// const maxScoreSpan = document.getElementById('max-score');
+// const resultMessage = document.getElementById('result-message');
+// const restartButton = document.getElementById('restart-btn');
+// const progressBar = document.getElementById('progress');
 
-memeContainer.innerHTML = '';
-jokeContainer.innerHTML = '';
-quoteContainer.innerHTML = '';
-riddleContainer.innerHTML = '';
-}
 
-function showMeme(){
+// const quizQuestions = [
+//     {
+//         question : "What is the capital of France",
+//         answers : [
+//             {text: "London", correct : false},
+//             {text: "Berlin", correct : false},
+//             {text: "Paris", correct : true},
+//             {text: "Madrid", correct : false},
+//         ]
+//     },
 
-    const randomMemeUrl = getRandomData('memes');
-    const container = document.querySelector('.meme-content');
-    const newElement = document.createElement('img');
-    newElement.setAttribute('src', randomMemeUrl)
+//     {
+//         question : "Which planet Known as Red Planet?",
+//         answers : [
+//             {text: "Venus", correct : false},
+//             {text: "Mars", correct : true},
+//             {text: "Jupiter", correct : false},
+//             {text: "Saturn", correct : false},
+//         ]
+//     },
 
-    clearAll()
+//     {
+//         question : "What is the Largest Ocean int the World",
+//         answers : [
+//             {text: "Atlantic Ocean", correct : false},
+//             {text: "Indian Ocean", correct : false},
+//             {text: "Arctic Ocean", correct : false},
+//             {text: "Pacific Ocean", correct : true},
+//         ]
+//     },
+
+//     {
+//         question : "What is the Chemical symbol for gold",
+//         answers : [
+//             {text: "Atlantic Ocean", correct : false},
+//             {text: "Indian Ocean", correct : false},
+//             {text: "Arctic Ocean", correct : false},
+//             {text: "Pacific Ocean", correct : true},
+//         ]
+//     },
+
+
+// ]
+
+// let currentQuestionIndex = 0;
+// let score = 0;
+// let answersDisabled = false;
+
+// totalQuestionSpan.textContent = quizQuestions.length;
+// console.log(totalQuestionSpan.textContent = quizQuestions.length);
+
+
+
+// const form = document.getElementById('form');
+// const firstname_input = document.getElementById('firstname-input');
+// const email_input = document.getElementById('email-input');
+// const password_input = document.getElementById('password-input');
+// const repeat_password_input = document.getElementById('repeat-password-input');
+// const errors_message = document.getElementById('error-message');
+// const err_fname_error = document.getElementById('fname-error');
+// const err_email = document.getElementById('error-message-email');
+// const err_password = document.getElementById('error-message-password');
+// const err_repeat_password = document.getElementById('error-message-repeat-password');
+
+
+// form.addEventListener('submit', (e)=> {
+
+//     let errors = [];
+
+//     if(firstname_input){
+//         errors = getSignUpFormErrors(firstname_input.value, email_input.value, password_input.value, repeat_password_input.value);
+//     }else{
+//         errors = getLoginFormErrors(email_input.value, password_input.value);
+//     }
+
+//     if(errors.length > 0){
+//         e.preventDefault();
+//         errors_message.innerText = errors.join(',  ');
+//     }
     
-    container.appendChild(newElement);
-}
+// });
+
+// function getSignUpFormErrors(firstname, email, password, repeat_password){
+//     let errors =[];
 
 
-function showJoke(){
-    const randomJokeText = getRandomData('jokes');
-    const newP = document.createElement('p');
-    newP.textContent = randomJokeText;
+//     if(firstname === '' || firstname == null){
+//         // errors.push('First Name is Require');
+//         err_fname_error.innerText = 'First Name is Require';
+//         firstname_input.parentElement.classList.add('incorrect');
+//     }
 
-    const newCJoke = document.querySelector('.joke-content');
-        clearAll()
-    newCJoke.appendChild(newP);
+//     if(email === '' || email == null){
+//         // errors.push('Email is Require');
+//         err_email.innerText = 'Email is Require';
+//         email_input.parentElement.classList.add('incorrect');
+//     }
 
+//     if(password === '' || password == null){
+//         // errors.push('Password is Require');
+//         err_password.innerText = 'Password is Require';
+//         password_input.parentElement.classList.add('incorrect');
+//     }
+
+//     if(password.length < 8  ){
+//         err_password.innerText ='Password at least have 8 Charechters';
+//     }
+
+//     if(password !== repeat_password ){
+//         // errors.push('Password does not match with repeated Password');
+//         err_repeat_password.innerText = 'Password does not match with repeated Password';
+//         repeat_password_input.parentElement.classList.add('incorrect');
+//         password_input.parentElement.classList.add('incorrect');
+//     }
+
+//     return errors;
+// }
+
+// function getLoginFormErrors(email, password){
+//     let errors = [];
+
+//    if(email === '' || email == null){
+//         // errors.push('Email is Require');
+//         err_email.innerText = 'Email is Require';
+//         email_input.parentElement.classList.add('incorrect');
+//     }
+
+//     if(password.length < 8){
+//         errors.push('Password at least have 8 Charechters / Enter the correct password ');
+//     }
+
+//     if(password === '' || password == null){
+//         errors.push('Password is Require');
+//         password_input.parentElement.classList.add('incorrect');
+//     }
     
-    
-}
+//     return errors;
+// }
 
-function showQuote(){
-    const randomQuote = getRandomData('quotes');
-    const newQuote = document.createElement('p');
-    const author = document.createElement('p');
-    newQuote.textContent = randomQuote.quote;
-    author.textContent = '- ' + randomQuote.author;
+// const allInput = [firstname_input, email_input, password_input, repeat_password_input].filter(input => input != null);
+
+// allInput.forEach(input =>{
+//     input.addEventListener('input', ()=>{
+//         if(input.parentElement.classList.contains('incorrect')){
+//         input.parentElement.classList.remove('incorrect');
+//         err_fname_error.innerText = '';
+//         err_email.innerText = '';
+//         err_password.innerText = '';
+//         err_repeat_password.innerText = '';
+//     }
+//     })
+// })
 
 
-    const newQuoteContainer = document.querySelector('.quote-content');
-    clearAll()
-    newQuoteContainer.appendChild(newQuote);
-    newQuoteContainer.appendChild(author)   
-}
 
-function showRiddle(){
-    const randomRiddle = getRandomData('riddles');
-    const {question, answer} = randomRiddle;
 
-    const questionElem = document.createElement('p');
-    questionElem.textContent = question;
+const err_name = document.getElementById("err-name");
+const err_email = document.getElementById("err-email");
+const err_phone = document.getElementById("err-phone");
+const err_pass = document.getElementById("err-pass");
 
-    const answerElem = document.createElement('p');    
-    answerElem.textContent = answer;    
-    answerElem.setAttribute('id', 'riddle-answer');
-    answerElem.hidden = true;
+const form = document.getElementById("form");
 
-    
-    const newRidContainer = document.querySelector('.riddle-content');
-    clearAll();
-    newRidContainer.appendChild(questionElem);
-    newRidContainer.appendChild(answerElem);
-}
 
-function revealAnswers(){
+/* =========================================
+   NAME VALIDATION
+========================================= */
 
-    const riddleContainer = document.querySelector('.riddle-content');
-    const riddle = riddleContainer.querySelector('p');
-    const answer = document.querySelector('#riddle-answer');
+function validateName() {
 
-    console.log(answer);
+    const name = document.getElementById("name");
 
-    if (riddle && answer.hidden){
-        answer.hidden = false;
-    }else if(riddle){
-        alert('Already reveal the Answer');
-    }else{
-        alert('There is no Answer reval to');
+    const nameValue = name.value.trim();
+
+
+    /* Required */
+
+    if (nameValue.length === 0) {
+
+        err_name.innerText = "Name is required";
+
+        name.style.border = "1px solid red";
+
+        return false;
     }
-}
-
-function getRandomData(type){
-    return data[type][rn(data[type].length)];
-}
 
 
+    /* Letters only */
 
-// =====================
-//    Button Content
-// =====================
+    if (!nameValue.match(/^[a-zA-Z ]+$/)) {
 
-const memes = [
-    'https://www.magnific.com/free-photos-vectors/memes',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdlbqimzR0rQ7j8zJ8fgUlnDv1BZM8XdI41TC1wFgb9FssYQ1rjrwp5T3a&s=10',
-    'https://t3.ftcdn.net/jpg/13/48/09/42/360_F_1348094272_OrravX8WpawzEMXrxkhlP9PsitnpGovQ.jpg',
-    'https://cdn-useast1.kapwing.com/static/templates/monkey-thinking-meme-template-27--kClqt8PzKNph-full.jpg',
-    'https://encrypted-tbn0.gstatic.com/images?=tbn:ANd9GcRPEIevZxmt1Fb25VF8N9eIQcJpDALJ-fC1IZAohVa5HQzPalEuLAHed2Kc&s=10'
-]
+        err_name.innerText = "Name should contain letters only";
 
-const jokes = [
-    'Why did the marketer break up with the spreadsheet? It kept bringing up old data.',
-    'I asked AI to run my ad campaign. Now it asks me for performance reviews.',
-    'Performance marketing is like going to the gym. Everyone wants six-pack ROAS, but nobody wants to optimize daily. 😄'
-]
+        name.style.border = "1px solid red";
 
-const quotes = [
-    {
-        quote: 'The best marketing does not feel like marketing',
-        author: 'Tom Fishburne',
-    },
-    {
-        quote: 'Powered by AI. Driven by Results.',
-        author: 'Peter Drucker',
-    },
-    {
-        quote: 'Growth is never by mere chance; it is the result of forces working together.',
-        author: 'James Cash Penney',
-    },
-]
+        name.style.outline = "none";
 
-const riddles = [
-    {
-        question: 'What is performance marketing?',
-        answer: 'Performance marketing is a results-driven digital marketing strategy where advertisers pay only for measurable actions such as clicks, leads, app installs, or conversions, ensuring maximum ROI.',
-    },
-    {
-        question: 'How does Havmor Media help grow my business?',
-        answer: 'We leverage AI-powered optimization, real-time analytics, audience targeting, and multi-channel campaigns to increase traffic, generate quality leads, and maximize your return on ad spend (ROAS).',
-    },
-    {
-        question: 'Which industries do you work with?',
-        answer: 'We partner with businesses across FinTech, E-commerce, Gaming, Travel, EdTech, Healthcare, Insurance, Mobile Apps, and other industries looking to scale through performance marketing.    ',
-    },
-]
-
-
-
-function rn(len){
-    return Math.floor(Math.random() * len);
-}
-
-const data = {
-    memes,
-    jokes,
-    quotes,
-    riddles,
-};
-
-
-// ===================
-//    Meme App Second
-// ===================
-
-function reset(){
-    clearAll2()
-}
-
-function clearAll2(){
-   const memesContainer = document.querySelector('.meme-content2');
-   const jokes2Container = document.querySelector('.joke-content2');
-   const quotes2Container = document.querySelector('.quote-content2');
-   const riddle2Container = document.querySelector('.riddle-content2');
-   
-   memesContainer.innerHTML = '';
-   jokes2Container.innerHTML = '';
-   quotes2Container.innerHTML = '';
-   quotes2Container.innerHTML = '';
-   riddle2Container.innerHTML = '';
-}
-
-function showMeme2(){
-   const rnDataContent =  randomdata2('memes2');
-   const memesContainer = document.querySelector('.meme-content2');
-   const memesCntContainer = document.createElement('img');
-        memesCntContainer.setAttribute('src', rnDataContent );
-
-    clearAll2();
-
-    memesContainer.appendChild(memesCntContainer);      
-}
-
-function showJoke2(){
-    const rnDataContent =  randomdata2('jokes2');
-    const jokes2Container = document.querySelector('.joke-content2');
-    const newJokeP = document.createElement('p');
-    newJokeP.textContent = rnDataContent;
-
-    clearAll2()
-
-    jokes2Container.appendChild(newJokeP);
-}
-
-function showQuote2(){
-    const rnDataContent =  randomdata2('quotes2');
-    const quotes2Container = document.querySelector('.quote-content2');
-    const {quote, author} = rnDataContent;
-    const newQuote2 = document.createElement('p');
-    newQuote2.textContent = quote;
-
-    const quoteAuthor = document.createElement('p');
-    quoteAuthor.textContent = "- " + author;
-
-    clearAll2();
-
-    quotes2Container.appendChild(newQuote2);
-    quotes2Container.appendChild(quoteAuthor);
-}
-
-function showRiddle2(){
-    const rnDataContent =  randomdata2('riddles2');
-    const riddle2Container = document.querySelector('.riddle-content2');
-    const { question, answer} = rnDataContent;
-    
-    const riddleQuestion = document.createElement('p');
-    riddleQuestion.textContent = question;
-
-    const riddleAnswer = document.createElement('p');
-    riddleAnswer.textContent = "This is a Answer: " + answer;
-    riddleAnswer.setAttribute('id', 'riddle-ans');
-    riddleAnswer.hidden = true;
-
-
-    clearAll2();
-
-    riddle2Container.appendChild(riddleQuestion);
-    riddle2Container.appendChild(riddleAnswer);
-}
-
-function revealAnswers2(){
-    const riddle2Container = document.querySelector('.riddle-content2');
-    const riddle2Para = riddle2Container.querySelector('p');
-    const riddle2Answer = document.querySelector('#riddle-ans');
-    
-
-    if(riddle2Para && riddle2Answer.hidden){
-        riddle2Answer.hidden = false;
-    }else if(riddle2Answer){
-        alert('Already show the Answer.');
-    }else{
-        alert('There is no answer reval to.');
+        return false;
     }
+
+
+    /* Valid */
+
+    err_name.innerText = "";
+
+    name.style.border = "1px solid green";
+
+    return true;
 }
 
 
-function randomdata2(type){
-    return data2[type][rndata(data2[type].length)];
+/* =========================================
+   EMAIL VALIDATION
+========================================= */
+
+function validateEmail() {
+
+    const email = document.getElementById("email");
+
+    const emailValue = email.value.trim();
+
+
+    /* Required */
+
+    if (emailValue.length === 0) {
+
+        err_email.innerText = "Email is required";
+
+        email.style.border =  "1px solid red";
+
+        return false;
+    }
+
+
+    /* Email format */
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+    if (!emailPattern.test(emailValue)) {
+
+        err_email.innerText = "Please enter a valid email address";
+
+        email.style.border = "1px solid red";
+
+        email.style.outline = "none";
+
+        return false;
+    }
+
+
+    /* Valid */
+
+    err_email.innerText = "";
+
+    email.style.border = "1px solid green";
+
+    return true;
 }
 
-const memes2 = [
-    'https://img.magnific.com/free-vector/simple-vibing-cat-square-meme_742173-4493.jpg?ga=GA1.1.300798732.1779195873&semt=ais_hybrid&w=740&q=80',
-    'https://img.magnific.com/free-vector/funny-anytime-mum-calls-meme_23-2149093840.jpg?ga=GA1.1.300798732.1779195873&semt=ais_hybrid&w=740&q=80',
-    'https://img.magnific.com/free-vector/funny-please-no-animal-meme_23-2149152570.jpg?ga=GA1.1.300798732.1779195873&semt=ais_hybrid&w=740&q=80',
-    'https://img.magnific.com/free-vector/national-fun-work-day-square-meme_742173-15702.jpg?ga=GA1.1.300798732.1779195873&semt=ais_hybrid&w=740&q=80',
-    'https://img.magnific.com/premium-vector/creative-custom-typography-t-shirt-design_1282524-1064.jpg?ga=GA1.1.300798732.1779195873&semt=ais_hybrid&w=740&q=80',
-    'https://img.magnific.com/free-vector/how-i-feel-meme_23-2149003983.jpg?ga=GA1.1.300798732.1779195873&semt=ais_hybrid&w=740&q=80',
-    'https://img.magnific.com/premium-vector/cat-drinking-coffee-funny-tshirt-design-vector_621660-7004.jpg?ga=GA1.1.300798732.1779195873&semt=ais_hybrid&w=740&q=80'
-]
 
-const jokes2 = [
-    `Why do not skeletons fight each other / * They do not have the guts.*`,
-    `I told my computer I needed a break. / It said, "No problem, I'll freeze.`,
-    `Why did the math book look sad? / * It had too many problems. *`,
-    `I asked the librarian if the library had books on paranoia. / * She whispered, "They're right behind you."`,
-    `Why did the scarecrow win an award? / *Because he was outstanding in his field.*`,
-    `Parallel lines have so much in common. / * It's a shame they'll never meet. *`,
-    `I only know 25 letters of the alphabet. / * I don't know Y. *`,
-    `Why don't scientists trust atoms? / * Because they make up everything. *`,
-    `My wallet is like an onion. / * Opening it makes me cry. *`,
-    `I told my Wi-Fi we needed to talk. / * Now we're not connected anymore. 😄 *`
-]
+/* =========================================
+   PHONE VALIDATION
+========================================= */
 
-const quotes2 = [
-    {
-        quote: 'The best marketing does not feel like marketing',
-        author: 'Tom Fishburne',
-    },
-    {
-        quote: 'Powered by AI. Driven by Results.',
-        author: 'Peter Drucker',
-    },
-    {
-        quote: 'Growth is never by mere chance; it is the result of forces working together.',
-        author: 'James Cash Penney',
-    },
-] 
+function validatePhone() {
+
+    const phone = document.getElementById("phone");
+
+    const phoneValue = phone.value.trim();
 
 
-const riddles2 = [
-    {
-        question: 'What is performance marketing?',
-        answer: 'Performance marketing is a results-driven digital marketing strategy where advertisers pay only for measurable actions such as clicks, leads, app installs, or conversions, ensuring maximum ROI.',
-    },
-    {
-        question: 'How does Havmor Media help grow my business?',
-        answer: 'We leverage AI-powered optimization, real-time analytics, audience targeting, and multi-channel campaigns to increase traffic, generate quality leads, and maximize your return on ad spend (ROAS).',
-    },
-    {
-        question: 'Which industries do you work with?',
-        answer: 'We partner with businesses across FinTech, E-commerce, Gaming, Travel, EdTech, Healthcare, Insurance, Mobile Apps, and other industries looking to scale through performance marketing.    ',
-    },
-]
+    /* Required */
+
+    if (phoneValue.length === 0) {
+
+        err_phone.innerText = "Phone is required";
+
+        phone.style.border = "1px solid red";
+
+        return false;
+    }
 
 
-function rndata(len){
-    return Math.floor(Math.random() * len);
+    /* Numbers only */
+
+    if (!/^[0-9]+$/.test(phoneValue)) {
+
+        err_phone.innerText = "Phone should contain numbers only";
+
+        phone.style.border = "1px solid red";
+
+        return false;
+    }
+
+
+    /* Exactly 10 digits */
+
+    if (phoneValue.length !== 10) {
+
+        err_phone.innerText = "Phone should contain 10 numbers";
+
+        phone.style.border = "1px solid red";
+
+        return false;
+    }
+
+
+    /* Valid */
+
+    err_phone.innerText = "";
+
+    phone.style.border = "1px solid green";
+
+    return true;
 }
 
-const data2 = {
-    memes2,
-    jokes2,
-    quotes2,
-    riddles2
+
+/* =========================================
+   PASSWORD VALIDATION
+========================================= */
+
+function validatePassword() {
+
+    const password = document.getElementById("pass");
+
+    const passwordValue = password.value;
+
+    const passLength = 8;
+
+
+    /* Required */
+
+    if (passwordValue.length === 0) {
+
+        err_pass.innerText = "Password is required";
+
+        password.style.border = "1px solid red";
+
+        return false;
+    }
+
+
+    /* Minimum 8 characters */
+
+    if (passwordValue.length < passLength) {
+
+        err_pass.innerText =
+            "Password must have at least 8 characters";
+
+        password.style.border = "1px solid red";
+
+        return false;
+    }
+
+
+    /* Valid */
+
+    err_pass.innerText = "";
+
+    password.style.border = "1px solid green";
+
+    return true;
 }
+
+
+/* =========================================
+   FORM VALIDATION
+========================================= */
+
+form.addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+
+    const nameValid = validateName();
+
+    const emailValid = validateEmail();
+
+    const phoneValid = validatePhone();
+
+    const passwordValid = validatePassword();
+
+
+    if ( !nameValid || !emailValid || !phoneValid || !passwordValid ) {
+
+        return;
+
+    }
+
+
+    /* Everything is valid */
+
+    console.log(
+        "Form validation successful!"
+    );
+
+
+    
+    //    For now, this prevents the actual
+    //    submission so you can test.
+
+    //    Later you can redirect to login:
+       
+       window.location.href = "loging.html";
+    
+
+});
+
+
+
+// Show and hide  Password
+const showPass = document.querySelector('.open-eye-icon');
+const hidePass = document.querySelector('.close-eye-icon');
+const showHideBox = document.querySelector('.eye-icon-bx');
+const passInput = document.querySelector('.pass-input');
+
+if(showHideBox)(
+    showHideBox.addEventListener('click', ()=>{
+        if(passInput.type === "password"){
+            passInput.type = "text";
+            showPass.classList.add('active');
+            hidePass.classList.add('active');
+        }else{
+            passInput.type = "password";
+            showPass.classList.remove('active');
+            hidePass.classList.remove('active');
+        }
+    })
+)
