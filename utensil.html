@@ -3,1373 +3,1512 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Talk to Havmor Media about performance marketing, AI-powered customer acquisition, mobile advertising, affiliate marketing and scalable digital growth.">
-    <title>Contact Havmor Media | Performance Marketing &amp; Growth</title>
+    <title>Havmor Media Services | Performance Marketing & Digital Growth</title>
+    <meta name="description" content="Explore Havmor Media's performance marketing services including affiliate marketing, programmatic advertising, mobile advertising, app growth, user acquisition and media buying.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
     <!-- Bootstrap 5 CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Remix Icon CDN -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-
     <!-- Custom CSS -->
     <style>
-        /* ============================================
-   HAVMOR MEDIA - CONTACT PAGE STYLES
-   Premium Performance Marketing Design
-   ============================================ */
-
-/* CSS Variables */
+        /* ==================================================
+   BRAND VARIABLES & THEME DEFINITION
+   ================================================== */
 :root {
-    --primary-purple: #800080;
-    --secondary-purple: #9B2C9B;
-    --accent-pink: #C73E9B;
-    --light-bg: #F8F7FB;
-    --border-color: #EBEBEB;
-    --text-dark: #171717;
-    --text-muted: #6B6B6B;
-    --success-green: #198754;
-    --error-red: #DC3545;
-    --gradient-purple: linear-gradient(135deg, #800080 0%, #9B2C9B 45%, #C73E9B 100%);
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --primary: #800080;
+    --secondary: #9B2C9B;
+    --accent: #C73E9B;
+    --dark: #171717;
+    --muted: #6B6B6B;
+    --border: #EBEBEB;
+    --white: #FFFFFF;
+    --bg-light: #FAFAFD;
+    
+    --grad-primary: linear-gradient(135deg, #800080 0%, #9B2C9B 45%, #C73E9B 100%);
+    --grad-accent: linear-gradient(135deg, #9B2C9B 0%, #C73E9B 100%);
+    --grad-glow: radial-gradient(circle, rgba(128, 0, 128, 0.15) 0%, rgba(199, 62, 156, 0.05) 50%, transparent 70%);
+    
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-btn: 'Outfit', sans-serif;
+    
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Reset & Base */
-* {
+/* Reset & Base Setup */
+*, *::before, *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    color: var(--text-dark);
-    background-color: #ffffff;
+    font-family: var(--font-body);
+    color: var(--dark);
+    background-color: var(--white);
     line-height: 1.6;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* ============================================
-   1. STICKY NAVBAR
-   ============================================ */
-.navbar {
-    padding: 1.25rem 0;
-    transition: var(--transition-smooth);
-    background: transparent;
-}
-
-.navbar.scrolled {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    padding: 0.75rem 0;
-}
-
-.brand-logo {
-    font-size: 1.5rem;
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
     font-weight: 700;
-    background: var(--gradient-purple);
+    color: var(--dark);
+    line-height: 1.15;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s var(--ease-out);
+}
+
+.max-width-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+.text-gradient {
+    background: var(--grad-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
+    display: inline-block;
 }
 
-.navbar-nav {
-    gap: 0.5rem;
+.text-muted-custom {
+    color: var(--muted);
 }
 
-.nav-link {
-    color: var(--text-dark) !important;
-    font-weight: 500;
-    padding: 0.5rem 1rem !important;
-    transition: var(--transition-smooth);
-    position: relative;
+.font-mono {
+    font-family: 'Space Grotesk', monospace;
 }
 
-.nav-link:hover,
-.nav-link.active {
-    color: var(--primary-purple) !important;
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: var(--gradient-purple);
-    transition: var(--transition-smooth);
-    transform: translateX(-50%);
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-    width: 100%;
-}
-
-.cta-button {
-    background: var(--gradient-purple);
-    border: none;
-    color: #ffffff !important;
-    padding: 0.625rem 1.5rem;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: var(--transition-smooth);
-}
-
-.cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(128, 0, 128, 0.25);
-    color: #ffffff !important;
-}
-
-.navbar-toggler {
-    border: none;
-    padding: 0.5rem;
-}
-
-.navbar-toggler:focus {
-    box-shadow: none;
-}
-
-/* Mobile Navigation */
-@media (max-width: 991px) {
-    .navbar-collapse {
-        background: #ffffff;
-        padding: 1rem;
-        border-radius: 12px;
-        margin-top: 1rem;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    }
-
-    .navbar-nav {
-        flex-direction: column;
-        gap: 0;
-        margin-top: 1rem;
-    }
-
-    .nav-link {
-        padding: 0.75rem 1rem !important;
-    }
-
-    .cta-button {
-        margin-top: 1rem;
-        width: 100%;
-        text-align: center;
-    }
-}
-
-/* ============================================
-   2. CONTACT HERO
-   ============================================ */
-.hero-section {
-    position: relative;
-    padding: 8rem 0 6rem;
-    overflow: hidden;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-}
-
-.hero-background {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-}
-
-.hero-grid {
-    position: absolute;
-    inset: 0;
-    background-image: 
-        linear-gradient(rgba(128, 0, 128, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(128, 0, 128, 0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-    opacity: 0.5;
-}
-
-.hero-gradient-glow {
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 80%;
-    height: 150%;
-    background: radial-gradient(ellipse, rgba(128, 0, 128, 0.15) 0%, transparent 70%);
-    animation: glowPulse 8s ease-in-out infinite;
-}
-
-@keyframes glowPulse {
-    0%, 100% { opacity: 0.5; transform: scale(1); }
-    50% { opacity: 0.8; transform: scale(1.05); }
-}
-
-.floating-particles {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-}
-
-.particle {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: var(--primary-purple);
-    border-radius: 50%;
-    opacity: 0.3;
-    animation: floatParticle 15s infinite;
-}
-
-@keyframes floatParticle {
-    0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; }
-    50% { transform: translateY(-100px) translateX(50px); opacity: 0.6; }
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-}
-
-.hero-eyebrow {
-    font-size: 0.875rem;
+.eyebrow {
+    font-family: var(--font-btn);
+    font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.15em;
-    color: var(--primary-purple);
-    margin-bottom: 1.5rem;
+    color: var(--primary);
     text-transform: uppercase;
 }
 
-.hero-heading {
-    font-size: 3.5rem;
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    color: var(--text-dark);
+.border-subtle {
+    border-color: var(--border) !important;
 }
 
-.gradient-text {
-    background: var(--gradient-purple);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.bg-subtle-pattern {
+    background-color: var(--bg-light);
 }
 
-.hero-text {
-    font-size: 1.25rem;
-    color: var(--text-muted);
-    margin-bottom: 2.5rem;
-    line-height: 1.8;
-}
-
-.hero-cta {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.hero-cta .btn-primary {
-    background: var(--gradient-purple);
+/* ==================================================
+   BUTTONS
+   ================================================== */
+.btn-primary-custom {
+    font-family: var(--font-btn);
+    background: var(--grad-primary);
+    color: var(--white);
     border: none;
-    padding: 1rem 2rem;
-    font-weight: 600;
-    border-radius: 10px;
-    transition: var(--transition-smooth);
-}
-
-.hero-cta .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(128, 0, 128, 0.3);
-}
-
-.hero-cta .btn-outline-secondary {
-    border: 2px solid var(--border-color);
-    color: var(--text-dark);
-    padding: 1rem 2rem;
-    font-weight: 600;
-    border-radius: 10px;
-    transition: var(--transition-smooth);
-}
-
-.hero-cta .btn-outline-secondary:hover {
-    border-color: var(--primary-purple);
-    color: var(--primary-purple);
-}
-
-/* Hero Responsive */
-@media (max-width: 768px) {
-    .hero-section {
-        padding: 6rem 0 4rem;
-        min-height: auto;
-    }
-
-    .hero-heading {
-        font-size: 2.25rem;
-    }
-
-    .hero-text {
-        font-size: 1.125rem;
-    }
-
-    .hero-cta {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero-cta .btn {
-        width: 100%;
-        max-width: 300px;
-    }
-}
-
-/* ============================================
-   3. CONTACT FORM + CONTACT INFORMATION
-   ============================================ */
-.contact-section {
-    padding: 6rem 0;
-    background: var(--light-bg);
-}
-
-.form-container {
-    background: #ffffff;
-    padding: 3rem;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-}
-
-.form-heading {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--text-dark);
-}
-
-.form-text {
-    color: var(--text-muted);
-    margin-bottom: 2.5rem;
-    line-height: 1.7;
-}
-
-.form-label {
-    font-weight: 600;
-    font-size: 0.875rem;
-    color: var(--text-dark);
-    margin-bottom: 0.5rem;
-}
-
-.required {
-    color: var(--error-red);
-}
-
-.form-control,
-.form-select {
-    border: 1px solid var(--border-color);
+    padding: 14px 28px;
     border-radius: 8px;
-    padding: 0.875rem 1rem;
-    font-size: 1rem;
-    transition: var(--transition-smooth);
-    color: var(--text-dark);
-}
-
-.form-control:focus,
-.form-select:focus {
-    border-color: var(--primary-purple);
-    box-shadow: 0 0 0 3px rgba(128, 0, 128, 0.1);
-    outline: none;
-}
-
-.form-control.is-valid {
-    border-color: var(--success-green);
-}
-
-.form-control.is-invalid {
-    border-color: var(--error-red);
-}
-
-.invalid-feedback {
-    display: none;
-    color: var(--error-red);
-    font-size: 0.875rem;
-    margin-top: 0.375rem;
-}
-
-.form-control.is-invalid ~ .invalid-feedback,
-.form-select.is-invalid ~ .invalid-feedback {
-    display: block;
-}
-
-.btn-submit {
-    background: var(--gradient-purple);
-    border: none;
-    padding: 1rem 2.5rem;
     font-weight: 600;
-    border-radius: 10px;
-    transition: var(--transition-smooth);
+    font-size: 0.95rem;
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
+    transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
 }
 
-.btn-submit:hover {
+.btn-primary-custom:hover {
+    color: var(--white);
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(128, 0, 128, 0.25);
 }
 
-.btn-submit i {
-    transition: var(--transition-smooth);
-}
-
-.btn-submit:hover i {
-    transform: translateX(5px);
-}
-
-.btn-submit:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-    transform: none;
-}
-
-.privacy-message {
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    margin-top: 1rem;
-}
-
-.success-message {
-    text-align: center;
-    padding: 3rem 2rem;
-    background: rgba(25, 135, 84, 0.05);
-    border-radius: 12px;
-    border: 1px solid var(--success-green);
-}
-
-.success-message i {
-    font-size: 3rem;
-    color: var(--success-green);
-    margin-bottom: 1rem;
-}
-
-.success-message h3 {
-    color: var(--text-dark);
-    margin-bottom: 0.5rem;
-}
-
-.success-message p {
-    color: var(--text-muted);
-}
-
-/* Contact Info */
-.contact-info-container {
-    padding: 2rem;
-}
-
-.contact-info-heading {
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--text-dark);
-}
-
-.contact-info-text {
-    color: var(--text-muted);
-    margin-bottom: 2.5rem;
-    line-height: 1.7;
-}
-
-.contact-details {
-    margin-bottom: 2.5rem;
-}
-
-.contact-item {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    align-items: flex-start;
-}
-
-.contact-item i {
-    font-size: 1.5rem;
-    color: var(--primary-purple);
-    width: 24px;
-}
-
-.contact-item .label {
-    display: block;
-    font-size: 0.75rem;
+.btn-outline-custom {
+    font-family: var(--font-btn);
+    background: transparent;
+    color: var(--dark);
+    border: 1px solid var(--border);
+    padding: 14px 28px;
+    border-radius: 8px;
     font-weight: 600;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s var(--ease-out);
 }
 
-.contact-item a,
-.contact-item span {
-    color: var(--text-dark);
-    font-weight: 500;
-    text-decoration: none;
-    transition: var(--transition-smooth);
+.btn-outline-custom:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
 }
 
-.contact-item a:hover {
-    color: var(--primary-purple);
-}
-
-.global-team {
-    background: var(--gradient-purple);
-    padding: 2rem;
-    border-radius: 12px;
-    color: #ffffff;
-    margin-bottom: 2rem;
-}
-
-.global-team h4 {
-    font-size: 1.25rem;
+.btn-light-custom {
+    font-family: var(--font-btn);
+    background: var(--white);
+    color: var(--primary);
+    border: none;
+    padding: 16px 36px;
+    border-radius: 8px;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s var(--ease-out);
 }
 
-.global-team p {
-    font-size: 0.9375rem;
-    opacity: 0.9;
-    line-height: 1.6;
+.btn-light-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    color: var(--primary);
 }
 
-/* Contact Visual */
-.contact-visual {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    position: relative;
-    overflow: hidden;
+.btn-outline-light-custom {
+    font-family: var(--font-btn);
+    background: transparent;
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 16px 36px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s var(--ease-out);
 }
 
-.visual-flow {
+.btn-outline-light-custom:hover {
+    border-color: var(--white);
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ==================================================
+   1. NAVBAR
+   ================================================== */
+.navbar {
+    padding: 20px 0;
+    transition: all 0.4s var(--ease-out);
+    background: transparent;
+}
+
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.brand-logo {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--dark);
+    letter-spacing: -0.02em;
+}
+
+.brand-logo span {
+    color: var(--primary);
+}
+
+.nav-link {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--muted) !important;
+    padding: 8px 16px !important;
+    transition: color 0.3s var(--ease-out);
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary) !important;
+}
+
+/* ==================================================
+   2 & 3. HERO & BACKGROUND PARTICLES
+   ================================================== */
+.hero-section {
+    min-height: 90vh;
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    align-items: center;
     position: relative;
+    padding-bottom: 80px;
+}
+
+.hero-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(199, 62, 156, 0.075), transparent 55%),
+        radial-gradient(circle at 80% 30%, rgba(128, 0, 128, 0.10), transparent 45%),
+        linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    background-size: auto, auto, 40px 40px, 40px 40px;
     z-index: 1;
 }
 
-.flow-node {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.875rem 1rem;
-    background: var(--light-bg);
-    border-radius: 8px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    transition: var(--transition-smooth);
-}
-
-.flow-node i {
-    font-size: 1.125rem;
-    color: var(--primary-purple);
-}
-
-.flow-node.highlight {
-    background: var(--gradient-purple);
-    color: #ffffff;
-}
-
-.flow-node.highlight i {
-    color: #ffffff;
-}
-
-.flow-line {
-    width: 2px;
-    height: 1.5rem;
-    background: linear-gradient(to bottom, var(--primary-purple), var(--accent-pink));
-    margin-left: 1.25rem;
-    position: relative;
-}
-
-.flow-line::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 6px;
-    height: 6px;
-    background: var(--accent-pink);
-    border-radius: 50%;
-    transform: translateX(-50%);
-    animation: flowDown 2s ease-in-out infinite;
-}
-
-@keyframes flowDown {
-    0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0; }
-    50% { opacity: 1; }
-    100% { transform: translateX(-50%) translateY(100%); opacity: 0; }
-}
-
-.growth-indicator {
-    margin-left: auto;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 700;
-}
-
-.visual-particles {
+.hero-particles-container {
     position: absolute;
     inset: 0;
+    z-index: 1;
+    overflow: hidden;
     pointer-events: none;
 }
 
-/* Form Responsive */
-@media (max-width: 991px) {
-    .form-container {
-        padding: 2rem;
-    }
-
-    .contact-info-container {
-        padding: 1rem;
-    }
+.particle {
+    position: absolute;
+    bottom: -10px;
+    background: var(--accent);
+    border-radius: 50%;
+    opacity: 0;
+    animation: particleUp linear infinite;
 }
 
-@media (max-width: 768px) {
-    .contact-section {
-        padding: 4rem 0;
-    }
-
-    .form-container {
-        padding: 1.5rem;
-    }
-
-    .form-heading {
-        font-size: 1.5rem;
-    }
+@keyframes particleUp {
+    0% { transform: translateY(0); opacity: 0; }
+    20% { opacity: 0.5; }
+    80% { opacity: 0.5; }
+    100% { transform: translateY(-100vh); opacity: 0; }
 }
 
-/* ============================================
-   4. WHY TALK TO US
-   ============================================ */
-.why-section {
-    padding: 6rem 0;
-    background: #ffffff;
+.hero-title {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    letter-spacing: -0.03em;
+    font-weight: 700;
 }
 
-.section-heading {
+.hero-desc {
+    font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+    color: var(--muted);
+    max-width: 580px;
+    line-height: 1.7;
+}
+
+.pt-100 {
+    padding-top: 100px;
+}
+
+/* Dashboard UI Widget */
+.adtech-dashboard-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 20px 50px rgba(128, 0, 128, 0.08);
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(199, 62, 156, 0.7);
+    animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(199, 62, 156, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(199, 62, 156, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(199, 62, 156, 0); }
+}
+
+.dash-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.05em;
+}
+
+.dash-timestamp {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-family: var(--font-heading);
+}
+
+.dash-value {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--dark);
+    line-height: 1;
+}
+
+.dash-sub {
+    font-size: 1rem;
+    color: var(--muted);
+}
+
+.chart-svg {
+    width: 100%;
+    height: 80px;
+    overflow: visible;
+}
+
+.pill-box {
+    background: var(--bg-light);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.pill-box .label {
+    display: block;
+    font-size: 0.65rem;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.pill-box .val {
+    font-size: 0.95rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+}
+
+/* ==================================================
+   4. SERVICES INTRODUCTION (PRINCIPLES)
+   ================================================== */
+.section-title {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    letter-spacing: -0.02em;
+}
+
+.section-desc {
+    font-size: 1.1rem;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.principles-wrap {
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+}
+
+.principle-col {
+    padding: 40px 30px;
+    border-right: 1px solid var(--border);
+}
+
+.principle-col:last-child {
+    border-right: none;
+}
+
+.principle-number {
+    font-family: var(--font-heading);
     font-size: 2.5rem;
     font-weight: 700;
-    text-align: center;
-    margin-bottom: 4rem;
-    color: var(--text-dark);
+    color: var(--primary);
+    opacity: 0.25;
+    margin-bottom: 12px;
 }
 
-.benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-}
-
-.benefit-item {
-    padding: 2rem;
-    border-radius: 12px;
-    transition: var(--transition-smooth);
-    position: relative;
-}
-
-.benefit-item:hover {
-    background: var(--light-bg);
-}
-
-.benefit-number {
-    font-size: 3rem;
-    font-weight: 800;
-    background: var(--gradient-purple);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    opacity: 0.2;
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-}
-
-.benefit-icon {
-    width: 48px;
-    height: 48px;
-    background: var(--gradient-purple);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-}
-
-.benefit-icon i {
-    font-size: 1.5rem;
-    color: #ffffff;
-}
-
-.benefit-title {
+.principle-name {
     font-size: 1.25rem;
     font-weight: 700;
-    margin-bottom: 0.75rem;
-    color: var(--text-dark);
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
 }
 
-.benefit-text {
-    color: var(--text-muted);
-    line-height: 1.7;
-    font-size: 0.9375rem;
+.principle-text {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 0;
 }
 
-/* Benefits Responsive */
-@media (max-width: 1199px) {
-    .benefits-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+/* ==================================================
+   5. CORE SERVICES (NUMBERED LIST)
+   ================================================== */
+.services-list-container {
+    border-top: 1px solid var(--border);
 }
 
-@media (max-width: 768px) {
-    .why-section {
-        padding: 4rem 0;
-    }
-
-    .section-heading {
-        font-size: 2rem;
-        margin-bottom: 3rem;
-    }
-
-    .benefits-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-}
-
-/* ============================================
-   5. GLOBAL PRESENCE
-   ============================================ */
-.global-section {
-    padding: 6rem 0;
-    background: var(--light-bg);
-    text-align: center;
-}
-
-.global-map {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto 3rem;
-    height: 300px;
-}
-
-.map-background {
-    position: absolute;
-    inset: 0;
-    opacity: 0.1;
-}
-
-.world-map {
-    width: 100%;
-    height: 100%;
-}
-
-.map-line {
-    fill: none;
-    stroke: var(--primary-purple);
-    stroke-width: 1.5;
-    stroke-dasharray: 5, 5;
-    opacity: 0.3;
-}
-
-.region-points {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0 2rem;
-}
-
-.region-point {
+.service-row-item {
+    padding: 36px 20px;
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s var(--ease-out);
     position: relative;
     cursor: pointer;
 }
 
-.point-glow {
+.service-row-item::before {
+    content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(128, 0, 128, 0.03) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s var(--ease-out);
+}
+
+.service-row-item:hover::before {
+    opacity: 1;
+}
+
+.service-row-item:hover {
+    padding-left: 30px;
+}
+
+.service-idx {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--muted);
+}
+
+.service-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    transition: color 0.3s var(--ease-out);
+}
+
+.service-row-item:hover .service-name {
+    color: var(--primary);
+}
+
+.service-summary {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+.service-metric-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    color: var(--primary);
+}
+
+.service-arrow-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s var(--ease-out);
+}
+
+.service-row-item:hover .service-arrow-btn {
+    background: var(--grad-primary);
+    border-color: transparent;
+    color: var(--white);
+    transform: translateX(4px);
+}
+
+/* ==================================================
+   6. FLOW ENGINE (VISUAL FLOW)
+   ================================================== */
+.flow-engine-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.flow-step-node {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.flow-step-node i {
+    font-size: 1.4rem;
+    color: var(--primary);
+}
+
+.flow-step-node.highlight {
+    background: var(--grad-primary);
+    color: var(--white);
+    border-color: transparent;
+}
+
+.flow-step-node.highlight i {
+    color: var(--white);
+}
+
+.flow-connector {
+    width: 2px;
+    height: 24px;
+    background: var(--border);
+    margin-left: 36px;
+    position: relative;
+}
+
+.connector-pulse {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    left: -2px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: flowDown 2s infinite linear;
+}
+
+@keyframes flowDown {
+    0% { top: 0%; opacity: 0; }
+    50% { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+}
+
+/* ==================================================
+   7 & 8. EDITORIAL DETAILS
+   ================================================== */
+.editorial-heading {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+.editorial-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.grid-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.grid-card .card-icon {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 16px;
+}
+
+.grid-card h4 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+}
+
+.grid-card p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin-bottom: 0;
+}
+
+.partnership-flow-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+}
+
+.partner-box {
+    padding: 16px 24px;
+    border-radius: 8px;
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    font-weight: 700;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+}
+
+.partner-box.highlight {
+    background: var(--grad-primary);
+    color: var(--white);
+    border-color: transparent;
+}
+
+.flow-arrow {
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+/* ==================================================
+   9. PROGRAMMATIC DASHBOARD
+   ================================================== */
+.tag-pill {
+    padding: 8px 18px;
+    border-radius: 30px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.programmatic-dashboard {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.03);
+}
+
+.prog-metric-card {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.prog-metric-card .label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+}
+
+.prog-metric-card .value {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.prog-metric-card .trend {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #198754;
+}
+
+.prog-metric-card .trend.negative {
+    color: var(--primary);
+}
+
+/* ==================================================
+   10. MOBILE MOCKUP
+   ================================================== */
+.mobile-feature-box {
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.mobile-feature-box i {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+.mobile-ui-mockup {
+    width: 260px;
+    height: 480px;
+    background: var(--dark);
+    border-radius: 36px;
+    padding: 12px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+    margin: 0 auto;
+}
+
+.mockup-screen {
+    background: var(--white);
+    height: 100%;
+    border-radius: 26px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.mockup-header {
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.camera-pill {
+    width: 60px;
+    height: 8px;
+    background: var(--dark);
+    border-radius: 10px;
+}
+
+.mockup-body {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.mockup-app-icon {
     width: 60px;
     height: 60px;
-    background: radial-gradient(circle, rgba(128, 0, 128, 0.3) 0%, transparent 70%);
-    transform: translate(-50%, -50%);
-    animation: pointGlow 3s ease-in-out infinite;
+    background: var(--grad-primary);
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.8rem;
+    margin-bottom: 16px;
 }
 
-@keyframes pointGlow {
-    0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
-    50% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+.mockup-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 8px;
 }
 
-.point-dot {
-    width: 12px;
-    height: 12px;
-    background: var(--gradient-purple);
-    border-radius: 50%;
-    position: relative;
-    z-index: 1;
+.mockup-metric {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 12px;
 }
 
-.region-label {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 0.5rem;
-    font-size: 0.875rem;
+.mockup-metric .sub {
+    font-size: 0.8rem;
+    color: var(--muted);
+    display: block;
+}
+
+.mockup-bar {
+    height: 6px;
+    background: var(--bg-light);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.mockup-bar .fill {
+    height: 100%;
+    background: var(--grad-accent);
+}
+
+.mockup-tags {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.mockup-tags span {
+    font-size: 0.75rem;
     font-weight: 600;
-    color: var(--text-dark);
-    white-space: nowrap;
+    background: var(--bg-light);
+    padding: 6px 10px;
+    border-radius: 6px;
 }
 
-.global-text {
-    font-size: 1.25rem;
-    color: var(--text-muted);
-    line-height: 1.8;
-    max-width: 600px;
-    margin: 0 auto;
+/* ==================================================
+   11. FUNNEL CONTAINER
+   ================================================== */
+.funnel-container {
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-/* Global Responsive */
-@media (max-width: 768px) {
-    .global-section {
-        padding: 4rem 0;
-    }
-
-    .global-map {
-        height: 200px;
-    }
-
-    .region-label {
-        font-size: 0.75rem;
-    }
-}
-
-/* ============================================
-   6. FAQ
-   ============================================ */
-.faq-section {
-    padding: 6rem 0;
-    background: #ffffff;
-}
-
-.faq-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.faq-item {
-    border-bottom: 1px solid var(--border-color);
-}
-
-.faq-question {
+.funnel-stage {
     width: 100%;
+}
+
+.funnel-bar {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 0;
-    background: none;
-    border: none;
-    cursor: pointer;
-    text-align: left;
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    transition: var(--transition-smooth);
-}
-
-.faq-question:hover {
-    color: var(--primary-purple);
-}
-
-.faq-question[aria-expanded="true"] {
-    color: var(--primary-purple);
-}
-
-.faq-icon {
-    font-size: 1.5rem;
-    color: var(--primary-purple);
-    transition: var(--transition-smooth);
-}
-
-.faq-question[aria-expanded="true"] .faq-icon {
-    transform: rotate(45deg);
-}
-
-.faq-answer {
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.faq-answer p {
-    padding-bottom: 1.5rem;
-    color: var(--text-muted);
-    line-height: 1.7;
-}
-
-.faq-item.active .faq-answer {
-    max-height: 200px;
-}
-
-/* FAQ Responsive */
-@media (max-width: 768px) {
-    .faq-section {
-        padding: 4rem 0;
-    }
-
-    .faq-question {
-        font-size: 1rem;
-        padding: 1.25rem 0;
-    }
-}
-
-/* ============================================
-   7. FINAL CTA
-   ============================================ */
-.final-cta-section {
-    padding: 6rem 0;
-    background: var(--gradient-purple);
-    position: relative;
-    overflow: hidden;
-}
-
-.final-cta-section::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -20%;
-    width: 140%;
-    height: 200%;
-    background: radial-gradient(ellipse, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-    animation: ctaGlow 10s ease-in-out infinite;
-}
-
-@keyframes ctaGlow {
-    0%, 100% { transform: rotate(0deg); }
-    50% { transform: rotate(5deg); }
-}
-
-.cta-content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.cta-heading {
-    font-size: 2.75rem;
-    font-weight: 800;
-    color: #ffffff;
-    margin-bottom: 1rem;
-    line-height: 1.1;
-}
-
-.cta-text {
-    font-size: 1.25rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 2.5rem;
-    line-height: 1.7;
-}
-
-.cta-button-final {
-    background: #ffffff;
-    color: var(--primary-purple) !important;
-    padding: 1rem 2.5rem;
     font-weight: 700;
-    border-radius: 10px;
-    transition: var(--transition-smooth);
-    display: inline-flex;
+    font-size: 0.9rem;
+    transition: all 0.3s var(--ease-out);
+}
+
+.funnel-stage[data-stage="1"] .funnel-bar { width: 100%; }
+.funnel-stage[data-stage="2"] .funnel-bar { width: 90%; margin: 0 auto; }
+.funnel-stage[data-stage="3"] .funnel-bar { width: 80%; margin: 0 auto; }
+.funnel-stage[data-stage="4"] .funnel-bar { width: 70%; margin: 0 auto; }
+.funnel-stage[data-stage="5"] .funnel-bar { width: 60%; margin: 0 auto; }
+.funnel-stage[data-stage="6"] .funnel-bar { width: 50%; margin: 0 auto; background: var(--grad-primary); color: var(--white); border-color: transparent; }
+
+/* ==================================================
+   12. AI MATRIX
+   ================================================== */
+.ai-glow-orb {
+    position: absolute;
+    top: 50%;
+    right: -10%;
+    transform: translateY(-50%);
+    width: 500px;
+    height: 500px;
+    background: var(--grad-glow);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.ai-badge {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 8px;
 }
 
-.cta-button-final:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+.ai-badge i {
+    color: var(--primary);
 }
 
-.cta-button-final i {
-    transition: var(--transition-smooth);
+.ai-interactive-matrix {
+    position: relative;
+    height: 340px;
+    border: 1px dashed var(--border);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.cta-button-final:hover i {
-    transform: translateX(5px);
+.matrix-node.central {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: var(--grad-primary);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.75rem;
+    z-index: 2;
+    box-shadow: 0 10px 30px rgba(128, 0, 128, 0.3);
 }
 
-/* CTA Responsive */
-@media (max-width: 768px) {
-    .final-cta-section {
-        padding: 4rem 0;
-    }
-
-    .cta-heading {
-        font-size: 2rem;
-    }
-
-    .cta-text {
-        font-size: 1.125rem;
-    }
+.matrix-node.central i {
+    font-size: 2rem;
+    margin-bottom: 4px;
 }
 
-/* ============================================
-   8. FOOTER
-   ============================================ */
-.footer-section {
-    padding: 5rem 0 2rem;
-    background: #0a0a0a;
-    color: #ffffff;
+.matrix-node.child {
+    position: absolute;
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
-.footer-grid {
+.matrix-node.child.c1 { top: 30px; left: 40px; }
+.matrix-node.child.c2 { top: 30px; right: 40px; }
+.matrix-node.child.c3 { bottom: 30px; left: 40px; }
+.matrix-node.child.c4 { bottom: 30px; right: 40px; }
+
+/* ==================================================
+   13. PERFORMANCE STATS
+   ================================================== */
+.stat-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 30px 15px;
+}
+
+.stat-val {
+    font-size: 3rem;
+    font-weight: 700;
+    display: inline-block;
+    line-height: 1;
+}
+
+.stat-suffix {
+    font-size: 1.8rem;
+    font-weight: 700;
+    display: inline-block;
+    color: var(--primary);
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    margin-top: 8px;
+}
+
+/* ==================================================
+   14. TIMELINE
+   ================================================== */
+.timeline-wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 3rem;
-    margin-bottom: 3rem;
+    border-top: 1px solid var(--border);
+    position: relative;
 }
 
-.footer-title {
-    font-size: 1rem;
+.timeline-step {
+    padding: 40px 24px 0;
+    position: relative;
+}
+
+.timeline-step::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 24px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--primary);
+}
+
+.timeline-step-num {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
-    color: #ffffff;
+    color: var(--muted);
+    opacity: 0.4;
+    margin-bottom: 12px;
 }
 
-.footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.timeline-step h4 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+}
+
+.timeline-step p {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+/* ==================================================
+   15. WHY HAVMOR MEDIA
+   ================================================== */
+.why-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 30px;
+    height: 100%;
+}
+
+.why-card i {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.why-card h4 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+}
+
+/* ==================================================
+   16. FINAL CTA & 17. FOOTER
+   ================================================== */
+.cta-section {
+    background: var(--grad-primary);
+}
+
+.cta-bg-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.12) 0%, transparent 60%);
+}
+
+.cta-title {
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+}
+
+.cta-desc {
+    font-size: 1.15rem;
+    max-width: 600px;
+}
+
+.footer-section {
+    background: var(--dark);
+    color: var(--white);
+    padding: 80px 0 30px;
+}
+
+.footer-logo {
+    color: var(--white);
+}
+
+.footer-heading {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--white);
 }
 
 .footer-links li {
-    margin-bottom: 0.75rem;
+    margin-bottom: 10px;
 }
 
 .footer-links a {
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    font-size: 0.9375rem;
-    transition: var(--transition-smooth);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.88rem;
 }
 
 .footer-links a:hover {
-    color: #ffffff;
+    color: var(--white);
 }
 
-.footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 2rem;
-    text-align: center;
+.footer-socials a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1rem;
 }
 
-.footer-bottom p {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 0.875rem;
-    margin: 0;
+.footer-socials a:hover {
+    background: var(--primary);
 }
 
-/* Footer Responsive */
+/* ==================================================
+   RESPONSIVE DESIGN
+   ================================================== */
 @media (max-width: 991px) {
-    .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
+    .section-padding { padding: 70px 0; }
+    .timeline-wrapper { grid-template-columns: 1fr; border-top: none; }
+    .timeline-step { padding: 20px 0 20px 30px; border-left: 1px solid var(--border); }
+    .timeline-step::before { left: -6px; top: 24px; }
+    .principles-wrap .principle-col { border-right: none; border-bottom: 1px solid var(--border); padding: 30px 15px; }
+    .principles-wrap .principle-col:last-child { border-bottom: none; }
+    .editorial-grid { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 576px) {
-    .footer-section {
-        padding: 3rem 0 1.5rem;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
+@media (max-width: 768px) {
+    .service-row-item { padding: 24px 10px; }
+    .service-summary { margin: 10px 0; }
 }
-
-/* ============================================
-   UTILITY CLASSES
-   ============================================ */
-.text-gradient {
-    background: var(--gradient-purple);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-/* Smooth Scroll */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Focus States */
-button:focus-visible,
-a:focus-visible {
-    outline: 2px solid var(--primary-purple);
-    outline-offset: 2px;
-}
-
-/* Selection */
-::selection {
-    background: var(--primary-purple);
-    color: #ffffff;
-}
-
     </style>
 </head>
-<body style="">
-    <!-- Sticky Navbar -->
-    <nav class="navbar sticky-top" id="navbar">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <span class="brand-logo">Havmor Media</span>
-            </a>
+<body>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+    <!-- 1. STICKY NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+        <div class="container-fluid max-width-container">
+            <a class="navbar-brand brand-logo" href="#" aria-label="Havmor Media Home">
+                Havmor<span>Media</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
+            <div class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Solutions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Industries</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Case Studies</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                 </ul>
-
-                <a href="#" class="btn btn-primary cta-button">Book a Free Consultation</a>
+                <div class="d-flex">
+                    <a href="#cta" class="btn btn-primary-custom nav-cta">Book Free Consultation</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Contact Hero -->
-    <section class="hero-section" id="hero">
-        <div class="hero-background">
-            <div class="hero-grid"></div>
-            <div class="hero-gradient-glow"></div>
-            <div class="floating-particles" id="particles"></div>
-        </div>
+    <!-- 2 & 3. HERO SECTION WITH BACKGROUND -->
+    <header class="hero-section position-relative overflow-hidden" id="hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-particles-container" id="heroParticles"></div>
 
-        <div class="container hero-content">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <p class="hero-eyebrow">LET'S TALK GROWTH</p>
-                    <h1 class="hero-heading">
-                        Let's turn your marketing<br>
-                        into <span class="gradient-text">measurable</span> growth.
+        <div class="container-fluid max-width-container position-relative z-index-2">
+            <div class="row align-items-center g-5 min-vh-90 pt-100">
+                <div class="col-lg-7 hero-content">
+                    <div class="eyebrow mb-3">WHAT WE DO</div>
+                    <h1 class="hero-title mb-4">
+                        Performance marketing built for <span class="text-gradient">measurable growth</span>.
                     </h1>
-                    <p class="hero-text">
-                        Whether you're looking to scale customer acquisition,<br>
-                        improve campaign performance, or unlock new revenue<br>
-                        opportunities, our growth experts are ready to help.
+                    <p class="hero-desc mb-5">
+                        From customer acquisition to intelligent media buying, we combine technology, data and performance marketing to help ambitious brands scale faster and more efficiently.
                     </p>
-                    <div class="hero-cta">
-                        <a href="#contact-form" class="btn btn-primary btn-lg">Talk to a Growth Expert</a>
-                        <a href="#" class="btn btn-outline-secondary btn-lg">Explore Our Solutions</a>
+                    <div class="hero-cta-group d-flex flex-wrap gap-3">
+                        <a href="#services" class="btn btn-primary-custom">
+                            Explore Our Services <i class="ri-arrow-right-line ms-1"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-outline-custom">
+                            Talk to a Growth Expert <i class="ri-arrow-right-line ms-1"></i>
+                        </a>
                     </div>
+                </div>
+                
+                <div class="col-lg-5 hero-visual-col">
+                    <div class="adtech-dashboard-card" id="heroDashboard">
+                        <div class="dashboard-header d-flex justify-content-between align-items-center mb-4">
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="pulse-dot"></div>
+                                <span class="dash-badge">AI OPTIMIZER ACTIVE</span>
+                            </div>
+                            <span class="dash-timestamp">LIVE STREAM</span>
+                        </div>
+
+                        <div class="dashboard-metric-box mb-4">
+                            <div class="d-flex justify-content-between text-muted-custom small mb-1">
+                                <span>AGGREGATED RETURN</span>
+                                <span class="text-success-custom font-mono">+48.2%</span>
+                            </div>
+                            <div class="dash-value font-mono">4.8x <span class="dash-sub">ROAS</span></div>
+                        </div>
+
+                        <div class="mini-chart-container mb-4">
+                            <svg class="chart-svg" viewBox="0 0 300 80">
+                                <defs>
+                                    <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#800080" stop-opacity="0.3"/>
+                                        <stop offset="100%" stop-color="#C73E9B" stop-opacity="0"/>
+                                    </linearGradient>
+                                </defs>
+                                <path class="chart-area" d="M0,70 Q75,60 150,30 T300,10 L300,80 L0,80 Z" fill="url(#chartGrad)"/>
+                                <path class="chart-line" d="M0,70 Q75,60 150,30 T300,10" fill="none" stroke="#800080" stroke-width="2.5"/>
+                            </svg>
+                        </div>
+
+                        <div class="row g-2 text-center dash-pills">
+                            <div class="col-4">
+                                <div class="p-2 pill-box">
+                                    <span class="label">DATA</span>
+                                    <span class="val">99.4%</span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="p-2 pill-box">
+                                    <span class="label">CTR</span>
+                                    <span class="val">4.82%</span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="p-2 pill-box">
+                                    <span class="label">SCALE</span>
+                                    <span class="val">10x</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 4. SERVICES INTRODUCTION -->
+    <section class="section-padding border-bottom border-subtle">
+        <div class="container-fluid max-width-container">
+            <div class="row mb-5">
+                <div class="col-lg-6">
+                    <div class="eyebrow mb-2">OUR CAPABILITIES</div>
+                    <h2 class="section-title">Everything you need to scale smarter.</h2>
+                </div>
+                <div class="col-lg-6 d-flex align-items-end">
+                    <p class="section-desc mb-0">From strategy and acquisition to media buying and optimization, our services are designed around one goal: measurable growth.</p>
+                </div>
+            </div>
+
+            <div class="row g-0 principles-wrap">
+                <div class="col-md-4 principle-col">
+                    <div class="principle-number">01</div>
+                    <h3 class="principle-name">ACQUIRE</h3>
+                    <p class="principle-text">Reach high-intent audiences through verified programmatic pipelines and precision targeting.</p>
+                </div>
+                <div class="col-md-4 principle-col">
+                    <div class="principle-number">02</div>
+                    <h3 class="principle-name">OPTIMIZE</h3>
+                    <p class="principle-text">Continuously improve performance with autonomous, algorithmic multi-variable testing.</p>
+                </div>
+                <div class="col-md-4 principle-col">
+                    <div class="principle-number">03</div>
+                    <h3 class="principle-name">SCALE</h3>
+                    <p class="principle-text">Turn winning campaigns into durable, high-yield digital acquisition channels.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form + Contact Information -->
-    <section class="contact-section" id="contact-form">
-        <div class="container">
-            <div class="row g-5">
-                <!-- LEFT SIDE: Contact Form -->
-                <div class="col-lg-7">
-                    <div class="form-container">
-                        <h2 class="form-heading">Tell us about your growth goals.</h2>
-                        <p class="form-text">
-                            Share a few details about your business and our team<br>
-                            will get back to you with ideas tailored to your goals.
-                        </p>
+    <!-- 5. CORE SERVICES (NUMBERED LIST) -->
+    <section class="section-padding" id="services">
+        <div class="container-fluid max-width-container">
+            <div class="row mb-5">
+                <div class="col-lg-6">
+                    <h2 class="section-title">Built around<br>performance.</h2>
+                </div>
+            </div>
 
-                        <form id="contactForm" novalidate="">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label for="firstName" class="form-label">First Name <span class="required">*</span></label>
-                                    <input type="text" class="form-control" id="firstName" name="firstName" required="">
-                                    <div class="invalid-feedback">First name is required.</div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label for="lastName" class="form-label">Last Name</label>
-                                    <input type="text" class="form-control" id="lastName" name="lastName">
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label for="email" class="form-label">Work Email <span class="required">*</span></label>
-                                    <input type="email" class="form-control" id="email" name="email" required="">
-                                    <div class="invalid-feedback">Work email is required.</div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label for="phone" class="form-label">Phone Number</label>
-                                    <input type="tel" class="form-control" id="phone" name="phone">
-                                    <div class="invalid-feedback">Please enter a valid phone number.</div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label for="company" class="form-label">Company Name <span class="required">*</span></label>
-                                    <input type="text" class="form-control" id="company" name="company" required="">
-                                    <div class="invalid-feedback">Please enter your company name.</div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label for="website" class="form-label">Website</label>
-                                    <input type="url" class="form-control" id="website" name="website">
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label for="industry" class="form-label">Industry</label>
-                                    <select class="form-select" id="industry" name="industry">
-                                        <option value="">Select an industry</option>
-                                        <option value="Mobile Apps">Mobile Apps</option>
-                                        <option value="E-commerce">E-commerce</option>
-                                        <option value="SaaS">SaaS</option>
-                                        <option value="FinTech">FinTech</option>
-                                        <option value="Gaming">Gaming</option>
-                                        <option value="Travel">Travel</option>
-                                        <option value="Healthcare">Healthcare</option>
-                                        <option value="Education">Education</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label for="budget" class="form-label">Monthly Advertising Budget</label>
-                                    <select class="form-select" id="budget" name="budget">
-                                        <option value="">Select a budget range</option>
-                                        <option value="Under $10K">Under $10K</option>
-                                        <option value="$10K – $50K">$10K – $50K</option>
-                                        <option value="$50K – $100K">$50K – $100K</option>
-                                        <option value="$100K – $500K">$100K – $500K</option>
-                                        <option value="$500K+">$500K+</option>
-                                    </select>
-                                </div>
-
-                                <div class="col-12">
-                                    <label for="helpWith" class="form-label">What can we help you with?</label>
-                                    <select class="form-select" id="helpWith" name="helpWith">
-                                        <option value="">Select a service</option>
-                                        <option value="Performance Marketing">Performance Marketing</option>
-                                        <option value="User Acquisition">User Acquisition</option>
-                                        <option value="Affiliate Marketing">Affiliate Marketing</option>
-                                        <option value="Programmatic Advertising">Programmatic Advertising</option>
-                                        <option value="App Growth">App Growth</option>
-                                        <option value="Media Buying">Media Buying</option>
-                                        <option value="Publisher Monetization">Publisher Monetization</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-                                </div>
-
-                                <div class="col-12">
-                                    <label for="message" class="form-label">Message <span class="required">*</span></label>
-                                    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Tell us about your goals, challenges, or current campaigns..." required=""></textarea>
-                                    <div class="invalid-feedback">Please enter your message.</div>
-                                </div>
-
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-primary btn-lg btn-submit" id="submitBtn">
-                                        Send Message <i class="ri-arrow-right-line"></i>
-                                    </button>
-                                    <p class="privacy-message">By submitting this form, you agree to our Privacy Policy.</p>
-                                </div>
-                            </div>
-                        </form>
-
-                        <div class="success-message" id="successMessage" style="display: none;">
-                            <i class="ri-check-line"></i>
-                            <h3>Thanks! Your message has been received.</h3>
-                            <p>Our growth team will be in touch shortly.</p>
+            <div class="services-list-container">
+                <!-- 01 -->
+                <div class="service-row-item">
+                    <div class="row align-items-center">
+                        <div class="col-lg-1 col-md-2 col-12 service-idx">01</div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <h3 class="service-name">Performance Marketing</h3>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <p class="service-summary">Turn every marketing dollar into measurable business outcomes through data-driven acquisition, optimization, and conversion strategies.</p>
+                        </div>
+                        <div class="col-lg-2 col-md-1 col-6 text-lg-center">
+                            <span class="service-metric-badge">+42% Growth</span>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-6 text-end">
+                            <div class="service-arrow-btn"><i class="ri-arrow-right-line"></i></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- RIGHT SIDE: Contact Information -->
+                <!-- 02 -->
+                <div class="service-row-item">
+                    <div class="row align-items-center">
+                        <div class="col-lg-1 col-md-2 col-12 service-idx">02</div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <h3 class="service-name">Affiliate Marketing</h3>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <p class="service-summary">Scalable publisher partnerships designed on pure performance and zero wasted media spend.</p>
+                        </div>
+                        <div class="col-lg-2 col-md-1 col-6 text-lg-center">
+                            <span class="service-metric-badge">Zero Risk</span>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-6 text-end">
+                            <div class="service-arrow-btn"><i class="ri-arrow-right-line"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 03 -->
+                <div class="service-row-item">
+                    <div class="row align-items-center">
+                        <div class="col-lg-1 col-md-2 col-12 service-idx">03</div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <h3 class="service-name">Programmatic Advertising</h3>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <p class="service-summary">Real-time bidding across world-class DSPs to capture high-converting users at millisecond speeds.</p>
+                        </div>
+                        <div class="col-lg-2 col-md-1 col-6 text-lg-center">
+                            <span class="service-metric-badge">RTB Engine</span>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-6 text-end">
+                            <div class="service-arrow-btn"><i class="ri-arrow-right-line"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 04 -->
+                <div class="service-row-item">
+                    <div class="row align-items-center">
+                        <div class="col-lg-1 col-md-2 col-12 service-idx">04</div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <h3 class="service-name">Mobile Advertising</h3>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <p class="service-summary">Precision mobile-first campaign executions focused on device-specific engagement patterns.</p>
+                        </div>
+                        <div class="col-lg-2 col-md-1 col-6 text-lg-center">
+                            <span class="service-metric-badge">High Yield</span>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-6 text-end">
+                            <div class="service-arrow-btn"><i class="ri-arrow-right-line"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 05 -->
+                <div class="service-row-item">
+                    <div class="row align-items-center">
+                        <div class="col-lg-1 col-md-2 col-12 service-idx">05</div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <h3 class="service-name">App Growth Marketing</h3>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <p class="service-summary">End-to-end install-to-retention strategies optimizing for post-install LTV, not vanity metrics.</p>
+                        </div>
+                        <div class="col-lg-2 col-md-1 col-6 text-lg-center">
+                            <span class="service-metric-badge">LTV Focused</span>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-6 text-end">
+                            <div class="service-arrow-btn"><i class="ri-arrow-right-line"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 06 -->
+                <div class="service-row-item">
+                    <div class="row align-items-center">
+                        <div class="col-lg-1 col-md-2 col-12 service-idx">06</div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <h3 class="service-name">User Acquisition</h3>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <p class="service-summary">High-intent customer pipelines targeting bottom-of-funnel conversion across tier-one platforms.</p>
+                        </div>
+                        <div class="col-lg-2 col-md-1 col-6 text-lg-center">
+                            <span class="service-metric-badge">-31% CPA</span>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-6 text-end">
+                            <div class="service-arrow-btn"><i class="ri-arrow-right-line"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 07 -->
+                <div class="service-row-item">
+                    <div class="row align-items-center">
+                        <div class="col-lg-1 col-md-2 col-12 service-idx">07</div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <h3 class="service-name">Native Advertising</h3>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <p class="service-summary">Contextual storytelling and editorial placements built to bypass ad fatigue seamlessly.</p>
+                        </div>
+                        <div class="col-lg-2 col-md-1 col-6 text-lg-center">
+                            <span class="service-metric-badge">Context-Rich</span>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-6 text-end">
+                            <div class="service-arrow-btn"><i class="ri-arrow-right-line"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 08 -->
+                <div class="service-row-item">
+                    <div class="row align-items-center">
+                        <div class="col-lg-1 col-md-2 col-12 service-idx">08</div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <h3 class="service-name">Influencer Marketing</h3>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <p class="service-summary">Performance-tracked creator partnerships backed by contract-grade attribution tracking.</p>
+                        </div>
+                        <div class="col-lg-2 col-md-1 col-6 text-lg-center">
+                            <span class="service-metric-badge">Tracked ROI</span>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-6 text-end">
+                            <div class="service-arrow-btn"><i class="ri-arrow-right-line"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 09 -->
+                <div class="service-row-item">
+                    <div class="row align-items-center">
+                        <div class="col-lg-1 col-md-2 col-12 service-idx">09</div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <h3 class="service-name">OEM Advertising</h3>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <p class="service-summary">Direct hardware-level on-device distribution via smartphone ecosystem integrations.</p>
+                        </div>
+                        <div class="col-lg-2 col-md-1 col-6 text-lg-center">
+                            <span class="service-metric-badge">Direct OEM</span>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-6 text-end">
+                            <div class="service-arrow-btn"><i class="ri-arrow-right-line"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10 -->
+                <div class="service-row-item">
+                    <div class="row align-items-center">
+                        <div class="col-lg-1 col-md-2 col-12 service-idx">10</div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <h3 class="service-name">Media Buying</h3>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <p class="service-summary">Algorithmic inventory procurement maximizing working capital across programmatic exchanges.</p>
+                        </div>
+                        <div class="col-lg-2 col-md-1 col-6 text-lg-center">
+                            <span class="service-metric-badge">Bulk Yield</span>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-6 text-end">
+                            <div class="service-arrow-btn"><i class="ri-arrow-right-line"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FEATURED SERVICE (VISUAL FLOW) -->
+    <section class="section-padding bg-subtle-pattern">
+        <div class="container-fluid max-width-container">
+            <div class="row align-items-center g-5">
                 <div class="col-lg-5">
-                    <div class="contact-info-container">
-                        <h3 class="contact-info-heading">Have a project in mind?</h3>
-                        <p class="contact-info-text">
-                            Let's discuss how intelligent performance marketing<br>
-                            can help your business scale.
-                        </p>
-
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <i class="ri-mail-line"></i>
-                                <div>
-                                    <span class="label">Email</span>
-                                    <a href="mailto:hello@havmormedia.com">hello@havmormedia.com</a>
-                                </div>
-                            </div>
-
-                            <div class="contact-item">
-                                <i class="ri-phone-line"></i>
-                                <div>
-                                    <span class="label">Phone</span>
-                                    <a href="tel:+91XXXXXXXXXX">+91 XXX XXX XXXX</a>
-                                </div>
-                            </div>
-
-                            <div class="contact-item">
-                                <i class="ri-time-line"></i>
-                                <div>
-                                    <span class="label">Business Hours</span>
-                                    <span>Monday – Friday<br>9:00 AM – 6:00 PM IST</span>
-                                </div>
-                            </div>
+                    <div class="eyebrow mb-2">INTEGRATED ARCHITECTURE</div>
+                    <h2 class="section-title mb-4">Performance Marketing</h2>
+                    <p class="section-desc mb-4">Connect strategy, media, creative, and data into one continuous growth engine that optimizes every single touchpoint in the funnel.</p>
+                    <ul class="feature-checklist list-unstyled">
+                        <li><i class="ri-check-line"></i> Autonomous Budget Allocation</li>
+                        <li><i class="ri-check-line"></i> Cross-Platform Attribution</li>
+                        <li><i class="ri-check-line"></i> Creative Fatigue Diagnostics</li>
+                    </ul>
+                </div>
+                <div class="col-lg-7">
+                    <div class="flow-engine-container">
+                        <div class="flow-step-node" id="node1">
+                            <i class="ri-user-search-line"></i>
+                            <span>AUDIENCE</span>
                         </div>
-
-                        <div class="global-team">
-                            <h4>Global Growth Team</h4>
-                            <p>Working with ambitious brands, advertisers and publishers<br>across global markets.</p>
+                        <div class="flow-connector"><div class="connector-pulse"></div></div>
+                        <div class="flow-step-node" id="node2">
+                            <i class="ri-compass-3-line"></i>
+                            <span>STRATEGY</span>
                         </div>
-
-                        <!-- Contact Visual -->
-                        <div class="contact-visual" id="contactVisual">
-                            <div class="visual-flow">
-                                <div class="flow-node">
-                                    <span class="node-label">Campaigns</span>
-                                    <i class="ri-download-line"></i>
-                                </div>
-                                <div class="flow-line"></div>
-                                <div class="flow-node">
-                                    <span class="node-label">Audience Intelligence</span>
-                                    <i class="ri-brain-line"></i>
-                                </div>
-                                <div class="flow-line"></div>
-                                <div class="flow-node">
-                                    <span class="node-label">AI Optimization</span>
-                                    <i class="ri-magic-line"></i>
-                                </div>
-                                <div class="flow-line"></div>
-                                <div class="flow-node">
-                                    <span class="node-label">Conversions</span>
-                                    <i class="ri-target-line"></i>
-                                </div>
-                                <div class="flow-line"></div>
-                                <div class="flow-node highlight">
-                                    <span class="node-label">Revenue Growth</span>
-                                    <i class="ri-trending-up-line"></i>
-                                    <span class="growth-indicator">+247%</span>
-                                </div>
-                            </div>
-                            <div class="visual-particles"></div>
+                        <div class="flow-connector"><div class="connector-pulse"></div></div>
+                        <div class="flow-step-node" id="node3">
+                            <i class="ri-advertisement-line"></i>
+                            <span>MEDIA</span>
+                        </div>
+                        <div class="flow-connector"><div class="connector-pulse"></div></div>
+                        <div class="flow-step-node" id="node4">
+                            <i class="ri-cpu-line"></i>
+                            <span>OPTIMIZATION</span>
+                        </div>
+                        <div class="flow-connector"><div class="connector-pulse"></div></div>
+                        <div class="flow-step-node" id="node5">
+                            <i class="ri-swap-box-line"></i>
+                            <span>CONVERSION</span>
+                        </div>
+                        <div class="flow-connector"><div class="connector-pulse"></div></div>
+                        <div class="flow-step-node highlight" id="node6">
+                            <i class="ri-line-chart-line"></i>
+                            <span>GROWTH</span>
                         </div>
                     </div>
                 </div>
@@ -1377,639 +1516,619 @@ a:focus-visible {
         </div>
     </section>
 
-    <!-- Why Talk To Us -->
-    <section class="why-section">
-        <div class="container">
-            <h2 class="section-heading">Why brands choose Havmor Media</h2>
-
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-number">01</div>
-                    <div class="benefit-icon">
-                        <i class="ri-ai-generate"></i>
-                    </div>
-                    <h3 class="benefit-title">AI-Powered Optimization</h3>
-                    <p class="benefit-text">
-                        Continuously optimize campaigns using intelligent<br>
-                        data-driven decision making.
-                    </p>
+    <!-- 7 & 8. DEEP-DIVE DETAILS (EDITORIAL SPLITS) -->
+    <section class="section-padding border-top border-subtle">
+        <div class="container-fluid max-width-container">
+            <!-- Part 1: Performance Marketing -->
+            <div class="row g-5 align-items-center mb-100">
+                <div class="col-lg-5">
+                    <h3 class="editorial-heading mb-4">Built to optimize every stage of the customer journey.</h3>
+                    <p class="section-desc">We eliminate guessing. Campaigns are broken down into precision datasets to ensure total visibility across all paid touchpoints.</p>
                 </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-number">02</div>
-                    <div class="benefit-icon">
-                        <i class="ri-pie-chart-line"></i>
+                <div class="col-lg-7">
+                    <div class="editorial-grid">
+                        <div class="grid-card">
+                            <div class="card-icon"><i class="ri-funds-line"></i></div>
+                            <h4>Paid Acquisition</h4>
+                            <p>High-efficiency ad spend execution across Search, Social, and Display.</p>
+                        </div>
+                        <div class="grid-card">
+                            <div class="card-icon"><i class="ri-pie-chart-2-line"></i></div>
+                            <h4>Conversion Optimization</h4>
+                            <p>Iterative UX and copy heuristics designed to lower conversion friction.</p>
+                        </div>
+                        <div class="grid-card">
+                            <div class="card-icon"><i class="ri-focus-2-line"></i></div>
+                            <h4>Audience Targeting</h4>
+                            <p>1st and 3rd party deterministic behavioral cohort generation.</p>
+                        </div>
+                        <div class="grid-card">
+                            <div class="card-icon"><i class="ri-bubble-chart-line"></i></div>
+                            <h4>Performance Analytics</h4>
+                            <p>Enterprise attribution pipelines revealing precise incrementality metrics.</p>
+                        </div>
                     </div>
-                    <h3 class="benefit-title">Transparent Performance</h3>
-                    <p class="benefit-text">
-                        Understand exactly where your budget goes and<br>
-                        how it contributes to growth.
-                    </p>
                 </div>
+            </div>
 
-                <div class="benefit-item">
-                    <div class="benefit-number">03</div>
-                    <div class="benefit-icon">
-                        <i class="ri-global-line"></i>
+            <!-- Part 2: Affiliate Marketing -->
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-7 order-lg-1 order-2">
+                    <div class="partnership-flow-card">
+                        <div class="d-flex justify-content-between text-center align-items-center flex-wrap g-2">
+                            <div class="partner-box">BRAND</div>
+                            <i class="ri-arrow-right-line flow-arrow"></i>
+                            <div class="partner-box">PARTNERS</div>
+                            <i class="ri-arrow-right-line flow-arrow"></i>
+                            <div class="partner-box">AUDIENCE</div>
+                            <i class="ri-arrow-right-line flow-arrow"></i>
+                            <div class="partner-box highlight">REVENUE</div>
+                        </div>
                     </div>
-                    <h3 class="benefit-title">Global Reach</h3>
-                    <p class="benefit-text">
-                        Scale campaigns across mobile, web and emerging<br>
-                        digital ecosystems.
-                    </p>
                 </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-number">04</div>
-                    <div class="benefit-icon">
-                        <i class="ri-bar-chart-grouped-line"></i>
-                    </div>
-                    <h3 class="benefit-title">Measurable Results</h3>
-                    <p class="benefit-text">
-                        Focus on the metrics that actually impact your business.
-                    </p>
+                <div class="col-lg-5 order-lg-2 order-1">
+                    <div class="eyebrow mb-2">PARTNERSHIP SCALE</div>
+                    <h3 class="editorial-heading mb-3">Turn partnerships into performance.</h3>
+                    <p class="section-desc">Deploy managed affiliate networks powered by strict compliance, commission optimization, and programmatic fraud prevention engines.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Global Presence -->
-    <section class="global-section">
-        <div class="container">
-            <h2 class="section-heading">Built for global growth.</h2>
-
-            <div class="global-map">
-                <div class="map-background">
-                    <svg viewBox="0 0 800 400" class="world-map">
-                        <path d="M150,120 Q180,100 220,110 T300,130" class="map-line"></path>
-                        <path d="M350,140 Q400,120 450,130 T520,150" class="map-line"></path>
-                        <path d="M200,200 Q250,180 300,190 T380,210" class="map-line"></path>
-                        <path d="M420,220 Q480,200 540,210 T620,230" class="map-line"></path>
-                        <path d="M180,280 Q230,260 280,270 T350,290" class="map-line"></path>
-                    </svg>
-                </div>
-
-                <div class="region-points">
-                    <div class="region-point" data-region="India">
-                        <div class="point-glow"></div>
-                        <div class="point-dot"></div>
-                        <span class="region-label">India</span>
-                    </div>
-                    <div class="region-point" data-region="North America">
-                        <div class="point-glow"></div>
-                        <div class="point-dot"></div>
-                        <span class="region-label">North America</span>
-                    </div>
-                    <div class="region-point" data-region="Europe">
-                        <div class="point-glow"></div>
-                        <div class="point-dot"></div>
-                        <span class="region-label">Europe</span>
-                    </div>
-                    <div class="region-point" data-region="Middle East">
-                        <div class="point-glow"></div>
-                        <div class="point-dot"></div>
-                        <span class="region-label">Middle East</span>
-                    </div>
-                    <div class="region-point" data-region="APAC">
-                        <div class="point-glow"></div>
-                        <div class="point-dot"></div>
-                        <span class="region-label">APAC</span>
+    <!-- 9. PROGRAMMATIC ADVERTISING -->
+    <section class="section-padding bg-subtle-pattern border-top border-subtle">
+        <div class="container-fluid max-width-container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5">
+                    <div class="eyebrow mb-2">RTB ECOSYSTEM</div>
+                    <h2 class="section-title mb-4">Buy smarter.<br>Reach better.</h2>
+                    <p class="section-desc mb-4">Access premium programmatic exchanges with automated bid pacing and cross-device targeting capabilities.</p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="tag-pill">Display</span>
+                        <span class="tag-pill">Video</span>
+                        <span class="tag-pill">Native</span>
+                        <span class="tag-pill">Connected TV</span>
                     </div>
                 </div>
-            </div>
-
-            <p class="global-text">
-                From local growth to global scale, our technology<br>
-                helps advertisers and publishers build stronger<br>
-                digital businesses.
-            </p>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq-section">
-        <div class="container">
-            <h2 class="section-heading">Frequently Asked Questions</h2>
-
-            <div class="faq-container">
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>How quickly will your team respond?</span>
-                        <i class="ri-add-line faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Our growth team typically responds within 24 hours during business days. For urgent inquiries, you can reach us directly at hello@havmormedia.com or call us during business hours.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Do you work with startups?</span>
-                        <i class="ri-add-line faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes! We work with ambitious startups and established enterprises alike. Our AI-powered platform scales with your business, whether you're just starting out or looking to expand globally.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>What industries do you specialize in?</span>
-                        <i class="ri-add-line faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>We specialize in Mobile Apps, E-commerce, SaaS, FinTech, Gaming, Travel, Healthcare, and Education. Our platform adapts to your industry's unique challenges and opportunities.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>What advertising platforms do you support?</span>
-                        <i class="ri-add-line faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>We support all major advertising platforms including Google Ads, Meta Ads, TikTok Ads, LinkedIn Ads, and programmatic networks. Our AI optimizes across channels for maximum performance.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Can you manage international campaigns?</span>
-                        <i class="ri-add-line faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Absolutely. Our global growth team manages campaigns across multiple regions, time zones, and currencies. We handle localization, compliance, and optimization for international markets.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Do you offer performance-based pricing?</span>
-                        <i class="ri-add-line faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes, we offer flexible pricing models including performance-based options. During your consultation, we'll discuss the best pricing structure aligned with your goals and budget.</p>
+                <div class="col-lg-7">
+                    <div class="programmatic-dashboard">
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="prog-metric-card">
+                                    <span class="label">IMPRESSIONS</span>
+                                    <span class="value font-mono">1.24B</span>
+                                    <span class="trend"><i class="ri-arrow-up-line"></i> +18.4%</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="prog-metric-card">
+                                    <span class="label">AVG. CPM</span>
+                                    <span class="value font-mono">$1.12</span>
+                                    <span class="trend negative"><i class="ri-arrow-down-line"></i> -14.2%</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="prog-metric-card">
+                                    <span class="label">ACTIVE DSPs</span>
+                                    <span class="value font-mono">14 Connected</span>
+                                    <span class="trend">Live RTB</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="prog-metric-card">
+                                    <span class="label">ATTRIBUTION</span>
+                                    <span class="value font-mono">99.8%</span>
+                                    <span class="trend">Verified</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="final-cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-heading">Ready to build your next growth engine?</h2>
-                <p class="cta-text">
-                    Let's turn your marketing challenges into measurable<br>
-                    business outcomes.
-                </p>
-                <a href="#" class="btn btn-light btn-lg cta-button-final">
-                    Book a Free Consultation <i class="ri-arrow-right-line"></i>
-                </a>
+    <!-- 10. MOBILE & APP GROWTH -->
+    <section class="section-padding border-top border-subtle">
+        <div class="container-fluid max-width-container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <div class="eyebrow mb-2">MOBILE ECOSYSTEM</div>
+                    <h2 class="section-title mb-4">Grow mobile experiences from install to loyalty.</h2>
+                    <p class="section-desc mb-4">Scale app installations, post-install actions, and user retention cycles using predictive algorithmic cohorts.</p>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="mobile-feature-box">
+                                <i class="ri-install-line"></i>
+                                <h5>App Install (CPI)</h5>
+                                <p class="small text-muted-custom">Volume-driven high-intent downloads.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mobile-feature-box">
+                                <i class="ri-refresh-line"></i>
+                                <h5>Re-engagement</h5>
+                                <p class="small text-muted-custom">Reactivating dormant cohort value.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="mobile-ui-mockup">
+                        <div class="mockup-screen">
+                            <div class="mockup-header">
+                                <div class="camera-pill"></div>
+                            </div>
+                            <div class="mockup-body">
+                                <div class="mockup-app-icon"><i class="ri-apps-2-line"></i></div>
+                                <div class="mockup-title">Acquisition Live</div>
+                                <div class="mockup-metric font-mono">142.8k <span class="sub">Installs</span></div>
+                                <div class="mockup-bar"><div class="fill" style="width: 78%;"></div></div>
+                                <div class="mockup-tags">
+                                    <span>ROAS: 5.2x</span>
+                                    <span>Retention: 42%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- 11. USER ACQUISITION FUNNEL -->
+    <section class="section-padding bg-subtle-pattern border-top border-subtle">
+        <div class="container-fluid max-width-container">
+            <div class="text-center max-width-700 mx-auto mb-5">
+                <div class="eyebrow mb-2">PRECISION CONVERSION</div>
+                <h2 class="section-title">The Continuous Funnel</h2>
+            </div>
+            
+            <div class="funnel-container mx-auto">
+                <div class="funnel-stage" data-stage="1">
+                    <div class="funnel-bar"><span class="title">AWARENESS</span><span class="drop-rate font-mono">100% Volume</span></div>
+                </div>
+                <div class="funnel-stage" data-stage="2">
+                    <div class="funnel-bar"><span class="title">INTEREST</span><span class="drop-rate font-mono">68% Intent</span></div>
+                </div>
+                <div class="funnel-stage" data-stage="3">
+                    <div class="funnel-bar"><span class="title">INSTALL / LEAD</span><span class="drop-rate font-mono">42% Qualified</span></div>
+                </div>
+                <div class="funnel-stage" data-stage="4">
+                    <div class="funnel-bar"><span class="title">ACTIVATION</span><span class="drop-rate font-mono">29% Active</span></div>
+                </div>
+                <div class="funnel-stage" data-stage="5">
+                    <div class="funnel-bar"><span class="title">RETENTION</span><span class="drop-rate font-mono">19% LTV Cohort</span></div>
+                </div>
+                <div class="funnel-stage highlight" data-stage="6">
+                    <div class="funnel-bar"><span class="title">REVENUE</span><span class="drop-rate font-mono">Max Yield</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. AI-POWERED OPTIMIZATION ENGINE -->
+    <section class="section-padding border-top border-subtle position-relative overflow-hidden">
+        <div class="ai-glow-orb"></div>
+        <div class="container-fluid max-width-container position-relative z-index-2">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="eyebrow mb-2">INTELLIGENCE ENGINE</div>
+                    <h2 class="section-title mb-4">Marketing that gets smarter with every signal.</h2>
+                    <p class="section-desc mb-4">Use autonomous machine learning, high-velocity bid adjustments, and real-time creative fatigue detection to safeguard ROAS at enterprise scale.</p>
+                    <div class="row g-2">
+                        <div class="col-6"><div class="ai-badge"><i class="ri-cpu-line"></i> Dynamic Bidding</div></div>
+                        <div class="col-6"><div class="ai-badge"><i class="ri-magic-line"></i> Predictive LTV</div></div>
+                        <div class="col-6"><div class="ai-badge"><i class="ri-shield-check-line"></i> Fraud Shield</div></div>
+                        <div class="col-6"><div class="ai-badge"><i class="ri-bar-chart-grouped-line"></i> Incrementality</div></div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="ai-interactive-matrix">
+                        <div class="matrix-node central"><i class="ri-brain-line"></i><span>HAVMOR AI</span></div>
+                        <div class="matrix-node child c1">Data Streams</div>
+                        <div class="matrix-node child c2">Creative Variant</div>
+                        <div class="matrix-node child c3">Audience Cohort</div>
+                        <div class="matrix-node child c4">Conversion Event</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 13. PERFORMANCE DASHBOARD METRICS -->
+    <section class="section-padding bg-subtle-pattern border-top border-subtle">
+        <div class="container-fluid max-width-container">
+            <div class="row g-4 text-center">
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="stat-card">
+                        <div class="stat-val font-mono text-gradient" data-target="4.8" data-decimal="1">0</div>
+                        <div class="stat-suffix">x</div>
+                        <div class="stat-label">AVERAGE ROAS</div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="stat-card">
+                        <div class="stat-val font-mono" data-target="31">0</div>
+                        <div class="stat-suffix">-%</div>
+                        <div class="stat-label">ACQUISITION CPA</div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="stat-card">
+                        <div class="stat-val font-mono" data-target="42">0</div>
+                        <div class="stat-suffix">+%</div>
+                        <div class="stat-label">CLICK-THROUGH RATE</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="stat-card">
+                        <div class="stat-val font-mono" data-target="68">0</div>
+                        <div class="stat-suffix">+%</div>
+                        <div class="stat-label">CONVERSION VOLUME</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="stat-card">
+                        <div class="stat-val font-mono" data-target="52">0</div>
+                        <div class="stat-suffix">+%</div>
+                        <div class="stat-label">REVENUE EXPANSION</div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-muted-custom small mt-4 mb-0">* Aggregated performance benchmark metrics across active Havmor Media ad pipelines.</p>
+        </div>
+    </section>
+
+    <!-- 14. HOW IT WORKS (TIMELINE) -->
+    <section class="section-padding border-top border-subtle">
+        <div class="container-fluid max-width-container">
+            <div class="text-center max-width-700 mx-auto mb-5">
+                <div class="eyebrow mb-2">SYSTEMATIC EXECUTION</div>
+                <h2 class="section-title">From strategy to scale.</h2>
+            </div>
+
+            <div class="timeline-wrapper">
+                <div class="timeline-step">
+                    <div class="timeline-step-num">01</div>
+                    <h4>DISCOVER</h4>
+                    <p>Deep-dive analysis into audience behavior, baseline analytics, and unit economics.</p>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-step-num">02</div>
+                    <h4>STRATEGIZE</h4>
+                    <p>Engineered channel selection, media modeling, and dynamic creative mapping.</p>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-step-num">03</div>
+                    <h4>ACTIVATE</h4>
+                    <p>Rapid deployment across programmatic, direct, and affiliate ecosystems.</p>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-step-num">04</div>
+                    <h4>OPTIMIZE</h4>
+                    <p>Algorithmic measurement, attribution pruning, and high-velocity scaling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 15. WHY HAVMOR MEDIA -->
+    <section class="section-padding bg-subtle-pattern border-top border-subtle">
+        <div class="container-fluid max-width-container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="eyebrow mb-2">WHY CHOOSE US</div>
+                    <h2 class="section-title mb-4">Built for outcomes, not impressions.</h2>
+                    <p class="section-desc">We align our operating principles with bottom-line enterprise results, ensuring absolute capital efficiency.</p>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="why-card">
+                                <i class="ri-database-2-line"></i>
+                                <h4>Data-Driven Decisions</h4>
+                                <p class="text-muted-custom">Every dollar allocated is governed by verified historical conversion models.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="why-card">
+                                <i class="ri-cpu-line"></i>
+                                <h4>AI-Powered Optimization</h4>
+                                <p class="text-muted-custom">Real-time heuristics detect creative decay and bidding arbitrage opportunities.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="why-card">
+                                <i class="ri-eye-line"></i>
+                                <h4>Transparent Reporting</h4>
+                                <p class="text-muted-custom">Clear, unredacted dashboard access with true attribution incrementality metrics.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="why-card">
+                                <i class="ri-scales-3-line"></i>
+                                <h4>Full-Funnel Alignment</h4>
+                                <p class="text-muted-custom">Bridging top-of-funnel reach with high-yielding lifetime customer value.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 16. FINAL CTA -->
+    <section class="cta-section section-padding position-relative overflow-hidden" id="cta">
+        <div class="cta-bg-glow"></div>
+        <div class="container-fluid max-width-container text-center position-relative z-index-2">
+            <div class="eyebrow text-white-50 mb-3">READY TO GROW?</div>
+            <h2 class="cta-title text-white mb-4">Let's turn your marketing into measurable growth.</h2>
+            <p class="cta-desc text-white-50 mx-auto mb-5">Tell us what you're trying to achieve. We'll show you what's possible.</p>
+            <div class="d-flex justify-content-center flex-wrap gap-3">
+                <a href="#" class="btn btn-light-custom">Book Free Consultation <i class="ri-arrow-right-line ms-1"></i></a>
+                <a href="#" class="btn btn-outline-light-custom">View Case Studies <i class="ri-arrow-right-line ms-1"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 17. FOOTER -->
     <footer class="footer-section">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h4 class="footer-title">Company</h4>
-                    <ul class="footer-links">
+        <div class="container-fluid max-width-container">
+            <div class="row g-5 mb-5">
+                <div class="col-lg-4">
+                    <a class="footer-logo brand-logo mb-3 d-inline-block" href="#">Havmor<span>Media</span></a>
+                    <p class="text-white-50 small mb-4">AI-powered performance marketing and digital growth solutions built for measurable outcomes.</p>
+                    <div class="footer-socials d-flex gap-2">
+                        <a href="#" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="ri-twitter-x-line"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="ri-facebook-circle-fill"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h5 class="footer-heading">Company</h5>
+                    <ul class="footer-links list-unstyled">
                         <li><a href="#">About</a></li>
                         <li><a href="#">Careers</a></li>
-                        <li><a href="#">Partners</a></li>
                         <li><a href="#">Contact</a></li>
+                        <li><a href="#">Press</a></li>
                     </ul>
                 </div>
-
-                <div class="footer-column">
-                    <h4 class="footer-title">Solutions</h4>
-                    <ul class="footer-links">
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h5 class="footer-heading">Services</h5>
+                    <ul class="footer-links list-unstyled">
                         <li><a href="#">Performance Marketing</a></li>
                         <li><a href="#">Affiliate Marketing</a></li>
-                        <li><a href="#">Programmatic Advertising</a></li>
-                        <li><a href="#">Mobile Advertising</a></li>
-                        <li><a href="#">App Growth</a></li>
+                        <li><a href="#">Programmatic Ads</a></li>
+                        <li><a href="#">Mobile Growth</a></li>
                     </ul>
                 </div>
-
-                <div class="footer-column">
-                    <h4 class="footer-title">Resources</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Case Studies</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Insights</a></li>
-                        <li><a href="#">FAQs</a></li>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h5 class="footer-heading">Solutions</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="#">User Acquisition</a></li>
+                        <li><a href="#">Lead Generation</a></li>
+                        <li><a href="#">Media Buying</a></li>
+                        <li><a href="#">Monetization</a></li>
                     </ul>
                 </div>
-
-                <div class="footer-column">
-                    <h4 class="footer-title">Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h5 class="footer-heading">Products</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="#">Adstatix</a></li>
+                        <li><a href="#">Home Improvement</a></li>
+                        <li><a href="#">DSP Comparison</a></li>
                     </ul>
                 </div>
             </div>
-
-            <div class="footer-bottom">
-                <p>© 2026 Havmor Media. All rights reserved.</p>
+            <div class="footer-bottom border-top border-dark-subtle pt-4 text-center text-white-50 small">
+                <p>&copy; 2026 Havmor Media. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- GSAP + ScrollTrigger -->
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- GSAP & ScrollTrigger CDN -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
-
     <!-- Custom JS -->
     <script>
-        // ============================================
-// HAVMOR MEDIA - CONTACT PAGE JAVASCRIPT
-// Premium Performance Marketing Interactions
-// ============================================
+        document.addEventListener('DOMContentLoaded', () => {
 
-// Wait for DOM to be ready
-document.addEventListener('DOMContentLoaded', function() {
-
-    // ============================================
+    // ==========================================
     // 1. NAVBAR SCROLL EFFECT
-    // ============================================
-    const navbar = document.getElementById('navbar');
-
-    function handleNavbarScroll() {
-        if (window.scrollY > 50) {
+    // ==========================================
+    const navbar = document.getElementById('mainNavbar');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 40) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
-    }
+    });
 
-    window.addEventListener('scroll', handleNavbarScroll);
-    handleNavbarScroll(); // Check on load
+    // ==========================================
+    // 2. HERO PARTICLES GENERATOR
+    // ==========================================
+    const particlesContainer = document.getElementById('heroParticles');
+    const particleCount = 28;
 
-    // ============================================
-    // 2. HERO PARTICLES ANIMATION
-    // ============================================
-    const particlesContainer = document.getElementById('particles');
-
-    function createParticles() {
-        const particleCount = 30;
-
+    if (particlesContainer) {
         for (let i = 0; i < particleCount; i++) {
             const particle = document.createElement('div');
-            particle.className = 'particle';
-
-            // Random position
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.top = Math.random() * 100 + '%';
-
-            // Random animation delay
-            particle.style.animationDelay = Math.random() * 15 + 's';
-
-            // Random size variation
-            const size = Math.random() * 4 + 2;
-            particle.style.width = size + 'px';
-            particle.style.height = size + 'px';
-
+            particle.classList.add('particle');
+            
+            const size = Math.random() * 3 + 2; // 2px to 5px
+            const leftPos = Math.random() * 100; // 0% to 100%
+            const duration = Math.random() * 12 + 8; // 8s to 20s
+            const delay = Math.random() * 8; // 0s to 8s
+            
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${leftPos}%`;
+            particle.style.animationDuration = `${duration}s`;
+            particle.style.animationDelay = `${delay}s`;
+            
             particlesContainer.appendChild(particle);
         }
     }
 
-    createParticles();
-
-    // ============================================
-    // 3. FORM VALIDATION
-    // ============================================
-    const contactForm = document.getElementById('contactForm');
-    const submitBtn = document.getElementById('submitBtn');
-    const successMessage = document.getElementById('successMessage');
-    const formContainer = document.querySelector('.form-container form');
-
-    // Email regex pattern
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    // Phone regex (allows international formats)
-    const phoneRegex = /^[\+]?[(]?[0-9]{1,4}[)]?[-\s\./0-9]*$/;
-
-    // Validation function
-    function validateField(field) {
-        const value = field.value.trim();
-        const fieldName = field.name;
-        let isValid = true;
-        let errorMessage = '';
-
-        // Remove previous validation classes
-        field.classList.remove('is-valid', 'is-invalid');
-
-        // Check if required
-        if (field.required && !value) {
-            isValid = false;
-
-            // Custom error messages
-            if (fieldName === 'firstName') {
-                errorMessage = 'First name is required.';
-            } else if (fieldName === 'email') {
-                errorMessage = 'Work email is required.';
-            } else if (fieldName === 'company') {
-                errorMessage = 'Please enter your company name.';
-            } else if (fieldName === 'message') {
-                errorMessage = 'Please enter your message.';
-            }
-        } else if (value) {
-            // Email validation
-            if (fieldName === 'email' && !emailRegex.test(value)) {
-                isValid = false;
-                errorMessage = 'Please enter a valid email address.';
-            }
-
-            // Phone validation (if provided)
-            if (fieldName === 'phone' && value && !phoneRegex.test(value)) {
-                isValid = false;
-                errorMessage = 'Please enter a valid phone number.';
-            }
-        }
-
-        // Apply validation state
-        if (isValid && (value || !field.required)) {
-            field.classList.add('is-valid');
-        } else if (!isValid) {
-            field.classList.add('is-invalid');
-
-            // Update error message
-            const feedback = field.parentElement.querySelector('.invalid-feedback');
-            if (feedback && errorMessage) {
-                feedback.textContent = errorMessage;
-            }
-        }
-
-        return isValid;
-    }
-
-    // Validate all fields
-    function validateForm() {
-        const fields = contactForm.querySelectorAll('input, select, textarea');
-        let isFormValid = true;
-
-        fields.forEach(field => {
-            if (!validateField(field)) {
-                isFormValid = false;
-            }
-        });
-
-        return isFormValid;
-    }
-
-    // Real-time validation on blur
-    const formFields = contactForm.querySelectorAll('input, select, textarea');
-    formFields.forEach(field => {
-        field.addEventListener('blur', () => validateField(field));
-
-        // Clear error on input
-        field.addEventListener('input', () => {
-            if (field.classList.contains('is-invalid')) {
-                validateField(field);
-            }
-        });
-    });
-
-    // Form submission
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        if (validateForm()) {
-            // Show loading state
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = 'Sending... <i class="ri-loader-4-line ri-spin"></i>';
-
-            // Simulate API call (replace with actual submission)
-            setTimeout(() => {
-                // Hide form, show success
-                formContainer.style.display = 'none';
-                successMessage.style.display = 'block';
-
-                // Animate success message
-                gsap.from(successMessage, {
-                    opacity: 0,
-                    y: 20,
-                    duration: 0.5,
-                    ease: 'power2.out'
-                });
-
-                // Reset form
-                contactForm.reset();
-                formFields.forEach(field => {
-                    field.classList.remove('is-valid', 'is-invalid');
-                });
-            }, 2000);
-        } else {
-            // Scroll to first invalid field
-            const firstInvalid = contactForm.querySelector('.is-invalid');
-            if (firstInvalid) {
-                firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                firstInvalid.focus();
-            }
-        }
-    });
-
-    // ============================================
-    // 4. FAQ ACCORDION
-    // ============================================
-    const faqItems = document.querySelectorAll('.faq-item');
-    const faqQuestions = document.querySelectorAll('.faq-question');
-
-    faqQuestions.forEach((question, index) => {
-        question.addEventListener('click', () => {
-            const currentItem = faqItems[index];
-            const isActive = currentItem.classList.contains('active');
-
-            // Close all items
-            faqItems.forEach(item => {
-                item.classList.remove('active');
-                item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-            });
-
-            // Open clicked item if it wasn't active
-            if (!isActive) {
-                currentItem.classList.add('active');
-                question.setAttribute('aria-expanded', 'true');
-            }
-        });
-    });
-
-    // ============================================
-    // 5. GSAP ANIMATIONS
-    // ============================================
+    // ==========================================
+    // 3. GSAP & SCROLLTRIGGER INITIALIZATION
+    // ==========================================
     gsap.registerPlugin(ScrollTrigger);
 
-    // Hero animations
-    gsap.from('.hero-eyebrow', {
-        opacity: 0,
-        y: 30,
-        duration: 1,
-        ease: 'power3.out',
-        delay: 0.2
+    // Hero Entry Animation
+    const heroTl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 1 } });
+    
+    heroTl.from('.hero-content .eyebrow', { opacity: 0, y: 20, delay: 0.2 })
+          .from('.hero-title', { opacity: 0, y: 30 }, '-=0.8')
+          .from('.hero-desc', { opacity: 0, y: 20 }, '-=0.8')
+          .from('.hero-cta-group', { opacity: 0, y: 20 }, '-=0.8')
+          .from('#heroDashboard', { opacity: 0, scale: 0.95, y: 30 }, '-=0.8');
+
+    // Section Titles Fade-Up
+    gsap.utils.toArray('.section-title').forEach(title => {
+        gsap.from(title, {
+            scrollTrigger: {
+                trigger: title,
+                start: 'top 85%',
+                toggleActions: 'play none none none'
+            },
+            opacity: 0,
+            y: 30,
+            duration: 0.8,
+            ease: 'power3.out'
+        });
     });
 
-    gsap.from('.hero-heading', {
-        opacity: 0,
-        y: 30,
-        duration: 1,
-        ease: 'power3.out',
-        delay: 0.4
-    });
-
-    gsap.from('.hero-text', {
-        opacity: 0,
-        y: 30,
-        duration: 1,
-        ease: 'power3.out',
-        delay: 0.6
-    });
-
-    gsap.from('.hero-cta', {
-        opacity: 0,
-        y: 30,
-        duration: 1,
-        ease: 'power3.out',
-        delay: 0.8
-    });
-
-    // Contact form reveal
-    gsap.from('.form-container', {
+    // Principles Stagger
+    gsap.from('.principle-col', {
         scrollTrigger: {
-            trigger: '.contact-section',
-            start: 'top 80%',
-        },
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        ease: 'power3.out'
-    });
-
-    // Contact info reveal
-    gsap.from('.contact-info-container', {
-        scrollTrigger: {
-            trigger: '.contact-section',
-            start: 'top 80%',
-        },
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        ease: 'power3.out',
-        delay: 0.2
-    });
-
-    // Contact visual floating animation
-    gsap.to('.contact-visual', {
-        y: -10,
-        duration: 3,
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut'
-    });
-
-    // Flow nodes stagger animation
-    gsap.from('.flow-node', {
-        scrollTrigger: {
-            trigger: '.contact-visual',
-            start: 'top 80%',
-        },
-        opacity: 0,
-        x: -30,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: 'power3.out'
-    });
-
-    // Benefits grid animation
-    gsap.from('.benefit-item', {
-        scrollTrigger: {
-            trigger: '.benefits-grid',
+            trigger: '.principles-wrap',
             start: 'top 80%',
         },
         opacity: 0,
         y: 40,
         duration: 0.8,
-        stagger: 0.15,
+        stagger: 0.2,
         ease: 'power3.out'
     });
 
-    // Global map points animation
-    gsap.from('.region-point', {
+    // Core Services Stagger Reveal
+    gsap.from('.service-row-item', {
         scrollTrigger: {
-            trigger: '.global-map',
-            start: 'top 80%',
-        },
-        opacity: 0,
-        scale: 0,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: 'back.out(1.7)'
-    });
-
-    // FAQ items animation
-    gsap.from('.faq-item', {
-        scrollTrigger: {
-            trigger: '.faq-container',
+            trigger: '.services-list-container',
             start: 'top 80%',
         },
         opacity: 0,
         y: 20,
         duration: 0.6,
-        stagger: 0.1,
-        ease: 'power3.out'
+        stagger: 0.08,
+        ease: 'power2.out'
     });
 
-    // Final CTA animation
-    gsap.from('.cta-content', {
+    // Flow Step Nodes Sequence
+    gsap.from('.flow-step-node', {
         scrollTrigger: {
-            trigger: '.final-cta-section',
-            start: 'top 80%',
+            trigger: '.flow-engine-container',
+            start: 'top 75%',
         },
         opacity: 0,
-        y: 40,
-        duration: 1,
+        x: -20,
+        duration: 0.6,
+        stagger: 0.15,
         ease: 'power3.out'
     });
 
-    // Footer animation
-    gsap.from('.footer-column', {
+    // Funnel Bars Width Expansion
+    gsap.utils.toArray('.funnel-stage').forEach((stage, idx) => {
+        gsap.from(stage.querySelector('.funnel-bar'), {
+            scrollTrigger: {
+                trigger: '.funnel-container',
+                start: 'top 80%',
+            },
+            scaleX: 0.8,
+            opacity: 0,
+            duration: 0.7,
+            delay: idx * 0.1,
+            ease: 'power3.out'
+        });
+    });
+
+    // AI Interactive Matrix Orbit Nodes
+    gsap.to('.matrix-node.child', {
+        y: 'random(-6, 6)',
+        x: 'random(-6, 6)',
+        repeat: -1,
+        yoyo: true,
+        duration: 2.5,
+        ease: 'sine.inOut',
+        stagger: 0.3
+    });
+
+    // Timeline Steps Reveal
+    gsap.from('.timeline-step', {
         scrollTrigger: {
-            trigger: '.footer-section',
-            start: 'top 90%',
+            trigger: '.timeline-wrapper',
+            start: 'top 80%',
         },
         opacity: 0,
         y: 30,
         duration: 0.8,
-        stagger: 0.1,
+        stagger: 0.2,
         ease: 'power3.out'
     });
 
-    // ============================================
-    // 6. SMOOTH SCROLL FOR ANCHOR LINKS
-    // ============================================
+    // ==========================================
+    // 4. ANIMATED PERFORMANCE NUMBERS (COUNTER)
+    // ==========================================
+    const statCards = document.querySelectorAll('.stat-val');
+
+    statCards.forEach(stat => {
+        const targetVal = parseFloat(stat.getAttribute('data-target'));
+        const isDecimal = stat.getAttribute('data-decimal') === '1';
+
+        ScrollTrigger.create({
+            trigger: stat,
+            start: 'top 85%',
+            once: true,
+            onEnter: () => {
+                gsap.to(stat, {
+                    innerText: targetVal,
+                    duration: 2,
+                    ease: 'power2.out',
+                    snap: { innerText: isDecimal ? 0.1 : 1 },
+                    onUpdate: function () {
+                        if (isDecimal) {
+                            stat.innerText = parseFloat(stat.innerText).toFixed(1);
+                        } else {
+                            stat.innerText = Math.floor(stat.innerText);
+                        }
+                    }
+                });
+            }
+        });
+    });
+
+    // ==========================================
+    // 5. SMOOTH ANCHOR LINK SCROLLING
+    // ==========================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-
-            if (href !== '#' && href.length > 1) {
-                e.preventDefault();
-                const target = document.querySelector(href);
-
-                if (target) {
-                    const navbarHeight = navbar.offsetHeight;
-                    const targetPosition = target.offsetTop - navbarHeight;
+            const targetId = this.getAttribute('href');
+            if (targetId !== '#' && targetId.length > 1) {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    const navOffset = 70;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - navOffset;
 
                     window.scrollTo({
-                        top: targetPosition,
+                        top: offsetPosition,
                         behavior: 'smooth'
                     });
                 }
@@ -2017,105 +2136,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ============================================
-    // 7. BUTTON HOVER EFFECTS
-    // ============================================
-    const buttons = document.querySelectorAll('.btn-primary, .cta-button, .cta-button-final');
-
-    buttons.forEach(button => {
-        button.addEventListener('mouseenter', function() {
-            gsap.to(this, {
-                scale: 1.02,
-                duration: 0.2,
-                ease: 'power2.out'
-            });
-        });
-
-        button.addEventListener('mouseleave', function() {
-            gsap.to(this, {
-                scale: 1,
-                duration: 0.2,
-                ease: 'power2.out'
-            });
-        });
-    });
-
-    // ============================================
-    // 8. INPUT FOCUS EFFECTS
-    // ============================================
-    const inputs = document.querySelectorAll('.form-control, .form-select');
-
-    inputs.forEach(input => {
-        input.addEventListener('focus', function() {
-            gsap.to(this.parentElement, {
-                scale: 1.01,
-                duration: 0.2,
-                ease: 'power2.out'
-            });
-        });
-
-        input.addEventListener('blur', function() {
-            gsap.to(this.parentElement, {
-                scale: 1,
-                duration: 0.2,
-                ease: 'power2.out'
-            });
-        });
-    });
-
-    // ============================================
-    // 9. VISUAL PARTICLE ANIMATION
-    // ============================================
-    const visualParticles = document.querySelector('.visual-particles');
-
-    if (visualParticles) {
-        for (let i = 0; i < 15; i++) {
-            const particle = document.createElement('div');
-            particle.style.cssText = `
-                position: absolute;
-                width: ${Math.random() * 6 + 2}px;
-                height: ${Math.random() * 6 + 2}px;
-                background: linear-gradient(135deg, #800080, #C73E9B);
-                border-radius: 50%;
-                opacity: ${Math.random() * 0.5 + 0.2};
-                left: ${Math.random() * 100}%;
-                top: ${Math.random() * 100}%;
-                animation: floatParticle ${Math.random() * 10 + 10}s infinite;
-                animation-delay: ${Math.random() * 5}s;
-            `;
-            visualParticles.appendChild(particle);
-        }
-    }
-
-    // ============================================
-    // 10. REGION POINT HOVER EFFECT
-    // ============================================
-    const regionPoints = document.querySelectorAll('.region-point');
-
-    regionPoints.forEach(point => {
-        point.addEventListener('mouseenter', function() {
-            gsap.to(this.querySelector('.point-glow'), {
-                scale: 1.5,
-                opacity: 1,
-                duration: 0.3,
-                ease: 'power2.out'
-            });
-        });
-
-        point.addEventListener('mouseleave', function() {
-            gsap.to(this.querySelector('.point-glow'), {
-                scale: 1,
-                opacity: 0.5,
-                duration: 0.3,
-                ease: 'power2.out'
-            });
-        });
-    });
-
-    console.log('Havmor Media Contact Page loaded successfully!');
 });
-</script>
-
-
+    </script>
 </body>
 </html>

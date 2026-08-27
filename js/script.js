@@ -172,277 +172,433 @@
 
 
 
-const err_name = document.getElementById("err-name");
-const err_email = document.getElementById("err-email");
-const err_phone = document.getElementById("err-phone");
-const err_pass = document.getElementById("err-pass");
+// const err_name = document.getElementById("err-name");
+// const err_email = document.getElementById("err-email");
+// const err_phone = document.getElementById("err-phone");
+// const err_pass = document.getElementById("err-pass");
 
-const form = document.getElementById("form");
+// const form = document.getElementById("form");
 
 
 /* =========================================
    NAME VALIDATION
 ========================================= */
 
-function validateName() {
+// function validateName() {
 
-    const name = document.getElementById("name");
+//     const name = document.getElementById("name");
 
-    const nameValue = name.value.trim();
-
-
-    /* Required */
-
-    if (nameValue.length === 0) {
-
-        err_name.innerText = "Name is required";
-
-        name.style.border = "1px solid red";
-
-        return false;
-    }
+//     const nameValue = name.value.trim();
 
 
-    /* Letters only */
+//     /* Required */
 
-    if (!nameValue.match(/^[a-zA-Z ]+$/)) {
+//     if (nameValue.length === 0) {
 
-        err_name.innerText = "Name should contain letters only";
+//         err_name.innerText = "Name is required";
 
-        name.style.border = "1px solid red";
+//         name.style.border = "1px solid red";
 
-        name.style.outline = "none";
-
-        return false;
-    }
+//         return false;
+//     }
 
 
-    /* Valid */
+//     /* Letters only */
 
-    err_name.innerText = "";
+//     if (!nameValue.match(/^[a-zA-Z ]+$/)) {
 
-    name.style.border = "1px solid green";
+//         err_name.innerText = "Name should contain letters only";
 
-    return true;
-}
+//         name.style.border = "1px solid red";
+
+//         name.style.outline = "none";
+
+//         return false;
+//     }
+
+
+//     /* Valid */
+
+//     err_name.innerText = "";
+
+//     name.style.border = "1px solid green";
+
+//     return true;
+// }
 
 
 /* =========================================
    EMAIL VALIDATION
 ========================================= */
 
-function validateEmail() {
+// function validateEmail() {
 
-    const email = document.getElementById("email");
+//     const email = document.getElementById("email");
 
-    const emailValue = email.value.trim();
-
-
-    /* Required */
-
-    if (emailValue.length === 0) {
-
-        err_email.innerText = "Email is required";
-
-        email.style.border =  "1px solid red";
-
-        return false;
-    }
+//     const emailValue = email.value.trim();
 
 
-    /* Email format */
+//     /* Required */
 
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//     if (emailValue.length === 0) {
+
+//         err_email.innerText = "Email is required";
+
+//         email.style.border =  "1px solid red";
+
+//         return false;
+//     }
 
 
-    if (!emailPattern.test(emailValue)) {
+//     /* Email format */
 
-        err_email.innerText = "Please enter a valid email address";
+//     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        email.style.border = "1px solid red";
 
-        email.style.outline = "none";
+//     if (!emailPattern.test(emailValue)) {
 
-        return false;
-    }
+//         err_email.innerText = "Please enter a valid email address";
+
+//         email.style.border = "1px solid red";
+
+//         email.style.outline = "none";
+
+//         return false;
+//     }
 
 
     /* Valid */
 
-    err_email.innerText = "";
+//    err_email.innerText = "";
 
-    email.style.border = "1px solid green";
+//    email.style.border = "1px solid green";
 
-    return true;
-}
+//    return true;
+//}
 
 
 /* =========================================
    PHONE VALIDATION
 ========================================= */
 
-function validatePhone() {
+// function validatePhone() {
 
-    const phone = document.getElementById("phone");
+//     const phone = document.getElementById("phone");
 
-    const phoneValue = phone.value.trim();
-
-
-    /* Required */
-
-    if (phoneValue.length === 0) {
-
-        err_phone.innerText = "Phone is required";
-
-        phone.style.border = "1px solid red";
-
-        return false;
-    }
+//     const phoneValue = phone.value.trim();
 
 
-    /* Numbers only */
+//     /* Required */
 
-    if (!/^[0-9]+$/.test(phoneValue)) {
+//     if (phoneValue.length === 0) {
 
-        err_phone.innerText = "Phone should contain numbers only";
+//         err_phone.innerText = "Phone is required";
 
-        phone.style.border = "1px solid red";
+//         phone.style.border = "1px solid red";
 
-        return false;
-    }
-
-
-    /* Exactly 10 digits */
-
-    if (phoneValue.length !== 10) {
-
-        err_phone.innerText = "Phone should contain 10 numbers";
-
-        phone.style.border = "1px solid red";
-
-        return false;
-    }
+//         return false;
+//     }
 
 
-    /* Valid */
+//     /* Numbers only */
 
-    err_phone.innerText = "";
+//     if (!/^[0-9]+$/.test(phoneValue)) {
 
-    phone.style.border = "1px solid green";
+//         err_phone.innerText = "Phone should contain numbers only";
 
-    return true;
-}
+//         phone.style.border = "1px solid red";
+
+//         return false;
+//     }
+
+
+//     /* Exactly 10 digits */
+
+//     if (phoneValue.length !== 10) {
+
+//         err_phone.innerText = "Phone should contain 10 numbers";
+
+//         phone.style.border = "1px solid red";
+
+//         return false;
+//     }
+
+
+//     /* Valid */
+
+//     err_phone.innerText = "";
+
+//     phone.style.border = "1px solid green";
+
+//     return true;
+// }
 
 
 /* =========================================
    PASSWORD VALIDATION
 ========================================= */
 
-function validatePassword() {
+// function validatePassword() {
 
-    const password = document.getElementById("pass");
+//     const password = document.getElementById("pass");
 
-    const passwordValue = password.value;
+//     const passwordValue = password.value;
 
-    const passLength = 8;
-
-
-    /* Required */
-
-    if (passwordValue.length === 0) {
-
-        err_pass.innerText = "Password is required";
-
-        password.style.border = "1px solid red";
-
-        return false;
-    }
+//     const passLength = 8;
 
 
-    /* Minimum 8 characters */
+//     /* Required */
 
-    if (passwordValue.length < passLength) {
+//     if (passwordValue.length === 0) {
 
-        err_pass.innerText =
-            "Password must have at least 8 characters";
+//         err_pass.innerText = "Password is required";
 
-        password.style.border = "1px solid red";
+//         password.style.border = "1px solid red";
 
-        return false;
-    }
-
-
-    /* Valid */
-
-    err_pass.innerText = "";
-
-    password.style.border = "1px solid green";
-
-    return true;
-}
+//         return false;
+//     }
 
 
-/* =========================================
-   FORM VALIDATION
-========================================= */
+//     /* Minimum 8 characters */
 
-form.addEventListener("submit", function (e) {
+//     if (passwordValue.length < passLength) {
 
-    e.preventDefault();
+//         err_pass.innerText =
+//             "Password must have at least 8 characters";
 
+//         password.style.border = "1px solid red";
 
-    const nameValid = validateName();
-
-    const emailValid = validateEmail();
-
-    const phoneValid = validatePhone();
-
-    const passwordValid = validatePassword();
+//         return false;
+//     }
 
 
-    if ( !nameValid || !emailValid || !phoneValid || !passwordValid ) {
+//     /* Valid */
 
-        return;
+//     err_pass.innerText = "";
 
-    }
+//     password.style.border = "1px solid green";
+
+//     return true;
+// }
 
 
-    /* Everything is valid */
+// /* =========================================
+//    FORM VALIDATION
+// ========================================= */
 
-    console.log(
-        "Form validation successful!"
-    );
+// form.addEventListener("submit", function (e) {
+
+//     e.preventDefault();
+
+
+//     const nameValid = validateName();
+
+//     const emailValid = validateEmail();
+
+//     const phoneValid = validatePhone();
+
+//     const passwordValid = validatePassword();
+
+
+//     if ( !nameValid || !emailValid || !phoneValid || !passwordValid ) {
+
+//         return;
+
+//     }
+
+
+//     /* Everything is valid */
+
+//     console.log(
+//         "Form validation successful!"
+//     );
 
 
     
-    //    For now, this prevents the actual
-    //    submission so you can test.
+//     //    For now, this prevents the actual
+//     //    submission so you can test.
 
-    //    Later you can redirect to login:
+//     //    Later you can redirect to login:
        
-       window.location.href = "loging.html";
+//        window.location.href = "loging.html";
     
 
+// });
+
+
+
+// // Show and hide  Password
+// const showPass = document.querySelector('.open-eye-icon');
+// const hidePass = document.querySelector('.close-eye-icon');
+// const showHideBox = document.querySelector('.eye-icon-bx');
+// const passInput = document.querySelector('.pass-input');
+
+// if(showHideBox)(
+//     showHideBox.addEventListener('click', ()=>{
+//         if(passInput.type === "password"){
+//             passInput.type = "text";
+//             showPass.classList.add('active');
+//             hidePass.classList.add('active');
+//         }else{
+//             passInput.type = "password";
+//             showPass.classList.remove('active');
+//             hidePass.classList.remove('active');
+//         }
+//     })
+// )
+
+
+/* ==========================================================================
+   HAVMOR MEDIA - JS CONTROLLER & GSAP SCROLLTRIGGER ANIMATIONS
+   ========================================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. Initialize Particles Background
+  initParticleSystem();
+
+  // 2. Initialize GSAP Global Animations
+  gsap.registerPlugin(ScrollTrigger);
+  initGSAPAnimations();
+
+  // 3. Initialize Interactive Visuals per page
+  initPageVisuals();
 });
 
+/* Particle Canvas Engine */
+function initParticleSystem() {
+  const container = document.getElementById("particle-container");
+  if (!container) return;
 
+  const count = 28;
+  for (let i = 0; i < count; i++) {
+    const particle = document.createElement("div");
+    particle.className = "particle";
+    particle.style.left = `${Math.random() * 100}%`;
+    particle.style.animationDelay = `${Math.random() * 12}s`;
+    particle.style.animationDuration = `${8 + Math.random() * 10}s`;
+    particle.style.opacity = `${0.1 + Math.random() * 0.4}`;
+    container.appendChild(particle);
+  }
+}
 
-// Show and hide  Password
-const showPass = document.querySelector('.open-eye-icon');
-const hidePass = document.querySelector('.close-eye-icon');
-const showHideBox = document.querySelector('.eye-icon-bx');
-const passInput = document.querySelector('.pass-input');
+/* GSAP ScrollTrigger & Reveal Orchestration */
+function initGSAPAnimations() {
+  // Hero Fade-Up Sequence
+  gsap.from(".hero-animate", {
+    duration: 1,
+    y: 35,
+    opacity: 0,
+    stagger: 0.15,
+    ease: "power3.out"
+  });
 
-if(showHideBox)(
-    showHideBox.addEventListener('click', ()=>{
-        if(passInput.type === "password"){
-            passInput.type = "text";
-            showPass.classList.add('active');
-            hidePass.classList.add('active');
-        }else{
-            passInput.type = "password";
-            showPass.classList.remove('active');
-            hidePass.classList.remove('active');
-        }
-    })
-)
+  // Numbers Counter Animation
+  const counters = document.querySelectorAll(".counter-target");
+  counters.forEach((counter) => {
+    const target = parseFloat(counter.getAttribute("data-target"));
+    const prefix = counter.getAttribute("data-prefix") || "";
+    const suffix = counter.getAttribute("data-suffix") || "";
+    const decimals = counter.getAttribute("data-decimals") || 0;
+
+    gsap.to(counter, {
+      scrollTrigger: {
+        trigger: counter,
+        start: "top 85%",
+        once: true
+      },
+      duration: 2,
+      innerText: target,
+      snap: { innerText: decimals > 0 ? 0.1 : 1 },
+      onUpdate: function () {
+        const val = parseFloat(this.targets()[0].innerText).toFixed(decimals);
+        counter.innerText = `${prefix}${val}${suffix}`;
+      }
+    });
+  });
+
+  // Editorial Section Reveal
+  gsap.utils.toArray(".gsap-reveal").forEach((elem) => {
+    gsap.from(elem, {
+      scrollTrigger: {
+        trigger: elem,
+        start: "top 85%",
+        toggleActions: "play none none none"
+      },
+      duration: 0.8,
+      y: 30,
+      opacity: 0,
+      ease: "power2.out"
+    });
+  });
+
+  // Process Step Stagger Line Highlight
+  gsap.utils.toArray(".process-step").forEach((step, idx) => {
+    gsap.from(step, {
+      scrollTrigger: {
+        trigger: step,
+        start: "top 80%"
+      },
+      duration: 0.6,
+      x: -20,
+      opacity: 0,
+      delay: idx * 0.1,
+      ease: "power2.out"
+    });
+  });
+}
+
+/* Interactive Visual Render Engine */
+function initPageVisuals() {
+  // 1. Programmatic Real-Time Bidding Dashboard Logic
+  const rtbContainer = document.getElementById("rtb-visual-engine");
+  if (rtbContainer) {
+    let btc = 0;
+    const bidElement = document.getElementById("rtb-live-bid");
+    const impElement = document.getElementById("rtb-live-imp");
+    
+    setInterval(() => {
+      btc += Math.floor(Math.random() * 14) + 5;
+      if (bidElement) bidElement.innerText = `$${(1.24 + Math.random() * 0.45).toFixed(2)}`;
+      if (impElement) impElement.innerText = `${(14.2 + btc * 0.01).toFixed(1)}k`;
+    }, 1800);
+  }
+
+  // 2. Mobile Retention Funnel Interaction
+  const mobileFunnelBtn = document.getElementById("trigger-mobile-funnel");
+  if (mobileFunnelBtn) {
+    mobileFunnelBtn.addEventListener("click", () => {
+      gsap.fromTo(".funnel-bar-fill", 
+        { width: "0%" }, 
+        { width: (i, target) => target.getAttribute("data-percentage"), duration: 1.2, stagger: 0.2, ease: "power2.out" }
+      );
+    });
+  }
+
+  // 3. Lead Generation Funnel Stage Trigger
+  const leadPipeline = document.getElementById("lead-pipeline-flow");
+  if (leadPipeline) {
+    gsap.from(".pipeline-stage", {
+      scrollTrigger: {
+        trigger: leadPipeline,
+        start: "top 75%"
+      },
+      scale: 0.9,
+      opacity: 0,
+      stagger: 0.15,
+      duration: 0.7,
+      ease: "back.out(1.4)"
+    });
+  }
+
+  // 4. Social & Influencer Flywheel Node Switcher
+  const creatorNodes = document.querySelectorAll(".creator-node");
+  creatorNodes.forEach((node) => {
+    node.addEventListener("mouseenter", () => {
+      creatorNodes.forEach(n => n.classList.remove("active-node"));
+      node.classList.add("active-node");
+      const engValue = node.getAttribute("data-engagement");
+      const engOutput = document.getElementById("creator-live-engagement");
+      if (engOutput) engOutput.innerText = engValue;
+    });
+  });
+}
