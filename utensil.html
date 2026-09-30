@@ -2,2141 +2,3044 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Havmor Media Services | Performance Marketing & Digital Growth</title>
-    <meta name="description" content="Explore Havmor Media's performance marketing services including affiliate marketing, programmatic advertising, mobile advertising, app growth, user acquisition and media buying.">
+
+    <title>Home Improvement Services | Find Trusted Professionals</title>
+
+    <meta
+        name="description"
+        content="Connect with trusted home improvement professionals for roofing, HVAC, remodeling, solar, flooring and more. Get competitive quotes for your next project."
+    >
+
+    <meta name="robots" content="index, follow">
+
+    <!-- Replace this with your production URL -->
+    <link rel="canonical" href="https://www.example.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Home Improvement Services | HomeFix">
+    <meta
+        property="og:description"
+        content="Find trusted professionals for your next home improvement project."
+    >
+    <meta property="og:url" content="https://www.example.com/">
+    <meta property="og:image" content="img/hero/homefix-hero.jpg">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap 5 CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Remix Icon CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    <!-- Custom CSS -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Remix Icon -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+        rel="stylesheet"
+    >
+
+    <!-- Main styles -->
     <style>
-        /* ==================================================
-   BRAND VARIABLES & THEME DEFINITION
-   ================================================== */
+        /* =========================================================
+   HOMEFIX GLOBAL DESIGN SYSTEM
+========================================================= */
+
 :root {
     --primary: #800080;
-    --secondary: #9B2C9B;
-    --accent: #C73E9B;
+    --dark-purple: #390339;
+    --accent: #c73e9b;
     --dark: #171717;
-    --muted: #6B6B6B;
-    --border: #EBEBEB;
-    --white: #FFFFFF;
-    --bg-light: #FAFAFD;
-    
-    --grad-primary: linear-gradient(135deg, #800080 0%, #9B2C9B 45%, #C73E9B 100%);
-    --grad-accent: linear-gradient(135deg, #9B2C9B 0%, #C73E9B 100%);
-    --grad-glow: radial-gradient(circle, rgba(128, 0, 128, 0.15) 0%, rgba(199, 62, 156, 0.05) 50%, transparent 70%);
-    
-    --font-heading: 'Space Grotesk', sans-serif;
-    --font-body: 'Inter', sans-serif;
-    --font-btn: 'Outfit', sans-serif;
-    
-    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --text: #444444;
+    --muted: #777177;
+    --light-bg: #f7f5f8;
+    --white: #ffffff;
+    --border: #e8e4e9;
+    --soft-purple: #f0e8f0;
+
+    --heading-font: "Outfit", sans-serif;
+    --body-font: "Inter", sans-serif;
+
+    --container-width: 1240px;
+    --section-padding: 125px;
+
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+
+    --shadow-sm: 0 8px 25px rgba(34, 12, 34, 0.06);
+    --shadow-md: 0 18px 55px rgba(34, 12, 34, 0.1);
+
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --transition: all 0.35s ease;
 }
 
-/* Reset & Base Setup */
-*, *::before, *::after {
+/* =========================================================
+   RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: var(--font-body);
-    color: var(--dark);
-    background-color: var(--white);
-    line-height: 1.6;
+    margin: 0;
+    color: var(--text);
+    background: var(--white);
+    font-family: var(--body-font);
+    font-size: 16px;
+    line-height: 1.7;
     overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    color: var(--dark);
-    line-height: 1.15;
+body.menu-open {
+    overflow: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
 }
 
 a {
-    text-decoration: none;
     color: inherit;
-    transition: all 0.3s var(--ease-out);
+    text-decoration: none;
 }
 
-.max-width-container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding-left: 24px;
-    padding-right: 24px;
+button,
+input,
+textarea,
+select {
+    font: inherit;
 }
 
-.section-padding {
-    padding: 100px 0;
-}
-
-.text-gradient {
-    background: var(--grad-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-}
-
-.text-muted-custom {
-    color: var(--muted);
-}
-
-.font-mono {
-    font-family: 'Space Grotesk', monospace;
-}
-
-.eyebrow {
-    font-family: var(--font-btn);
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    color: var(--primary);
-    text-transform: uppercase;
-}
-
-.border-subtle {
-    border-color: var(--border) !important;
-}
-
-.bg-subtle-pattern {
-    background-color: var(--bg-light);
-}
-
-/* ==================================================
-   BUTTONS
-   ================================================== */
-.btn-primary-custom {
-    font-family: var(--font-btn);
-    background: var(--grad-primary);
-    color: var(--white);
-    border: none;
-    padding: 14px 28px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
-}
-
-.btn-primary-custom:hover {
-    color: var(--white);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(128, 0, 128, 0.25);
-}
-
-.btn-outline-custom {
-    font-family: var(--font-btn);
-    background: transparent;
-    color: var(--dark);
-    border: 1px solid var(--border);
-    padding: 14px 28px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s var(--ease-out);
-}
-
-.btn-outline-custom:hover {
-    border-color: var(--primary);
-    color: var(--primary);
-    transform: translateY(-2px);
-}
-
-.btn-light-custom {
-    font-family: var(--font-btn);
-    background: var(--white);
-    color: var(--primary);
-    border: none;
-    padding: 16px 36px;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 1rem;
-    display: inline-flex;
-    align-items: center;
-    transition: all 0.3s var(--ease-out);
-}
-
-.btn-light-custom:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    color: var(--primary);
-}
-
-.btn-outline-light-custom {
-    font-family: var(--font-btn);
-    background: transparent;
-    color: var(--white);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 16px 36px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 1rem;
-    display: inline-flex;
-    align-items: center;
-    transition: all 0.3s var(--ease-out);
-}
-
-.btn-outline-light-custom:hover {
-    border-color: var(--white);
-    color: var(--white);
-    background: rgba(255, 255, 255, 0.1);
-}
-
-/* ==================================================
-   1. NAVBAR
-   ================================================== */
-.navbar {
-    padding: 20px 0;
-    transition: all 0.4s var(--ease-out);
-    background: transparent;
-}
-
-.navbar.scrolled {
-    background: rgba(255, 255, 255, 0.88);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    padding: 12px 0;
-    border-bottom: 1px solid var(--border);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-}
-
-.brand-logo {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 1.4rem;
-    color: var(--dark);
-    letter-spacing: -0.02em;
-}
-
-.brand-logo span {
-    color: var(--primary);
-}
-
-.nav-link {
-    font-family: var(--font-body);
-    font-weight: 500;
-    font-size: 0.95rem;
-    color: var(--muted) !important;
-    padding: 8px 16px !important;
-    transition: color 0.3s var(--ease-out);
-}
-
-.nav-link:hover, .nav-link.active {
-    color: var(--primary) !important;
-}
-
-/* ==================================================
-   2 & 3. HERO & BACKGROUND PARTICLES
-   ================================================== */
-.hero-section {
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding-bottom: 80px;
-}
-
-.hero-bg-grid {
-    position: absolute;
-    inset: 0;
-    background-image: 
-        radial-gradient(circle at 20% 20%, rgba(199, 62, 156, 0.075), transparent 55%),
-        radial-gradient(circle at 80% 30%, rgba(128, 0, 128, 0.10), transparent 45%),
-        linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
-    background-size: auto, auto, 40px 40px, 40px 40px;
-    z-index: 1;
-}
-
-.hero-particles-container {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    overflow: hidden;
-    pointer-events: none;
-}
-
-.particle {
-    position: absolute;
-    bottom: -10px;
-    background: var(--accent);
-    border-radius: 50%;
-    opacity: 0;
-    animation: particleUp linear infinite;
-}
-
-@keyframes particleUp {
-    0% { transform: translateY(0); opacity: 0; }
-    20% { opacity: 0.5; }
-    80% { opacity: 0.5; }
-    100% { transform: translateY(-100vh); opacity: 0; }
-}
-
-.hero-title {
-    font-size: clamp(2.4rem, 5vw, 4rem);
-    letter-spacing: -0.03em;
-    font-weight: 700;
-}
-
-.hero-desc {
-    font-size: clamp(1.05rem, 1.4vw, 1.25rem);
-    color: var(--muted);
-    max-width: 580px;
-    line-height: 1.7;
-}
-
-.pt-100 {
-    padding-top: 100px;
-}
-
-/* Dashboard UI Widget */
-.adtech-dashboard-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 30px;
-    box-shadow: 0 20px 50px rgba(128, 0, 128, 0.08);
-    position: relative;
-    backdrop-filter: blur(10px);
-}
-
-.pulse-dot {
-    width: 8px;
-    height: 8px;
-    background: var(--accent);
-    border-radius: 50%;
-    box-shadow: 0 0 0 0 rgba(199, 62, 156, 0.7);
-    animation: pulseGlow 2s infinite;
-}
-
-@keyframes pulseGlow {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(199, 62, 156, 0.7); }
-    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(199, 62, 156, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(199, 62, 156, 0); }
-}
-
-.dash-badge {
-    font-size: 0.7rem;
-    font-weight: 700;
-    color: var(--primary);
-    letter-spacing: 0.05em;
-}
-
-.dash-timestamp {
-    font-size: 0.75rem;
-    color: var(--muted);
-    font-family: var(--font-heading);
-}
-
-.dash-value {
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: var(--dark);
-    line-height: 1;
-}
-
-.dash-sub {
-    font-size: 1rem;
-    color: var(--muted);
-}
-
-.chart-svg {
-    width: 100%;
-    height: 80px;
-    overflow: visible;
-}
-
-.pill-box {
-    background: var(--bg-light);
-    border-radius: 8px;
-    border: 1px solid var(--border);
-}
-
-.pill-box .label {
-    display: block;
-    font-size: 0.65rem;
-    color: var(--muted);
-    font-weight: 600;
-}
-
-.pill-box .val {
-    font-size: 0.95rem;
-    font-weight: 700;
-    font-family: var(--font-heading);
-}
-
-/* ==================================================
-   4. SERVICES INTRODUCTION (PRINCIPLES)
-   ================================================== */
-.section-title {
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    letter-spacing: -0.02em;
-}
-
-.section-desc {
-    font-size: 1.1rem;
-    color: var(--muted);
-    line-height: 1.7;
-}
-
-.principles-wrap {
-    border-top: 1px solid var(--border);
-    margin-top: 40px;
-}
-
-.principle-col {
-    padding: 40px 30px;
-    border-right: 1px solid var(--border);
-}
-
-.principle-col:last-child {
-    border-right: none;
-}
-
-.principle-number {
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary);
-    opacity: 0.25;
-    margin-bottom: 12px;
-}
-
-.principle-name {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-    letter-spacing: 0.05em;
-}
-
-.principle-text {
-    color: var(--muted);
-    font-size: 0.95rem;
-    margin-bottom: 0;
-}
-
-/* ==================================================
-   5. CORE SERVICES (NUMBERED LIST)
-   ================================================== */
-.services-list-container {
-    border-top: 1px solid var(--border);
-}
-
-.service-row-item {
-    padding: 36px 20px;
-    border-bottom: 1px solid var(--border);
-    transition: all 0.3s var(--ease-out);
-    position: relative;
+button {
+    border: 0;
     cursor: pointer;
 }
 
-.service-row-item::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, rgba(128, 0, 128, 0.03) 0%, transparent 100%);
-    opacity: 0;
-    transition: opacity 0.3s var(--ease-out);
-}
-
-.service-row-item:hover::before {
-    opacity: 1;
-}
-
-.service-row-item:hover {
-    padding-left: 30px;
-}
-
-.service-idx {
-    font-family: var(--font-heading);
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: var(--muted);
-}
-
-.service-name {
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin-bottom: 0;
-    transition: color 0.3s var(--ease-out);
-}
-
-.service-row-item:hover .service-name {
-    color: var(--primary);
-}
-
-.service-summary {
-    font-size: 0.9rem;
-    color: var(--muted);
-    margin-bottom: 0;
-    line-height: 1.6;
-}
-
-.service-metric-badge {
-    display: inline-block;
-    padding: 6px 14px;
-    background: var(--bg-light);
-    border: 1px solid var(--border);
-    border-radius: 30px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    font-family: var(--font-heading);
-    color: var(--primary);
-}
-
-.service-arrow-btn {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 1px solid var(--border);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s var(--ease-out);
-}
-
-.service-row-item:hover .service-arrow-btn {
-    background: var(--grad-primary);
-    border-color: transparent;
+::selection {
     color: var(--white);
-    transform: translateX(4px);
-}
-
-/* ==================================================
-   6. FLOW ENGINE (VISUAL FLOW)
-   ================================================== */
-.flow-engine-container {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.flow-step-node {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 16px 24px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 0.9rem;
-    letter-spacing: 0.05em;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
-}
-
-.flow-step-node i {
-    font-size: 1.4rem;
-    color: var(--primary);
-}
-
-.flow-step-node.highlight {
-    background: var(--grad-primary);
-    color: var(--white);
-    border-color: transparent;
-}
-
-.flow-step-node.highlight i {
-    color: var(--white);
-}
-
-.flow-connector {
-    width: 2px;
-    height: 24px;
-    background: var(--border);
-    margin-left: 36px;
-    position: relative;
-}
-
-.connector-pulse {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    left: -2px;
-    background: var(--accent);
-    border-radius: 50%;
-    animation: flowDown 2s infinite linear;
-}
-
-@keyframes flowDown {
-    0% { top: 0%; opacity: 0; }
-    50% { opacity: 1; }
-    100% { top: 100%; opacity: 0; }
-}
-
-/* ==================================================
-   7 & 8. EDITORIAL DETAILS
-   ================================================== */
-.editorial-heading {
-    font-size: clamp(1.8rem, 3vw, 2.4rem);
-}
-
-.editorial-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-}
-
-.grid-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    padding: 30px;
-    border-radius: 12px;
-}
-
-.grid-card .card-icon {
-    font-size: 1.8rem;
-    color: var(--primary);
-    margin-bottom: 16px;
-}
-
-.grid-card h4 {
-    font-size: 1.15rem;
-    margin-bottom: 8px;
-}
-
-.grid-card p {
-    font-size: 0.88rem;
-    color: var(--muted);
-    margin-bottom: 0;
-}
-
-.partnership-flow-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 40px 30px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
-}
-
-.partner-box {
-    padding: 16px 24px;
-    border-radius: 8px;
-    background: var(--bg-light);
-    border: 1px solid var(--border);
-    font-weight: 700;
-    font-family: var(--font-heading);
-    font-size: 0.85rem;
-    letter-spacing: 0.05em;
-}
-
-.partner-box.highlight {
-    background: var(--grad-primary);
-    color: var(--white);
-    border-color: transparent;
-}
-
-.flow-arrow {
-    font-size: 1.2rem;
-    color: var(--primary);
-}
-
-/* ==================================================
-   9. PROGRAMMATIC DASHBOARD
-   ================================================== */
-.tag-pill {
-    padding: 8px 18px;
-    border-radius: 30px;
-    border: 1px solid var(--border);
-    background: var(--white);
-    font-size: 0.85rem;
-    font-weight: 600;
-}
-
-.programmatic-dashboard {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 30px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.03);
-}
-
-.prog-metric-card {
-    background: var(--bg-light);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 20px;
-}
-
-.prog-metric-card .label {
-    display: block;
-    font-size: 0.7rem;
-    font-weight: 700;
-    color: var(--muted);
-    letter-spacing: 0.05em;
-    margin-bottom: 6px;
-}
-
-.prog-metric-card .value {
-    display: block;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--dark);
-}
-
-.prog-metric-card .trend {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #198754;
-}
-
-.prog-metric-card .trend.negative {
-    color: var(--primary);
-}
-
-/* ==================================================
-   10. MOBILE MOCKUP
-   ================================================== */
-.mobile-feature-box {
-    padding: 20px;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-}
-
-.mobile-feature-box i {
-    font-size: 1.5rem;
-    color: var(--primary);
-    margin-bottom: 8px;
-    display: inline-block;
-}
-
-.mobile-ui-mockup {
-    width: 260px;
-    height: 480px;
-    background: var(--dark);
-    border-radius: 36px;
-    padding: 12px;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
-    margin: 0 auto;
-}
-
-.mockup-screen {
-    background: var(--white);
-    height: 100%;
-    border-radius: 26px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-.mockup-header {
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.camera-pill {
-    width: 60px;
-    height: 8px;
-    background: var(--dark);
-    border-radius: 10px;
-}
-
-.mockup-body {
-    padding: 30px 20px;
-    text-align: center;
-}
-
-.mockup-app-icon {
-    width: 60px;
-    height: 60px;
-    background: var(--grad-primary);
-    border-radius: 14px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-    font-size: 1.8rem;
-    margin-bottom: 16px;
-}
-
-.mockup-title {
-    font-size: 0.85rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
-.mockup-metric {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-}
-
-.mockup-metric .sub {
-    font-size: 0.8rem;
-    color: var(--muted);
-    display: block;
-}
-
-.mockup-bar {
-    height: 6px;
-    background: var(--bg-light);
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 20px;
-}
-
-.mockup-bar .fill {
-    height: 100%;
-    background: var(--grad-accent);
-}
-
-.mockup-tags {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.mockup-tags span {
-    font-size: 0.75rem;
-    font-weight: 600;
-    background: var(--bg-light);
-    padding: 6px 10px;
-    border-radius: 6px;
-}
-
-/* ==================================================
-   11. FUNNEL CONTAINER
-   ================================================== */
-.funnel-container {
-    max-width: 700px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.funnel-stage {
-    width: 100%;
-}
-
-.funnel-bar {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 16px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 700;
-    font-size: 0.9rem;
-    transition: all 0.3s var(--ease-out);
-}
-
-.funnel-stage[data-stage="1"] .funnel-bar { width: 100%; }
-.funnel-stage[data-stage="2"] .funnel-bar { width: 90%; margin: 0 auto; }
-.funnel-stage[data-stage="3"] .funnel-bar { width: 80%; margin: 0 auto; }
-.funnel-stage[data-stage="4"] .funnel-bar { width: 70%; margin: 0 auto; }
-.funnel-stage[data-stage="5"] .funnel-bar { width: 60%; margin: 0 auto; }
-.funnel-stage[data-stage="6"] .funnel-bar { width: 50%; margin: 0 auto; background: var(--grad-primary); color: var(--white); border-color: transparent; }
-
-/* ==================================================
-   12. AI MATRIX
-   ================================================== */
-.ai-glow-orb {
-    position: absolute;
-    top: 50%;
-    right: -10%;
-    transform: translateY(-50%);
-    width: 500px;
-    height: 500px;
-    background: var(--grad-glow);
-    z-index: 1;
-    pointer-events: none;
-}
-
-.ai-badge {
-    background: var(--white);
-    border: 1px solid var(--border);
-    padding: 12px 18px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.85rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.ai-badge i {
-    color: var(--primary);
-}
-
-.ai-interactive-matrix {
-    position: relative;
-    height: 340px;
-    border: 1px dashed var(--border);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.matrix-node.central {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background: var(--grad-primary);
-    color: var(--white);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 0.75rem;
-    z-index: 2;
-    box-shadow: 0 10px 30px rgba(128, 0, 128, 0.3);
-}
-
-.matrix-node.central i {
-    font-size: 2rem;
-    margin-bottom: 4px;
-}
-
-.matrix-node.child {
-    position: absolute;
-    background: var(--white);
-    border: 1px solid var(--border);
-    padding: 8px 14px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
-.matrix-node.child.c1 { top: 30px; left: 40px; }
-.matrix-node.child.c2 { top: 30px; right: 40px; }
-.matrix-node.child.c3 { bottom: 30px; left: 40px; }
-.matrix-node.child.c4 { bottom: 30px; right: 40px; }
-
-/* ==================================================
-   13. PERFORMANCE STATS
-   ================================================== */
-.stat-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 30px 15px;
-}
-
-.stat-val {
-    font-size: 3rem;
-    font-weight: 700;
-    display: inline-block;
-    line-height: 1;
-}
-
-.stat-suffix {
-    font-size: 1.8rem;
-    font-weight: 700;
-    display: inline-block;
-    color: var(--primary);
-}
-
-.stat-label {
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--muted);
-    letter-spacing: 0.05em;
-    margin-top: 8px;
-}
-
-/* ==================================================
-   14. TIMELINE
-   ================================================== */
-.timeline-wrapper {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border-top: 1px solid var(--border);
-    position: relative;
-}
-
-.timeline-step {
-    padding: 40px 24px 0;
-    position: relative;
-}
-
-.timeline-step::before {
-    content: '';
-    position: absolute;
-    top: -6px;
-    left: 24px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
     background: var(--primary);
 }
 
-.timeline-step-num {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--muted);
-    opacity: 0.4;
-    margin-bottom: 12px;
+/* =========================================================
+   GLOBAL HELPERS
+========================================================= */
+
+.container {
+    width: min(100% - 40px, var(--container-width));
 }
 
-.timeline-step h4 {
-    font-size: 1.15rem;
-    margin-bottom: 8px;
+.section-padding {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
 }
 
-.timeline-step p {
-    font-size: 0.9rem;
-    color: var(--muted);
-}
-
-/* ==================================================
-   15. WHY HAVMOR MEDIA
-   ================================================== */
-.why-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 30px;
-    height: 100%;
-}
-
-.why-card i {
-    font-size: 1.8rem;
+.section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 22px;
     color: var(--primary);
-    margin-bottom: 12px;
-    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    line-height: 1.2;
+    text-transform: uppercase;
 }
 
-.why-card h4 {
-    font-size: 1.15rem;
-    margin-bottom: 8px;
+.section-label::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--accent);
 }
 
-/* ==================================================
-   16. FINAL CTA & 17. FOOTER
-   ================================================== */
-.cta-section {
-    background: var(--grad-primary);
+.section-label-light {
+    color: rgba(255, 255, 255, 0.75);
 }
 
-.cta-bg-glow {
+.section-label-light::before {
+    background: var(--accent);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    color: var(--dark);
+    font-family: var(--heading-font);
+    font-weight: 700;
+    line-height: 1.08;
+}
+
+h1,
+h2 {
+    letter-spacing: -0.045em;
+}
+
+h1 span,
+h2 span {
+    color: var(--primary);
+}
+
+p {
+    margin-top: 0;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 52px;
+    padding: 13px 21px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    transition: var(--transition);
+}
+
+.btn i {
+    font-size: 18px;
+    transition: transform 0.35s var(--ease);
+}
+
+.btn:hover i {
+    transform: translate(3px, -3px);
+}
+
+.btn-primary {
+    color: var(--white);
+    background: var(--primary);
+    box-shadow: 0 10px 25px rgba(128, 0, 128, 0.18);
+}
+
+.btn-primary:hover {
+    color: var(--white);
+    background: var(--dark-purple);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 32px rgba(128, 0, 128, 0.25);
+}
+
+.btn-light {
+    color: var(--dark-purple);
+    background: var(--white);
+}
+
+.btn-light:hover {
+    color: var(--white);
+    background: var(--accent);
+    transform: translateY(-3px);
+}
+
+.btn-large {
+    min-height: 60px;
+    padding: 16px 26px;
+}
+
+.text-link,
+.arrow-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--dark);
+    font-size: 14px;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.text-link i,
+.arrow-link i {
+    color: var(--primary);
+    font-size: 18px;
+    transition: transform 0.35s var(--ease);
+}
+
+.text-link:hover,
+.arrow-link:hover {
+    color: var(--primary);
+}
+
+.text-link:hover i,
+.arrow-link:hover i {
+    transform: translate(4px, -4px);
+}
+
+/* =========================================================
+   PAGE LOADER
+========================================================= */
+
+.page-loader {
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background: var(--dark-purple);
+    transition:
+        opacity 0.6s ease,
+        visibility 0.6s ease;
+}
+
+.page-loader.loaded {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loader-mark {
+    display: grid;
+    width: 55px;
+    height: 55px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 50%;
+    color: var(--white);
+    font-family: var(--heading-font);
+    font-size: 25px;
+    font-weight: 700;
+    animation: loaderPulse 1.2s ease-in-out infinite;
+}
+
+@keyframes loaderPulse {
+    0%,
+    100% {
+        transform: scale(0.9);
+        opacity: 0.55;
+    }
+
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+    transition: var(--transition);
+}
+
+.site-header.scrolled {
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 8px 28px rgba(30, 10, 30, 0.07);
+    backdrop-filter: blur(16px);
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 88px;
+}
+
+.brand-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--dark-purple);
+    font-family: var(--heading-font);
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.055em;
+}
+
+.brand-symbol {
+    display: grid;
+    width: 37px;
+    height: 37px;
+    place-items: center;
+    border-radius: 12px;
+    color: var(--white);
+    background: var(--primary);
+    font-size: 20px;
+}
+
+.brand-text span {
+    color: var(--primary);
+}
+
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-left: auto;
+    margin-right: 38px;
+}
+
+.nav-link {
+    position: relative;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.nav-link::after {
+    position: absolute;
+    right: 0;
+    bottom: -8px;
+    left: 0;
+    height: 2px;
+    content: "";
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.35s var(--ease);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-cta {
+    min-height: 46px;
+    padding: 12px 18px;
+    font-size: 12px;
+}
+
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: var(--dark-purple);
+    background: var(--soft-purple);
+    font-size: 23px;
+}
+
+.mobile-menu {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: none;
+    padding: 110px 20px 30px;
+    background: var(--white);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease,
+        transform 0.35s ease;
+}
+
+.mobile-menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.mobile-menu-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: min(100%, 500px);
+    margin: 0 auto;
+}
+
+.mobile-nav-link {
+    padding: 15px 4px;
+    border-bottom: 1px solid var(--border);
+    color: var(--dark);
+    font-family: var(--heading-font);
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.mobile-quote-btn {
+    align-self: flex-start;
+    margin-top: 22px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-section {
+    position: relative;
+    min-height: 820px;
+    padding-top: 185px;
+    padding-bottom: 110px;
+    overflow: hidden;
+    background: var(--light-bg);
+}
+
+.hero-row {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 640px;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 28px;
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.eyebrow-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 6px rgba(199, 62, 155, 0.13);
+}
+
+.hero-content h1 {
+    max-width: 700px;
+    margin-bottom: 28px;
+    color: var(--dark);
+    font-size: clamp(3.4rem, 6.2vw, 6.3rem);
+    font-weight: 700;
+    line-height: 0.99;
+}
+
+.hero-content h1 span {
+    display: block;
+    color: var(--primary);
+}
+
+.hero-description {
+    max-width: 530px;
+    margin-bottom: 31px;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.hero-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.hero-note i {
+    color: var(--primary);
+    font-size: 17px;
+}
+
+.hero-visual {
+    position: relative;
+    min-height: 560px;
+    margin-left: 30px;
+}
+
+.hero-image-wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 90%;
+    height: 520px;
+    overflow: hidden;
+    border-radius: var(--radius-xl) 0 var(--radius-xl) var(--radius-xl);
+    box-shadow: var(--shadow-md);
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s var(--ease);
+}
+
+.hero-visual:hover .hero-image {
+    transform: scale(1.04);
+}
+
+.hero-image-overlay {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.12) 0%, transparent 60%);
+    background:
+        linear-gradient(
+            140deg,
+            rgba(57, 3, 57, 0.2),
+            transparent 55%
+        ),
+        linear-gradient(
+            to top,
+            rgba(23, 23, 23, 0.28),
+            transparent 40%
+        );
 }
 
-.cta-title {
-    font-size: clamp(2.2rem, 4vw, 3.2rem);
+.hero-floating-card {
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 17px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(12px);
 }
 
-.cta-desc {
-    font-size: 1.15rem;
-    max-width: 600px;
+.hero-card-top {
+    top: 80px;
+    left: -25px;
 }
 
-.footer-section {
-    background: var(--dark);
+.hero-card-bottom {
+    right: 8px;
+    bottom: 72px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.floating-icon {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border-radius: 11px;
     color: var(--white);
-    padding: 80px 0 30px;
+    background: var(--primary);
+    font-size: 20px;
+}
+
+.hero-floating-card strong {
+    display: block;
+    color: var(--dark);
+    font-size: 11px;
+    line-height: 1.35;
+}
+
+.hero-floating-card span {
+    display: block;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.rating-stars {
+    display: flex;
+    gap: 2px;
+    color: #efae45;
+    font-size: 13px;
+}
+
+.hero-image-label {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 18%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.hero-image-label span:first-child {
+    color: var(--primary);
+    font-weight: 800;
+}
+
+.hero-image-label span:last-child {
+    padding-top: 1px;
+    border-top: 1px solid var(--primary);
+}
+
+.hero-decoration {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.hero-decoration-one {
+    top: 125px;
+    left: -80px;
+    width: 190px;
+    height: 190px;
+    border: 1px solid rgba(128, 0, 128, 0.15);
+}
+
+.hero-decoration-two {
+    right: 8%;
+    bottom: -100px;
+    width: 260px;
+    height: 260px;
+    border: 1px solid rgba(199, 62, 155, 0.17);
+}
+
+/* =========================================================
+   TRUST STRIP
+========================================================= */
+
+.trust-strip {
+    border-bottom: 1px solid var(--border);
+    background: var(--white);
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    padding: 28px 0;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.trust-icon {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    place-items: center;
+    border-radius: 12px;
+    color: var(--primary);
+    background: var(--soft-purple);
+    font-size: 20px;
+}
+
+.trust-item strong,
+.trust-item span {
+    display: block;
+}
+
+.trust-item strong {
+    color: var(--dark);
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.trust-item div > span {
+    margin-top: 2px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+.section-heading-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.section-heading-row h2,
+.section-heading-centered h2 {
+    max-width: 650px;
+    margin-bottom: 0;
+    font-size: clamp(2.5rem, 5vw, 5rem);
+}
+
+.section-heading-side {
+    width: min(100%, 340px);
+}
+
+.section-heading-side p,
+.section-heading-centered p {
+    margin-bottom: 17px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+.section-heading-centered {
+    max-width: 700px;
+    margin: 0 auto 70px;
+    text-align: center;
+}
+
+.section-heading-centered .section-label {
+    justify-content: center;
+}
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services-section {
+    background: var(--white);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 480px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--white);
+    transition:
+        transform 0.5s var(--ease),
+        box-shadow 0.5s var(--ease);
+}
+
+.service-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-8px);
+}
+
+.service-card-large {
+    grid-column: span 2;
+}
+
+.service-card-wide {
+    grid-column: span 2;
+}
+
+.service-image-wrap {
+    position: relative;
+    height: 295px;
+    overflow: hidden;
+}
+
+.service-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s var(--ease);
+}
+
+.service-card:hover .service-image {
+    transform: scale(1.08);
+}
+
+.service-image-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(57, 3, 57, 0.25),
+            transparent 55%
+        );
+}
+
+.service-icon {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    display: grid;
+    width: 45px;
+    height: 45px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 13px;
+    color: var(--white);
+    background: rgba(57, 3, 57, 0.48);
+    font-size: 21px;
+    backdrop-filter: blur(10px);
+}
+
+.service-number {
+    position: absolute;
+    right: 20px;
+    bottom: 15px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.service-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 17px;
+    min-height: 182px;
+    padding: 24px;
+}
+
+.service-content h3 {
+    margin-bottom: 10px;
+    color: var(--dark);
+    font-size: 23px;
+    letter-spacing: -0.03em;
+}
+
+.service-content p {
+    max-width: 285px;
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.service-arrow {
+    display: grid;
+    width: 41px;
+    height: 41px;
+    flex: 0 0 41px;
+    place-items: center;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--primary);
+    font-size: 18px;
+    transition: var(--transition);
+}
+
+.service-card:hover .service-arrow {
+    color: var(--white);
+    background: var(--primary);
+    transform: rotate(45deg);
+}
+
+/* =========================================================
+   ABOUT PREVIEW
+========================================================= */
+
+.about-preview-section {
+    background: var(--light-bg);
+}
+
+.about-preview-visual {
+    position: relative;
+    min-height: 650px;
+    padding-right: 85px;
+    padding-bottom: 85px;
+}
+
+.about-image-main,
+.about-image-small {
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+}
+
+.about-image-main {
+    width: 100%;
+    height: 540px;
+}
+
+.about-image-small {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 45%;
+    height: 260px;
+    border: 12px solid var(--light-bg);
+}
+
+.about-image-main img,
+.about-image-small img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.experience-badge {
+    position: absolute;
+    bottom: 35px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 200px;
+    padding: 13px 15px;
+    border-radius: 13px;
+    color: var(--white);
+    background: var(--dark-purple);
+    box-shadow: var(--shadow-md);
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.experience-number {
+    color: var(--accent);
+    font-family: var(--heading-font);
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.about-preview-content {
+    max-width: 550px;
+}
+
+.about-preview-content h2 {
+    margin-bottom: 22px;
+    font-size: clamp(2.5rem, 5vw, 4.7rem);
+}
+
+.about-preview-content > p {
+    margin-bottom: 38px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.benefit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-bottom: 34px;
+}
+
+.benefit-item {
+    display: flex;
+    gap: 15px;
+}
+
+.benefit-icon {
+    display: grid;
+    width: 43px;
+    height: 43px;
+    flex: 0 0 43px;
+    place-items: center;
+    border-radius: 12px;
+    color: var(--primary);
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+    font-size: 20px;
+}
+
+.benefit-item h3 {
+    margin-bottom: 4px;
+    color: var(--dark);
+    font-size: 16px;
+}
+
+.benefit-item p {
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.process-section {
+    background: var(--white);
+}
+
+.process-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+}
+
+.process-line {
+    position: absolute;
+    z-index: 0;
+    left: 12%;
+    right: 12%;
+    height: 1px;
+    margin-top: 59px;
+    background: var(--border);
+}
+
+.process-item {
+    position: relative;
+    z-index: 1;
+}
+
+.process-number {
+    margin-bottom: 25px;
+    color: var(--primary);
+    font-family: var(--heading-font);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.process-icon {
+    display: grid;
+    width: 68px;
+    height: 68px;
+    margin-bottom: 27px;
+    place-items: center;
+    border: 8px solid var(--white);
+    border-radius: 50%;
+    color: var(--white);
+    background: var(--primary);
+    box-shadow: 0 0 0 1px var(--border);
+    font-size: 24px;
+}
+
+.process-item h3 {
+    max-width: 190px;
+    margin-bottom: 11px;
+    font-size: 19px;
+    line-height: 1.2;
+}
+
+.process-item p {
+    max-width: 220px;
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.stats-section {
+    padding: 0 0 var(--section-padding);
+}
+
+.stats-panel {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 65px;
+    overflow: hidden;
+    padding: 72px;
+    border-radius: var(--radius-xl);
+    color: var(--white);
+    background:
+        radial-gradient(
+            circle at 95% 0%,
+            rgba(199, 62, 155, 0.6),
+            transparent 33%
+        ),
+        var(--dark-purple);
+}
+
+.stats-panel h2 {
+    max-width: 470px;
+    margin-bottom: 22px;
+    color: var(--white);
+    font-size: clamp(2.5rem, 4vw, 4.3rem);
+}
+
+.stats-panel h2 span {
+    color: var(--accent);
+}
+
+.stats-intro > p {
+    max-width: 400px;
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.stats-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 22px;
+}
+
+.stat-item {
+    padding-left: 25px;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-value {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--white);
+    font-family: var(--heading-font);
+    font-size: clamp(3rem, 5vw, 5.4rem);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.stat-value::after {
+    content: "+";
+    color: var(--accent);
+}
+
+.stat-label {
+    display: block;
+    max-width: 115px;
+    color: rgba(255, 255, 255, 0.63);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+/* =========================================================
+   SHOWCASE
+========================================================= */
+
+.showcase-section {
+    background: var(--light-bg);
+}
+
+.showcase-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr 1fr;
+    grid-template-rows: 280px 240px;
+    gap: 18px;
+}
+
+.showcase-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+}
+
+.showcase-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.9s var(--ease);
+}
+
+.showcase-item:hover img {
+    transform: scale(1.07);
+}
+
+.showcase-tall {
+    grid-row: span 2;
+}
+
+.showcase-wide {
+    grid-column: span 2;
+}
+
+.showcase-caption {
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    left: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 12px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 10px;
+    color: var(--white);
+    background: rgba(23, 23, 23, 0.42);
+    backdrop-filter: blur(10px);
+}
+
+.showcase-caption span {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.showcase-caption strong {
+    font-size: 11px;
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta-section {
+    background: var(--light-bg);
+}
+
+.cta-panel {
+    position: relative;
+    min-height: 450px;
+    overflow: hidden;
+    padding: 78px;
+    border-radius: var(--radius-xl);
+    color: var(--white);
+    background:
+        linear-gradient(
+            110deg,
+            rgba(57, 3, 57, 0.98),
+            rgba(128, 0, 128, 0.94)
+        );
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+}
+
+.cta-content h2 {
+    margin-bottom: 22px;
+    color: var(--white);
+    font-size: clamp(2.7rem, 5vw, 5rem);
+}
+
+.cta-content h2 span {
+    color: var(--accent);
+}
+
+.cta-content p {
+    max-width: 490px;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 15px;
+}
+
+.cta-mark {
+    position: absolute;
+    right: 8%;
+    bottom: -45px;
+    color: rgba(255, 255, 255, 0.1);
+    font-size: 300px;
+    line-height: 1;
+    transform: rotate(-12deg);
+}
+
+.cta-decoration {
+    position: absolute;
+    top: -100px;
+    right: 25%;
+    width: 330px;
+    height: 330px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+}
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.faq-section {
+    background: var(--white);
+}
+
+.faq-intro {
+    position: sticky;
+    top: 120px;
+}
+
+.faq-intro h2 {
+    margin-bottom: 22px;
+    font-size: clamp(2.5rem, 4vw, 4rem);
+}
+
+.faq-intro p {
+    margin-bottom: 28px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.faq-list {
+    border-top: 1px solid var(--border);
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    padding: 25px 0;
+    color: var(--dark);
+    background: transparent;
+    text-align: left;
+    font-family: var(--heading-font);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.faq-question i {
+    color: var(--primary);
+    font-size: 22px;
+    transition: transform 0.35s ease;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: grid-template-rows 0.4s ease;
+}
+
+.faq-item.active .faq-answer {
+    grid-template-rows: 1fr;
+}
+
+.faq-answer p {
+    min-height: 0;
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+    padding-top: 85px;
+    color: rgba(255, 255, 255, 0.7);
+    background: var(--dark);
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1.6fr repeat(3, 1fr);
+    gap: 45px;
+    padding-bottom: 65px;
 }
 
 .footer-logo {
     color: var(--white);
 }
 
-.footer-heading {
-    font-size: 0.95rem;
-    font-weight: 700;
-    margin-bottom: 20px;
+.footer-brand-col p {
+    max-width: 275px;
+    margin: 22px 0 25px;
+    color: rgba(255, 255, 255, 0.57);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.footer-cta {
+    min-height: 45px;
+    padding: 12px 17px;
+    font-size: 12px;
+}
+
+.footer-links-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 11px;
+}
+
+.footer-links-col h3 {
+    margin-bottom: 9px;
     color: var(--white);
+    font-size: 13px;
 }
 
-.footer-links li {
-    margin-bottom: 10px;
+.footer-links-col a {
+    color: rgba(255, 255, 255, 0.57);
+    font-size: 12px;
+    transition: var(--transition);
 }
 
-.footer-links a {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.88rem;
+.footer-links-col a:hover {
+    color: var(--accent);
+    transform: translateX(3px);
 }
 
-.footer-links a:hover {
-    color: var(--white);
+.footer-socials {
+    display: flex;
+    gap: 8px;
+    margin-top: 18px;
 }
 
 .footer-socials a {
-    width: 36px;
-    height: 36px;
+    display: grid;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.16);
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     color: var(--white);
-    font-size: 1rem;
 }
 
 .footer-socials a:hover {
+    color: var(--white);
     background: var(--primary);
+    transform: none;
 }
 
-/* ==================================================
-   RESPONSIVE DESIGN
-   ================================================== */
-@media (max-width: 991px) {
-    .section-padding { padding: 70px 0; }
-    .timeline-wrapper { grid-template-columns: 1fr; border-top: none; }
-    .timeline-step { padding: 20px 0 20px 30px; border-left: 1px solid var(--border); }
-    .timeline-step::before { left: -6px; top: 24px; }
-    .principles-wrap .principle-col { border-right: none; border-bottom: 1px solid var(--border); padding: 30px 15px; }
-    .principles-wrap .principle-col:last-child { border-bottom: none; }
-    .editorial-grid { grid-template-columns: 1fr; }
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.42);
+    font-size: 11px;
 }
 
-@media (max-width: 768px) {
-    .service-row-item { padding: 24px 10px; }
-    .service-summary { margin: 10px 0; }
+.footer-bottom i {
+    color: var(--accent);
+}
+
+/* =========================================================
+   ANIMATION STATES
+========================================================= */
+
+.reveal-up,
+.reveal-image {
+    opacity: 0;
+}
+
+.reveal-up {
+    transform: translateY(35px);
+}
+
+.reveal-image {
+    transform: translateY(25px) scale(0.97);
+}
+
+.reveal-up.is-visible,
+.reveal-image.is-visible {
+    opacity: 1;
+    transform: none;
+    transition:
+        opacity 0.8s ease,
+        transform 0.9s var(--ease);
 }
     </style>
 </head>
+
 <body>
 
-    <!-- 1. STICKY NAVBAR -->
-    <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
-        <div class="container-fluid max-width-container">
-            <a class="navbar-brand brand-logo" href="#" aria-label="Havmor Media Home">
-                Havmor<span>Media</span>
-            </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="toggler-icon"></span>
-                <span class="toggler-icon"></span>
-            </button>
+    <!-- Page loader -->
+    <div class="page-loader" aria-hidden="true">
+        <div class="loader-mark">H</div>
+    </div>
 
-            <div class="collapse navbar-collapse" id="navContent">
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Solutions</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Industries</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Case Studies</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                </ul>
-                <div class="d-flex">
-                    <a href="#cta" class="btn btn-primary-custom nav-cta">Book Free Consultation</a>
+    <!-- Header -->
+    <header class="site-header" id="siteHeader">
+        <div class="container">
+            <nav class="main-nav">
+
+                <a href="index.html" class="brand-logo" aria-label="HomeFix home page">
+                    <span class="brand-symbol">
+                        <i class="ri-home-5-line"></i>
+                    </span>
+
+                    <span class="brand-text">
+                        Home<span>Fix</span>
+                    </span>
+                </a>
+
+                <div class="desktop-nav">
+                    <a href="#services" class="nav-link active">Services</a>
+                    <a href="#about-preview" class="nav-link">About</a>
+                    <a href="#process" class="nav-link">How It Works</a>
+                    <a href="becomepartner.html" class="nav-link">For Professionals</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
                 </div>
-            </div>
+
+                <div class="nav-actions">
+                    <a href="quote.html" class="btn btn-primary nav-cta">
+                        Get a Free Quote
+                        <i class="ri-arrow-right-up-line"></i>
+                    </a>
+
+                    <button
+                        class="menu-toggle"
+                        id="menuToggle"
+                        type="button"
+                        aria-label="Open navigation menu"
+                        aria-controls="mobileMenu"
+                        aria-expanded="false"
+                    >
+                        <i class="ri-menu-4-line"></i>
+                    </button>
+                </div>
+            </nav>
         </div>
-    </nav>
 
-    <!-- 2 & 3. HERO SECTION WITH BACKGROUND -->
-    <header class="hero-section position-relative overflow-hidden" id="hero">
-        <div class="hero-bg-grid"></div>
-        <div class="hero-particles-container" id="heroParticles"></div>
+        <!-- Mobile menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-inner">
+                <a href="#services" class="mobile-nav-link">Services</a>
+                <a href="#about-preview" class="mobile-nav-link">About</a>
+                <a href="#process" class="mobile-nav-link">How It Works</a>
+                <a href="becomepartner.html" class="mobile-nav-link">For Professionals</a>
+                <a href="contact.html" class="mobile-nav-link">Contact</a>
 
-        <div class="container-fluid max-width-container position-relative z-index-2">
-            <div class="row align-items-center g-5 min-vh-90 pt-100">
-                <div class="col-lg-7 hero-content">
-                    <div class="eyebrow mb-3">WHAT WE DO</div>
-                    <h1 class="hero-title mb-4">
-                        Performance marketing built for <span class="text-gradient">measurable growth</span>.
-                    </h1>
-                    <p class="hero-desc mb-5">
-                        From customer acquisition to intelligent media buying, we combine technology, data and performance marketing to help ambitious brands scale faster and more efficiently.
-                    </p>
-                    <div class="hero-cta-group d-flex flex-wrap gap-3">
-                        <a href="#services" class="btn btn-primary-custom">
-                            Explore Our Services <i class="ri-arrow-right-line ms-1"></i>
-                        </a>
-                        <a href="#contact" class="btn btn-outline-custom">
-                            Talk to a Growth Expert <i class="ri-arrow-right-line ms-1"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="col-lg-5 hero-visual-col">
-                    <div class="adtech-dashboard-card" id="heroDashboard">
-                        <div class="dashboard-header d-flex justify-content-between align-items-center mb-4">
-                            <div class="d-flex align-items-center gap-2">
-                                <div class="pulse-dot"></div>
-                                <span class="dash-badge">AI OPTIMIZER ACTIVE</span>
-                            </div>
-                            <span class="dash-timestamp">LIVE STREAM</span>
-                        </div>
-
-                        <div class="dashboard-metric-box mb-4">
-                            <div class="d-flex justify-content-between text-muted-custom small mb-1">
-                                <span>AGGREGATED RETURN</span>
-                                <span class="text-success-custom font-mono">+48.2%</span>
-                            </div>
-                            <div class="dash-value font-mono">4.8x <span class="dash-sub">ROAS</span></div>
-                        </div>
-
-                        <div class="mini-chart-container mb-4">
-                            <svg class="chart-svg" viewBox="0 0 300 80">
-                                <defs>
-                                    <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="0%" stop-color="#800080" stop-opacity="0.3"/>
-                                        <stop offset="100%" stop-color="#C73E9B" stop-opacity="0"/>
-                                    </linearGradient>
-                                </defs>
-                                <path class="chart-area" d="M0,70 Q75,60 150,30 T300,10 L300,80 L0,80 Z" fill="url(#chartGrad)"/>
-                                <path class="chart-line" d="M0,70 Q75,60 150,30 T300,10" fill="none" stroke="#800080" stroke-width="2.5"/>
-                            </svg>
-                        </div>
-
-                        <div class="row g-2 text-center dash-pills">
-                            <div class="col-4">
-                                <div class="p-2 pill-box">
-                                    <span class="label">DATA</span>
-                                    <span class="val">99.4%</span>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="p-2 pill-box">
-                                    <span class="label">CTR</span>
-                                    <span class="val">4.82%</span>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="p-2 pill-box">
-                                    <span class="label">SCALE</span>
-                                    <span class="val">10x</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <a href="quote.html" class="btn btn-primary mobile-quote-btn">
+                    Get a Free Quote
+                    <i class="ri-arrow-right-up-line"></i>
+                </a>
             </div>
         </div>
     </header>
 
-    <!-- 4. SERVICES INTRODUCTION -->
-    <section class="section-padding border-bottom border-subtle">
-        <div class="container-fluid max-width-container">
-            <div class="row mb-5">
-                <div class="col-lg-6">
-                    <div class="eyebrow mb-2">OUR CAPABILITIES</div>
-                    <h2 class="section-title">Everything you need to scale smarter.</h2>
-                </div>
-                <div class="col-lg-6 d-flex align-items-end">
-                    <p class="section-desc mb-0">From strategy and acquisition to media buying and optimization, our services are designed around one goal: measurable growth.</p>
+    <main>
+
+        <!-- Hero -->
+        <section class="hero-section">
+            <div class="hero-decoration hero-decoration-one"></div>
+            <div class="hero-decoration hero-decoration-two"></div>
+
+            <div class="container">
+                <div class="row align-items-center hero-row">
+
+                    <div class="col-lg-6">
+                        <div class="hero-content reveal-up">
+
+                            <div class="eyebrow">
+                                <span class="eyebrow-dot"></span>
+                                Home improvement made simple
+                            </div>
+
+                            <h1>
+                                Upgrade Your Home.
+                                <span>Find Trusted Professionals.</span>
+                            </h1>
+
+                            <p class="hero-description">
+                                Connect with reliable home improvement professionals,
+                                compare options, and get competitive quotes for your
+                                next project.
+                            </p>
+
+                            <div class="hero-actions">
+                                <a href="quote.html" class="btn btn-primary btn-large">
+                                    Get My Free Quote
+                                    <i class="ri-arrow-right-up-line"></i>
+                                </a>
+
+                                <a href="#services" class="text-link">
+                                    Explore Services
+                                    <i class="ri-arrow-down-line"></i>
+                                </a>
+                            </div>
+
+                            <div class="hero-note">
+                                <i class="ri-shield-check-line"></i>
+                                No obligation. No hidden fees.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="hero-visual reveal-image">
+
+                            <div class="hero-image-wrap">
+                                <img
+                                    src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85"
+                                    alt="Bright modern home interior with premium furniture"
+                                    class="hero-image"
+                                >
+
+                                <div class="hero-image-overlay"></div>
+                            </div>
+
+                            <div class="hero-floating-card hero-card-top">
+                                <div class="floating-icon">
+                                    <i class="ri-user-star-line"></i>
+                                </div>
+
+                                <div>
+                                    <strong>Trusted professionals</strong>
+                                    <span>Ready to help</span>
+                                </div>
+                            </div>
+
+                            <div class="hero-floating-card hero-card-bottom">
+                                <div class="rating-stars">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                </div>
+
+                                <strong>Simple. Reliable. Local.</strong>
+                            </div>
+
+                            <div class="hero-image-label">
+                                <span>01</span>
+                                <span>Beautiful spaces begin with the right team.</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+        </section>
 
-            <div class="row g-0 principles-wrap">
-                <div class="col-md-4 principle-col">
-                    <div class="principle-number">01</div>
-                    <h3 class="principle-name">ACQUIRE</h3>
-                    <p class="principle-text">Reach high-intent audiences through verified programmatic pipelines and precision targeting.</p>
-                </div>
-                <div class="col-md-4 principle-col">
-                    <div class="principle-number">02</div>
-                    <h3 class="principle-name">OPTIMIZE</h3>
-                    <p class="principle-text">Continuously improve performance with autonomous, algorithmic multi-variable testing.</p>
-                </div>
-                <div class="col-md-4 principle-col">
-                    <div class="principle-number">03</div>
-                    <h3 class="principle-name">SCALE</h3>
-                    <p class="principle-text">Turn winning campaigns into durable, high-yield digital acquisition channels.</p>
+        <!-- Trust strip -->
+        <section class="trust-strip">
+            <div class="container">
+                <div class="trust-grid">
+
+                    <div class="trust-item">
+                        <span class="trust-icon">
+                            <i class="ri-verified-badge-line"></i>
+                        </span>
+
+                        <div>
+                            <strong>Verified Professionals</strong>
+                            <span>Reliable service providers</span>
+                        </div>
+                    </div>
+
+                    <div class="trust-item">
+                        <span class="trust-icon">
+                            <i class="ri-flashlight-line"></i>
+                        </span>
+
+                        <div>
+                            <strong>Fast Matching</strong>
+                            <span>Find help without the wait</span>
+                        </div>
+                    </div>
+
+                    <div class="trust-item">
+                        <span class="trust-icon">
+                            <i class="ri-bar-chart-box-line"></i>
+                        </span>
+
+                        <div>
+                            <strong>Competitive Quotes</strong>
+                            <span>Compare your options</span>
+                        </div>
+                    </div>
+
+                    <div class="trust-item">
+                        <span class="trust-icon">
+                            <i class="ri-map-pin-line"></i>
+                        </span>
+
+                        <div>
+                            <strong>Nationwide Service</strong>
+                            <span>Local support across the US</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 5. CORE SERVICES (NUMBERED LIST) -->
-    <section class="section-padding" id="services">
-        <div class="container-fluid max-width-container">
-            <div class="row mb-5">
-                <div class="col-lg-6">
-                    <h2 class="section-title">Built around<br>performance.</h2>
+        <!-- Services -->
+        <section class="services-section section-padding" id="services">
+            <div class="container">
+
+                <div class="section-heading-row reveal-up">
+                    <div>
+                        <span class="section-label">Our services</span>
+
+                        <h2>
+                            What are you looking
+                            <span>to improve?</span>
+                        </h2>
+                    </div>
+
+                    <div class="section-heading-side">
+                        <p>
+                            From essential repairs to complete renovations, find
+                            the right professionals for your project.
+                        </p>
+
+                        <a href="quote.html" class="arrow-link">
+                            Start a project
+                            <i class="ri-arrow-right-up-line"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="services-grid">
+
+                    <!-- Service 1 -->
+                    <a href="services/roofing.html" class="service-card service-card-large reveal-up">
+                        <div class="service-image-wrap">
+                            <img
+                                src="https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=1200&q=85"
+                                alt="Professional inspecting a residential roof"
+                                class="service-image"
+                            >
+
+                            <div class="service-image-overlay"></div>
+
+                            <span class="service-icon">
+                                <i class="ri-home-8-line"></i>
+                            </span>
+
+                            <span class="service-number">01</span>
+                        </div>
+
+                        <div class="service-content">
+                            <div>
+                                <h3>Roofing</h3>
+                                <p>
+                                    Repairs, replacements, inspections, and more
+                                    from qualified roofing professionals.
+                                </p>
+                            </div>
+
+                            <span class="service-arrow">
+                                <i class="ri-arrow-right-up-line"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Service 2 -->
+                    <a href="services/windows-doors.html" class="service-card reveal-up">
+                        <div class="service-image-wrap">
+                            <img
+                                src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=85"
+                                alt="Large modern windows in a renovated home"
+                                class="service-image"
+                            >
+
+                            <div class="service-image-overlay"></div>
+
+                            <span class="service-icon">
+                                <i class="ri-door-line"></i>
+                            </span>
+
+                            <span class="service-number">02</span>
+                        </div>
+
+                        <div class="service-content">
+                            <div>
+                                <h3>Windows & Doors</h3>
+                                <p>
+                                    Improve comfort, security, and curb appeal.
+                                </p>
+                            </div>
+
+                            <span class="service-arrow">
+                                <i class="ri-arrow-right-up-line"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Service 3 -->
+                    <a href="services/hvac.html" class="service-card reveal-up">
+                        <div class="service-image-wrap">
+                            <img
+                                src="https://images.unsplash.com/photo-1631545806609-7f7e2b9b0b1c?auto=format&fit=crop&w=1000&q=85"
+                                alt="Modern HVAC system installed in a home"
+                                class="service-image"
+                            >
+
+                            <div class="service-image-overlay"></div>
+
+                            <span class="service-icon">
+                                <i class="ri-temp-hot-line"></i>
+                            </span>
+
+                            <span class="service-number">03</span>
+                        </div>
+
+                        <div class="service-content">
+                            <div>
+                                <h3>HVAC</h3>
+                                <p>
+                                    Heating, cooling, installation, and maintenance.
+                                </p>
+                            </div>
+
+                            <span class="service-arrow">
+                                <i class="ri-arrow-right-up-line"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Service 4 -->
+                    <a href="services/kitchen-remodeling.html" class="service-card service-card-wide reveal-up">
+                        <div class="service-image-wrap">
+                            <img
+                                src="https://images.unsplash.com/photo-1556912167-f556f1f39fdf?auto=format&fit=crop&w=1200&q=85"
+                                alt="Premium modern kitchen renovation"
+                                class="service-image"
+                            >
+
+                            <div class="service-image-overlay"></div>
+
+                            <span class="service-icon">
+                                <i class="ri-restaurant-2-line"></i>
+                            </span>
+
+                            <span class="service-number">04</span>
+                        </div>
+
+                        <div class="service-content">
+                            <div>
+                                <h3>Kitchen Remodeling</h3>
+                                <p>
+                                    Create a kitchen that works beautifully for
+                                    the way you live.
+                                </p>
+                            </div>
+
+                            <span class="service-arrow">
+                                <i class="ri-arrow-right-up-line"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Service 5 -->
+                    <a href="services/bathroom-remodeling.html" class="service-card reveal-up">
+                        <div class="service-image-wrap">
+                            <img
+                                src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=1000&q=85"
+                                alt="Luxury bathroom remodeling project"
+                                class="service-image"
+                            >
+
+                            <div class="service-image-overlay"></div>
+
+                            <span class="service-icon">
+                                <i class="ri-drop-line"></i>
+                            </span>
+
+                            <span class="service-number">05</span>
+                        </div>
+
+                        <div class="service-content">
+                            <div>
+                                <h3>Bathroom Remodeling</h3>
+                                <p>
+                                    Turn everyday routines into a better experience.
+                                </p>
+                            </div>
+
+                            <span class="service-arrow">
+                                <i class="ri-arrow-right-up-line"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Service 6 -->
+                    <a href="services/solar.html" class="service-card reveal-up">
+                        <div class="service-image-wrap">
+                            <img
+                                src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1000&q=85"
+                                alt="Solar panels installed on a modern home"
+                                class="service-image"
+                            >
+
+                            <div class="service-image-overlay"></div>
+
+                            <span class="service-icon">
+                                <i class="ri-sun-line"></i>
+                            </span>
+
+                            <span class="service-number">06</span>
+                        </div>
+
+                        <div class="service-content">
+                            <div>
+                                <h3>Solar</h3>
+                                <p>
+                                    Explore smarter ways to improve energy efficiency.
+                                </p>
+                            </div>
+
+                            <span class="service-arrow">
+                                <i class="ri-arrow-right-up-line"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Service 7 -->
+                    <a href="services/flooring.html" class="service-card reveal-up">
+                        <div class="service-image-wrap">
+                            <img
+                                src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=85"
+                                alt="Elegant hardwood flooring in a renovated home"
+                                class="service-image"
+                            >
+
+                            <div class="service-image-overlay"></div>
+
+                            <span class="service-icon">
+                                <i class="ri-layout-grid-line"></i>
+                            </span>
+
+                            <span class="service-number">07</span>
+                        </div>
+
+                        <div class="service-content">
+                            <div>
+                                <h3>Flooring</h3>
+                                <p>
+                                    Hardwood, tile, vinyl, laminate, and carpet.
+                                </p>
+                            </div>
+
+                            <span class="service-arrow">
+                                <i class="ri-arrow-right-up-line"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Service 8 -->
+                    <a href="services/home-exterior.html" class="service-card service-card-wide reveal-up">
+                        <div class="service-image-wrap">
+                            <img
+                                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
+                                alt="Beautiful modern home exterior"
+                                class="service-image"
+                            >
+
+                            <div class="service-image-overlay"></div>
+
+                            <span class="service-icon">
+                                <i class="ri-building-2-line"></i>
+                            </span>
+
+                            <span class="service-number">08</span>
+                        </div>
+
+                        <div class="service-content">
+                            <div>
+                                <h3>Home Exterior</h3>
+                                <p>
+                                    Upgrade siding, gutters, paint, and outdoor spaces.
+                                </p>
+                            </div>
+
+                            <span class="service-arrow">
+                                <i class="ri-arrow-right-up-line"></i>
+                            </span>
+                        </div>
+                    </a>
+
                 </div>
             </div>
+        </section>
 
-            <div class="services-list-container">
-                <!-- 01 -->
-                <div class="service-row-item">
-                    <div class="row align-items-center">
-                        <div class="col-lg-1 col-md-2 col-12 service-idx">01</div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <h3 class="service-name">Performance Marketing</h3>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <p class="service-summary">Turn every marketing dollar into measurable business outcomes through data-driven acquisition, optimization, and conversion strategies.</p>
-                        </div>
-                        <div class="col-lg-2 col-md-1 col-6 text-lg-center">
-                            <span class="service-metric-badge">+42% Growth</span>
-                        </div>
-                        <div class="col-lg-1 col-md-1 col-6 text-end">
-                            <div class="service-arrow-btn"><i class="ri-arrow-right-line"></i></div>
+        <!-- About preview -->
+        <section class="about-preview-section section-padding" id="about-preview">
+            <div class="container">
+                <div class="row align-items-center g-5">
+
+                    <div class="col-lg-6">
+                        <div class="about-preview-visual reveal-image">
+                            <div class="about-image-main">
+                                <img
+                                    src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85"
+                                    alt="Modern living room in a renovated home"
+                                >
+                            </div>
+
+                            <div class="about-image-small">
+                                <img
+                                    src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=700&q=85"
+                                    alt="Contemporary home interior detail"
+                                >
+                            </div>
+
+                            <div class="experience-badge">
+                                <span class="experience-number">01</span>
+                                <span>One simpler way to improve your home</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- 02 -->
-                <div class="service-row-item">
-                    <div class="row align-items-center">
-                        <div class="col-lg-1 col-md-2 col-12 service-idx">02</div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <h3 class="service-name">Affiliate Marketing</h3>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <p class="service-summary">Scalable publisher partnerships designed on pure performance and zero wasted media spend.</p>
-                        </div>
-                        <div class="col-lg-2 col-md-1 col-6 text-lg-center">
-                            <span class="service-metric-badge">Zero Risk</span>
-                        </div>
-                        <div class="col-lg-1 col-md-1 col-6 text-end">
-                            <div class="service-arrow-btn"><i class="ri-arrow-right-line"></i></div>
+                    <div class="col-lg-6">
+                        <div class="about-preview-content reveal-up">
+                            <span class="section-label">Why HomeFix</span>
+
+                            <h2>
+                                A smarter way to
+                                <span>improve your home.</span>
+                            </h2>
+
+                            <p>
+                                Home improvement should feel exciting, not overwhelming.
+                                HomeFix helps homeowners connect with trusted professionals
+                                and make informed decisions with greater confidence.
+                            </p>
+
+                            <div class="benefit-list">
+                                <div class="benefit-item">
+                                    <span class="benefit-icon">
+                                        <i class="ri-shield-check-line"></i>
+                                    </span>
+
+                                    <div>
+                                        <h3>Trusted professionals</h3>
+                                        <p>
+                                            Discover service providers prepared to help
+                                            with your project.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="benefit-item">
+                                    <span class="benefit-icon">
+                                        <i class="ri-route-line"></i>
+                                    </span>
+
+                                    <div>
+                                        <h3>A simple process</h3>
+                                        <p>
+                                            Tell us what you need and move forward
+                                            without unnecessary complexity.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="benefit-item">
+                                    <span class="benefit-icon">
+                                        <i class="ri-scales-3-line"></i>
+                                    </span>
+
+                                    <div>
+                                        <h3>Better options</h3>
+                                        <p>
+                                            Compare potential solutions before choosing
+                                            the right fit for your home.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href="about.html" class="arrow-link">
+                                Learn more about HomeFix
+                                <i class="ri-arrow-right-up-line"></i>
+                            </a>
                         </div>
                     </div>
-                </div>
 
-                <!-- 03 -->
-                <div class="service-row-item">
-                    <div class="row align-items-center">
-                        <div class="col-lg-1 col-md-2 col-12 service-idx">03</div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <h3 class="service-name">Programmatic Advertising</h3>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <p class="service-summary">Real-time bidding across world-class DSPs to capture high-converting users at millisecond speeds.</p>
-                        </div>
-                        <div class="col-lg-2 col-md-1 col-6 text-lg-center">
-                            <span class="service-metric-badge">RTB Engine</span>
-                        </div>
-                        <div class="col-lg-1 col-md-1 col-6 text-end">
-                            <div class="service-arrow-btn"><i class="ri-arrow-right-line"></i></div>
-                        </div>
-                    </div>
                 </div>
-
-                <!-- 04 -->
-                <div class="service-row-item">
-                    <div class="row align-items-center">
-                        <div class="col-lg-1 col-md-2 col-12 service-idx">04</div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <h3 class="service-name">Mobile Advertising</h3>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <p class="service-summary">Precision mobile-first campaign executions focused on device-specific engagement patterns.</p>
-                        </div>
-                        <div class="col-lg-2 col-md-1 col-6 text-lg-center">
-                            <span class="service-metric-badge">High Yield</span>
-                        </div>
-                        <div class="col-lg-1 col-md-1 col-6 text-end">
-                            <div class="service-arrow-btn"><i class="ri-arrow-right-line"></i></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 05 -->
-                <div class="service-row-item">
-                    <div class="row align-items-center">
-                        <div class="col-lg-1 col-md-2 col-12 service-idx">05</div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <h3 class="service-name">App Growth Marketing</h3>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <p class="service-summary">End-to-end install-to-retention strategies optimizing for post-install LTV, not vanity metrics.</p>
-                        </div>
-                        <div class="col-lg-2 col-md-1 col-6 text-lg-center">
-                            <span class="service-metric-badge">LTV Focused</span>
-                        </div>
-                        <div class="col-lg-1 col-md-1 col-6 text-end">
-                            <div class="service-arrow-btn"><i class="ri-arrow-right-line"></i></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 06 -->
-                <div class="service-row-item">
-                    <div class="row align-items-center">
-                        <div class="col-lg-1 col-md-2 col-12 service-idx">06</div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <h3 class="service-name">User Acquisition</h3>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <p class="service-summary">High-intent customer pipelines targeting bottom-of-funnel conversion across tier-one platforms.</p>
-                        </div>
-                        <div class="col-lg-2 col-md-1 col-6 text-lg-center">
-                            <span class="service-metric-badge">-31% CPA</span>
-                        </div>
-                        <div class="col-lg-1 col-md-1 col-6 text-end">
-                            <div class="service-arrow-btn"><i class="ri-arrow-right-line"></i></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 07 -->
-                <div class="service-row-item">
-                    <div class="row align-items-center">
-                        <div class="col-lg-1 col-md-2 col-12 service-idx">07</div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <h3 class="service-name">Native Advertising</h3>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <p class="service-summary">Contextual storytelling and editorial placements built to bypass ad fatigue seamlessly.</p>
-                        </div>
-                        <div class="col-lg-2 col-md-1 col-6 text-lg-center">
-                            <span class="service-metric-badge">Context-Rich</span>
-                        </div>
-                        <div class="col-lg-1 col-md-1 col-6 text-end">
-                            <div class="service-arrow-btn"><i class="ri-arrow-right-line"></i></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 08 -->
-                <div class="service-row-item">
-                    <div class="row align-items-center">
-                        <div class="col-lg-1 col-md-2 col-12 service-idx">08</div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <h3 class="service-name">Influencer Marketing</h3>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <p class="service-summary">Performance-tracked creator partnerships backed by contract-grade attribution tracking.</p>
-                        </div>
-                        <div class="col-lg-2 col-md-1 col-6 text-lg-center">
-                            <span class="service-metric-badge">Tracked ROI</span>
-                        </div>
-                        <div class="col-lg-1 col-md-1 col-6 text-end">
-                            <div class="service-arrow-btn"><i class="ri-arrow-right-line"></i></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 09 -->
-                <div class="service-row-item">
-                    <div class="row align-items-center">
-                        <div class="col-lg-1 col-md-2 col-12 service-idx">09</div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <h3 class="service-name">OEM Advertising</h3>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <p class="service-summary">Direct hardware-level on-device distribution via smartphone ecosystem integrations.</p>
-                        </div>
-                        <div class="col-lg-2 col-md-1 col-6 text-lg-center">
-                            <span class="service-metric-badge">Direct OEM</span>
-                        </div>
-                        <div class="col-lg-1 col-md-1 col-6 text-end">
-                            <div class="service-arrow-btn"><i class="ri-arrow-right-line"></i></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 10 -->
-                <div class="service-row-item">
-                    <div class="row align-items-center">
-                        <div class="col-lg-1 col-md-2 col-12 service-idx">10</div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <h3 class="service-name">Media Buying</h3>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <p class="service-summary">Algorithmic inventory procurement maximizing working capital across programmatic exchanges.</p>
-                        </div>
-                        <div class="col-lg-2 col-md-1 col-6 text-lg-center">
-                            <span class="service-metric-badge">Bulk Yield</span>
-                        </div>
-                        <div class="col-lg-1 col-md-1 col-6 text-end">
-                            <div class="service-arrow-btn"><i class="ri-arrow-right-line"></i></div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 6. FEATURED SERVICE (VISUAL FLOW) -->
-    <section class="section-padding bg-subtle-pattern">
-        <div class="container-fluid max-width-container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-5">
-                    <div class="eyebrow mb-2">INTEGRATED ARCHITECTURE</div>
-                    <h2 class="section-title mb-4">Performance Marketing</h2>
-                    <p class="section-desc mb-4">Connect strategy, media, creative, and data into one continuous growth engine that optimizes every single touchpoint in the funnel.</p>
-                    <ul class="feature-checklist list-unstyled">
-                        <li><i class="ri-check-line"></i> Autonomous Budget Allocation</li>
-                        <li><i class="ri-check-line"></i> Cross-Platform Attribution</li>
-                        <li><i class="ri-check-line"></i> Creative Fatigue Diagnostics</li>
-                    </ul>
+        <!-- Process -->
+        <section class="process-section section-padding" id="process">
+            <div class="container">
+
+                <div class="section-heading-centered reveal-up">
+                    <span class="section-label">How it works</span>
+
+                    <h2>
+                        Your project.
+                        <span>Simplified.</span>
+                    </h2>
+
+                    <p>
+                        A straightforward path from your first idea to the next
+                        step in your home improvement project.
+                    </p>
                 </div>
-                <div class="col-lg-7">
-                    <div class="flow-engine-container">
-                        <div class="flow-step-node" id="node1">
+
+                <div class="process-line"></div>
+
+                <div class="process-grid">
+
+                    <div class="process-item reveal-up">
+                        <div class="process-number">01</div>
+
+                        <div class="process-icon">
+                            <i class="ri-chat-3-line"></i>
+                        </div>
+
+                        <h3>Tell us about your project</h3>
+
+                        <p>
+                            Share a few details about your home improvement needs.
+                        </p>
+                    </div>
+
+                    <div class="process-item reveal-up">
+                        <div class="process-number">02</div>
+
+                        <div class="process-icon">
                             <i class="ri-user-search-line"></i>
-                            <span>AUDIENCE</span>
                         </div>
-                        <div class="flow-connector"><div class="connector-pulse"></div></div>
-                        <div class="flow-step-node" id="node2">
-                            <i class="ri-compass-3-line"></i>
-                            <span>STRATEGY</span>
+
+                        <h3>Get matched with professionals</h3>
+
+                        <p>
+                            Find professionals who can help with your project.
+                        </p>
+                    </div>
+
+                    <div class="process-item reveal-up">
+                        <div class="process-number">03</div>
+
+                        <div class="process-icon">
+                            <i class="ri-file-list-3-line"></i>
                         </div>
-                        <div class="flow-connector"><div class="connector-pulse"></div></div>
-                        <div class="flow-step-node" id="node3">
-                            <i class="ri-advertisement-line"></i>
-                            <span>MEDIA</span>
+
+                        <h3>Compare your options</h3>
+
+                        <p>
+                            Review your options and decide what works best for you.
+                        </p>
+                    </div>
+
+                    <div class="process-item reveal-up">
+                        <div class="process-number">04</div>
+
+                        <div class="process-icon">
+                            <i class="ri-hammer-line"></i>
                         </div>
-                        <div class="flow-connector"><div class="connector-pulse"></div></div>
-                        <div class="flow-step-node" id="node4">
-                            <i class="ri-cpu-line"></i>
-                            <span>OPTIMIZATION</span>
+
+                        <h3>Start your project</h3>
+
+                        <p>
+                            Move forward with greater clarity and confidence.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-panel">
+
+                    <div class="stats-intro reveal-up">
+                        <span class="section-label section-label-light">
+                            Built around homeowners
+                        </span>
+
+                        <h2>
+                            Better decisions
+                            <span>start here.</span>
+                        </h2>
+
+                        <p>
+                            From the first question to the final decision,
+                            HomeFix helps make the process easier to navigate.
+                        </p>
+                    </div>
+
+                    <div class="stats-list">
+
+                        <div class="stat-item reveal-up">
+                            <span class="stat-value">
+                                <span data-counter="8">0</span>
+                            </span>
+
+                            <span class="stat-label">Core service categories</span>
                         </div>
-                        <div class="flow-connector"><div class="connector-pulse"></div></div>
-                        <div class="flow-step-node" id="node5">
-                            <i class="ri-swap-box-line"></i>
-                            <span>CONVERSION</span>
+
+                        <div class="stat-item reveal-up">
+                            <span class="stat-value">
+                                <span data-counter="4">0</span>
+                            </span>
+
+                            <span class="stat-label">Simple project steps</span>
                         </div>
-                        <div class="flow-connector"><div class="connector-pulse"></div></div>
-                        <div class="flow-step-node highlight" id="node6">
-                            <i class="ri-line-chart-line"></i>
-                            <span>GROWTH</span>
+
+                        <div class="stat-item reveal-up">
+                            <span class="stat-value">
+                                <span data-counter="1">0</span>
+                            </span>
+
+                            <span class="stat-label">Clear place to begin</span>
                         </div>
+
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 7 & 8. DEEP-DIVE DETAILS (EDITORIAL SPLITS) -->
-    <section class="section-padding border-top border-subtle">
-        <div class="container-fluid max-width-container">
-            <!-- Part 1: Performance Marketing -->
-            <div class="row g-5 align-items-center mb-100">
-                <div class="col-lg-5">
-                    <h3 class="editorial-heading mb-4">Built to optimize every stage of the customer journey.</h3>
-                    <p class="section-desc">We eliminate guessing. Campaigns are broken down into precision datasets to ensure total visibility across all paid touchpoints.</p>
+        <!-- Project showcase -->
+        <section class="showcase-section section-padding">
+            <div class="container">
+
+                <div class="section-heading-row reveal-up">
+                    <div>
+                        <span class="section-label">Project inspiration</span>
+
+                        <h2>
+                            Spaces worth
+                            <span>coming home to.</span>
+                        </h2>
+                    </div>
+
+                    <div class="section-heading-side">
+                        <p>
+                            Explore the possibilities and start imagining what
+                            your next project could become.
+                        </p>
+                    </div>
                 </div>
-                <div class="col-lg-7">
-                    <div class="editorial-grid">
-                        <div class="grid-card">
-                            <div class="card-icon"><i class="ri-funds-line"></i></div>
-                            <h4>Paid Acquisition</h4>
-                            <p>High-efficiency ad spend execution across Search, Social, and Display.</p>
+
+                <div class="showcase-grid">
+
+                    <div class="showcase-item showcase-tall reveal-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85"
+                            alt="Elegant renovated living room"
+                        >
+
+                        <div class="showcase-caption">
+                            <span>01</span>
+                            <strong>Interior renovation</strong>
                         </div>
-                        <div class="grid-card">
-                            <div class="card-icon"><i class="ri-pie-chart-2-line"></i></div>
-                            <h4>Conversion Optimization</h4>
-                            <p>Iterative UX and copy heuristics designed to lower conversion friction.</p>
+                    </div>
+
+                    <div class="showcase-item showcase-wide reveal-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85"
+                            alt="Bright kitchen and dining area"
+                        >
+
+                        <div class="showcase-caption">
+                            <span>02</span>
+                            <strong>Kitchen & windows</strong>
                         </div>
-                        <div class="grid-card">
-                            <div class="card-icon"><i class="ri-focus-2-line"></i></div>
-                            <h4>Audience Targeting</h4>
-                            <p>1st and 3rd party deterministic behavioral cohort generation.</p>
+                    </div>
+
+                    <div class="showcase-item showcase-small reveal-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=900&q=85"
+                            alt="Modern bathroom renovation"
+                        >
+
+                        <div class="showcase-caption">
+                            <span>03</span>
+                            <strong>Bathroom renovation</strong>
                         </div>
-                        <div class="grid-card">
-                            <div class="card-icon"><i class="ri-bubble-chart-line"></i></div>
-                            <h4>Performance Analytics</h4>
-                            <p>Enterprise attribution pipelines revealing precise incrementality metrics.</p>
+                    </div>
+
+                    <div class="showcase-item showcase-small reveal-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=900&q=85"
+                            alt="Solar panels on a modern house"
+                        >
+
+                        <div class="showcase-caption">
+                            <span>04</span>
+                            <strong>Smarter energy</strong>
                         </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section section-padding">
+            <div class="container">
+                <div class="cta-panel reveal-up">
+
+                    <div class="cta-decoration"></div>
+
+                    <div class="cta-content">
+                        <span class="section-label section-label-light">
+                            Your next project starts here
+                        </span>
+
+                        <h2>
+                            Ready to start your
+                            <span>next home project?</span>
+                        </h2>
+
+                        <p>
+                            Tell us what you need and we’ll help connect you with
+                            professionals who can get the job done.
+                        </p>
+
+                        <a href="quote.html" class="btn btn-light btn-large">
+                            Get Your Free Quote
+                            <i class="ri-arrow-right-up-line"></i>
+                        </a>
+                    </div>
+
+                    <div class="cta-mark">
+                        <i class="ri-home-heart-line"></i>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Part 2: Affiliate Marketing -->
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-7 order-lg-1 order-2">
-                    <div class="partnership-flow-card">
-                        <div class="d-flex justify-content-between text-center align-items-center flex-wrap g-2">
-                            <div class="partner-box">BRAND</div>
-                            <i class="ri-arrow-right-line flow-arrow"></i>
-                            <div class="partner-box">PARTNERS</div>
-                            <i class="ri-arrow-right-line flow-arrow"></i>
-                            <div class="partner-box">AUDIENCE</div>
-                            <i class="ri-arrow-right-line flow-arrow"></i>
-                            <div class="partner-box highlight">REVENUE</div>
+        <!-- FAQ -->
+        <section class="faq-section section-padding">
+            <div class="container">
+                <div class="row g-5">
+
+                    <div class="col-lg-4">
+                        <div class="faq-intro reveal-up">
+                            <span class="section-label">Questions, answered</span>
+
+                            <h2>
+                                Everything you
+                                <span>need to know.</span>
+                            </h2>
+
+                            <p>
+                                Still have questions? Our simple process is designed
+                                to help you move forward with confidence.
+                            </p>
+
+                            <a href="contact.html" class="arrow-link">
+                                Talk to our team
+                                <i class="ri-arrow-right-up-line"></i>
+                            </a>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-5 order-lg-2 order-1">
-                    <div class="eyebrow mb-2">PARTNERSHIP SCALE</div>
-                    <h3 class="editorial-heading mb-3">Turn partnerships into performance.</h3>
-                    <p class="section-desc">Deploy managed affiliate networks powered by strict compliance, commission optimization, and programmatic fraud prevention engines.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 9. PROGRAMMATIC ADVERTISING -->
-    <section class="section-padding bg-subtle-pattern border-top border-subtle">
-        <div class="container-fluid max-width-container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-5">
-                    <div class="eyebrow mb-2">RTB ECOSYSTEM</div>
-                    <h2 class="section-title mb-4">Buy smarter.<br>Reach better.</h2>
-                    <p class="section-desc mb-4">Access premium programmatic exchanges with automated bid pacing and cross-device targeting capabilities.</p>
-                    <div class="d-flex flex-wrap gap-2">
-                        <span class="tag-pill">Display</span>
-                        <span class="tag-pill">Video</span>
-                        <span class="tag-pill">Native</span>
-                        <span class="tag-pill">Connected TV</span>
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="programmatic-dashboard">
-                        <div class="row g-3">
-                            <div class="col-6">
-                                <div class="prog-metric-card">
-                                    <span class="label">IMPRESSIONS</span>
-                                    <span class="value font-mono">1.24B</span>
-                                    <span class="trend"><i class="ri-arrow-up-line"></i> +18.4%</span>
+                    <div class="col-lg-8">
+                        <div class="faq-list reveal-up">
+
+                            <div class="faq-item active">
+                                <button class="faq-question" type="button">
+                                    <span>How does HomeFix work?</span>
+                                    <i class="ri-add-line"></i>
+                                </button>
+
+                                <div class="faq-answer">
+                                    <p>
+                                        Tell us about your project, provide a few
+                                        details about your property, and we’ll help
+                                        connect you with professionals who may be
+                                        able to assist.
+                                    </p>
                                 </div>
                             </div>
-                            <div class="col-6">
-                                <div class="prog-metric-card">
-                                    <span class="label">AVG. CPM</span>
-                                    <span class="value font-mono">$1.12</span>
-                                    <span class="trend negative"><i class="ri-arrow-down-line"></i> -14.2%</span>
+
+                            <div class="faq-item">
+                                <button class="faq-question" type="button">
+                                    <span>Are professionals verified?</span>
+                                    <i class="ri-add-line"></i>
+                                </button>
+
+                                <div class="faq-answer">
+                                    <p>
+                                        HomeFix is designed to help homeowners discover
+                                        service providers and make more informed choices.
+                                        Always review credentials, availability, and
+                                        project details before hiring.
+                                    </p>
                                 </div>
                             </div>
-                            <div class="col-6">
-                                <div class="prog-metric-card">
-                                    <span class="label">ACTIVE DSPs</span>
-                                    <span class="value font-mono">14 Connected</span>
-                                    <span class="trend">Live RTB</span>
+
+                            <div class="faq-item">
+                                <button class="faq-question" type="button">
+                                    <span>How much does a quote cost?</span>
+                                    <i class="ri-add-line"></i>
+                                </button>
+
+                                <div class="faq-answer">
+                                    <p>
+                                        Requesting information through HomeFix is free
+                                        and does not obligate you to hire a professional.
+                                    </p>
                                 </div>
                             </div>
-                            <div class="col-6">
-                                <div class="prog-metric-card">
-                                    <span class="label">ATTRIBUTION</span>
-                                    <span class="value font-mono">99.8%</span>
-                                    <span class="trend">Verified</span>
+
+                            <div class="faq-item">
+                                <button class="faq-question" type="button">
+                                    <span>Do I have to hire a professional?</span>
+                                    <i class="ri-add-line"></i>
+                                </button>
+
+                                <div class="faq-answer">
+                                    <p>
+                                        No. You remain in control of your project and
+                                        can decide whether a professional is the right
+                                        fit for your needs.
+                                    </p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 10. MOBILE & APP GROWTH -->
-    <section class="section-padding border-top border-subtle">
-        <div class="container-fluid max-width-container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6">
-                    <div class="eyebrow mb-2">MOBILE ECOSYSTEM</div>
-                    <h2 class="section-title mb-4">Grow mobile experiences from install to loyalty.</h2>
-                    <p class="section-desc mb-4">Scale app installations, post-install actions, and user retention cycles using predictive algorithmic cohorts.</p>
-                    <div class="row g-3">
-                        <div class="col-sm-6">
-                            <div class="mobile-feature-box">
-                                <i class="ri-install-line"></i>
-                                <h5>App Install (CPI)</h5>
-                                <p class="small text-muted-custom">Volume-driven high-intent downloads.</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="mobile-feature-box">
-                                <i class="ri-refresh-line"></i>
-                                <h5>Re-engagement</h5>
-                                <p class="small text-muted-custom">Reactivating dormant cohort value.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <div class="mobile-ui-mockup">
-                        <div class="mockup-screen">
-                            <div class="mockup-header">
-                                <div class="camera-pill"></div>
-                            </div>
-                            <div class="mockup-body">
-                                <div class="mockup-app-icon"><i class="ri-apps-2-line"></i></div>
-                                <div class="mockup-title">Acquisition Live</div>
-                                <div class="mockup-metric font-mono">142.8k <span class="sub">Installs</span></div>
-                                <div class="mockup-bar"><div class="fill" style="width: 78%;"></div></div>
-                                <div class="mockup-tags">
-                                    <span>ROAS: 5.2x</span>
-                                    <span>Retention: 42%</span>
+                            <div class="faq-item">
+                                <button class="faq-question" type="button">
+                                    <span>Which areas do you serve?</span>
+                                    <i class="ri-add-line"></i>
+                                </button>
+
+                                <div class="faq-answer">
+                                    <p>
+                                        HomeFix is built for homeowners throughout the
+                                        United States. Availability may vary depending
+                                        on your location and project category.
+                                    </p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 11. USER ACQUISITION FUNNEL -->
-    <section class="section-padding bg-subtle-pattern border-top border-subtle">
-        <div class="container-fluid max-width-container">
-            <div class="text-center max-width-700 mx-auto mb-5">
-                <div class="eyebrow mb-2">PRECISION CONVERSION</div>
-                <h2 class="section-title">The Continuous Funnel</h2>
-            </div>
-            
-            <div class="funnel-container mx-auto">
-                <div class="funnel-stage" data-stage="1">
-                    <div class="funnel-bar"><span class="title">AWARENESS</span><span class="drop-rate font-mono">100% Volume</span></div>
-                </div>
-                <div class="funnel-stage" data-stage="2">
-                    <div class="funnel-bar"><span class="title">INTEREST</span><span class="drop-rate font-mono">68% Intent</span></div>
-                </div>
-                <div class="funnel-stage" data-stage="3">
-                    <div class="funnel-bar"><span class="title">INSTALL / LEAD</span><span class="drop-rate font-mono">42% Qualified</span></div>
-                </div>
-                <div class="funnel-stage" data-stage="4">
-                    <div class="funnel-bar"><span class="title">ACTIVATION</span><span class="drop-rate font-mono">29% Active</span></div>
-                </div>
-                <div class="funnel-stage" data-stage="5">
-                    <div class="funnel-bar"><span class="title">RETENTION</span><span class="drop-rate font-mono">19% LTV Cohort</span></div>
-                </div>
-                <div class="funnel-stage highlight" data-stage="6">
-                    <div class="funnel-bar"><span class="title">REVENUE</span><span class="drop-rate font-mono">Max Yield</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
+                            <div class="faq-item">
+                                <button class="faq-question" type="button">
+                                    <span>How quickly will I receive responses?</span>
+                                    <i class="ri-add-line"></i>
+                                </button>
 
-    <!-- 12. AI-POWERED OPTIMIZATION ENGINE -->
-    <section class="section-padding border-top border-subtle position-relative overflow-hidden">
-        <div class="ai-glow-orb"></div>
-        <div class="container-fluid max-width-container position-relative z-index-2">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <div class="eyebrow mb-2">INTELLIGENCE ENGINE</div>
-                    <h2 class="section-title mb-4">Marketing that gets smarter with every signal.</h2>
-                    <p class="section-desc mb-4">Use autonomous machine learning, high-velocity bid adjustments, and real-time creative fatigue detection to safeguard ROAS at enterprise scale.</p>
-                    <div class="row g-2">
-                        <div class="col-6"><div class="ai-badge"><i class="ri-cpu-line"></i> Dynamic Bidding</div></div>
-                        <div class="col-6"><div class="ai-badge"><i class="ri-magic-line"></i> Predictive LTV</div></div>
-                        <div class="col-6"><div class="ai-badge"><i class="ri-shield-check-line"></i> Fraud Shield</div></div>
-                        <div class="col-6"><div class="ai-badge"><i class="ri-bar-chart-grouped-line"></i> Incrementality</div></div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="ai-interactive-matrix">
-                        <div class="matrix-node central"><i class="ri-brain-line"></i><span>HAVMOR AI</span></div>
-                        <div class="matrix-node child c1">Data Streams</div>
-                        <div class="matrix-node child c2">Creative Variant</div>
-                        <div class="matrix-node child c3">Audience Cohort</div>
-                        <div class="matrix-node child c4">Conversion Event</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 13. PERFORMANCE DASHBOARD METRICS -->
-    <section class="section-padding bg-subtle-pattern border-top border-subtle">
-        <div class="container-fluid max-width-container">
-            <div class="row g-4 text-center">
-                <div class="col-lg-2 col-md-4 col-6">
-                    <div class="stat-card">
-                        <div class="stat-val font-mono text-gradient" data-target="4.8" data-decimal="1">0</div>
-                        <div class="stat-suffix">x</div>
-                        <div class="stat-label">AVERAGE ROAS</div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-6">
-                    <div class="stat-card">
-                        <div class="stat-val font-mono" data-target="31">0</div>
-                        <div class="stat-suffix">-%</div>
-                        <div class="stat-label">ACQUISITION CPA</div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-6">
-                    <div class="stat-card">
-                        <div class="stat-val font-mono" data-target="42">0</div>
-                        <div class="stat-suffix">+%</div>
-                        <div class="stat-label">CLICK-THROUGH RATE</div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-6">
-                    <div class="stat-card">
-                        <div class="stat-val font-mono" data-target="68">0</div>
-                        <div class="stat-suffix">+%</div>
-                        <div class="stat-label">CONVERSION VOLUME</div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-                    <div class="stat-card">
-                        <div class="stat-val font-mono" data-target="52">0</div>
-                        <div class="stat-suffix">+%</div>
-                        <div class="stat-label">REVENUE EXPANSION</div>
-                    </div>
-                </div>
-            </div>
-            <p class="text-center text-muted-custom small mt-4 mb-0">* Aggregated performance benchmark metrics across active Havmor Media ad pipelines.</p>
-        </div>
-    </section>
-
-    <!-- 14. HOW IT WORKS (TIMELINE) -->
-    <section class="section-padding border-top border-subtle">
-        <div class="container-fluid max-width-container">
-            <div class="text-center max-width-700 mx-auto mb-5">
-                <div class="eyebrow mb-2">SYSTEMATIC EXECUTION</div>
-                <h2 class="section-title">From strategy to scale.</h2>
-            </div>
-
-            <div class="timeline-wrapper">
-                <div class="timeline-step">
-                    <div class="timeline-step-num">01</div>
-                    <h4>DISCOVER</h4>
-                    <p>Deep-dive analysis into audience behavior, baseline analytics, and unit economics.</p>
-                </div>
-                <div class="timeline-step">
-                    <div class="timeline-step-num">02</div>
-                    <h4>STRATEGIZE</h4>
-                    <p>Engineered channel selection, media modeling, and dynamic creative mapping.</p>
-                </div>
-                <div class="timeline-step">
-                    <div class="timeline-step-num">03</div>
-                    <h4>ACTIVATE</h4>
-                    <p>Rapid deployment across programmatic, direct, and affiliate ecosystems.</p>
-                </div>
-                <div class="timeline-step">
-                    <div class="timeline-step-num">04</div>
-                    <h4>OPTIMIZE</h4>
-                    <p>Algorithmic measurement, attribution pruning, and high-velocity scaling.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 15. WHY HAVMOR MEDIA -->
-    <section class="section-padding bg-subtle-pattern border-top border-subtle">
-        <div class="container-fluid max-width-container">
-            <div class="row g-5">
-                <div class="col-lg-4">
-                    <div class="eyebrow mb-2">WHY CHOOSE US</div>
-                    <h2 class="section-title mb-4">Built for outcomes, not impressions.</h2>
-                    <p class="section-desc">We align our operating principles with bottom-line enterprise results, ensuring absolute capital efficiency.</p>
-                </div>
-                <div class="col-lg-8">
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <div class="why-card">
-                                <i class="ri-database-2-line"></i>
-                                <h4>Data-Driven Decisions</h4>
-                                <p class="text-muted-custom">Every dollar allocated is governed by verified historical conversion models.</p>
+                                <div class="faq-answer">
+                                    <p>
+                                        Response times depend on your project and local
+                                        availability. Providing complete information
+                                        helps professionals understand your request.
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="why-card">
-                                <i class="ri-cpu-line"></i>
-                                <h4>AI-Powered Optimization</h4>
-                                <p class="text-muted-custom">Real-time heuristics detect creative decay and bidding arbitrage opportunities.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="why-card">
-                                <i class="ri-eye-line"></i>
-                                <h4>Transparent Reporting</h4>
-                                <p class="text-muted-custom">Clear, unredacted dashboard access with true attribution incrementality metrics.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="why-card">
-                                <i class="ri-scales-3-line"></i>
-                                <h4>Full-Funnel Alignment</h4>
-                                <p class="text-muted-custom">Bridging top-of-funnel reach with high-yielding lifetime customer value.</p>
-                            </div>
+
                         </div>
                     </div>
+
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 16. FINAL CTA -->
-    <section class="cta-section section-padding position-relative overflow-hidden" id="cta">
-        <div class="cta-bg-glow"></div>
-        <div class="container-fluid max-width-container text-center position-relative z-index-2">
-            <div class="eyebrow text-white-50 mb-3">READY TO GROW?</div>
-            <h2 class="cta-title text-white mb-4">Let's turn your marketing into measurable growth.</h2>
-            <p class="cta-desc text-white-50 mx-auto mb-5">Tell us what you're trying to achieve. We'll show you what's possible.</p>
-            <div class="d-flex justify-content-center flex-wrap gap-3">
-                <a href="#" class="btn btn-light-custom">Book Free Consultation <i class="ri-arrow-right-line ms-1"></i></a>
-                <a href="#" class="btn btn-outline-light-custom">View Case Studies <i class="ri-arrow-right-line ms-1"></i></a>
-            </div>
-        </div>
-    </section>
+    </main>
 
-    <!-- 17. FOOTER -->
-    <footer class="footer-section">
-        <div class="container-fluid max-width-container">
-            <div class="row g-5 mb-5">
-                <div class="col-lg-4">
-                    <a class="footer-logo brand-logo mb-3 d-inline-block" href="#">Havmor<span>Media</span></a>
-                    <p class="text-white-50 small mb-4">AI-powered performance marketing and digital growth solutions built for measurable outcomes.</p>
-                    <div class="footer-socials d-flex gap-2">
-                        <a href="#" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="ri-twitter-x-line"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="ri-facebook-circle-fill"></i></a>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+
+            <div class="footer-main">
+
+                <div class="footer-brand-col">
+                    <a href="index.html" class="brand-logo footer-logo">
+                        <span class="brand-symbol">
+                            <i class="ri-home-5-line"></i>
+                        </span>
+
+                        <span class="brand-text">
+                            Home<span>Fix</span>
+                        </span>
+                    </a>
+
+                    <p>
+                        A simpler way to find trusted professionals for your
+                        next home improvement project.
+                    </p>
+
+                    <a href="quote.html" class="btn btn-light footer-cta">
+                        Get a Free Quote
+                        <i class="ri-arrow-right-up-line"></i>
+                    </a>
+                </div>
+
+                <div class="footer-links-col">
+                    <h3>Services</h3>
+
+                    <a href="services/roofing.html">Roofing</a>
+                    <a href="services/windows-doors.html">Windows & Doors</a>
+                    <a href="services/hvac.html">HVAC</a>
+                    <a href="services/kitchen-remodeling.html">Kitchen</a>
+                    <a href="services/bathroom-remodeling.html">Bathroom</a>
+                    <a href="services/solar.html">Solar</a>
+                    <a href="services/flooring.html">Flooring</a>
+                    <a href="services/home-exterior.html">Home Exterior</a>
+                </div>
+
+                <div class="footer-links-col">
+                    <h3>Company</h3>
+
+                    <a href="about.html">About</a>
+                    <a href="#process">How It Works</a>
+                    <a href="becomepartner.html">Become a Partner</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+
+                <div class="footer-links-col">
+                    <h3>Legal</h3>
+
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Facebook">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+
+                        <a href="#" aria-label="Instagram">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+
+                        <a href="#" aria-label="LinkedIn">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-3 col-6">
-                    <h5 class="footer-heading">Company</h5>
-                    <ul class="footer-links list-unstyled">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Press</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-3 col-6">
-                    <h5 class="footer-heading">Services</h5>
-                    <ul class="footer-links list-unstyled">
-                        <li><a href="#">Performance Marketing</a></li>
-                        <li><a href="#">Affiliate Marketing</a></li>
-                        <li><a href="#">Programmatic Ads</a></li>
-                        <li><a href="#">Mobile Growth</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-3 col-6">
-                    <h5 class="footer-heading">Solutions</h5>
-                    <ul class="footer-links list-unstyled">
-                        <li><a href="#">User Acquisition</a></li>
-                        <li><a href="#">Lead Generation</a></li>
-                        <li><a href="#">Media Buying</a></li>
-                        <li><a href="#">Monetization</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-3 col-6">
-                    <h5 class="footer-heading">Products</h5>
-                    <ul class="footer-links list-unstyled">
-                        <li><a href="#">Adstatix</a></li>
-                        <li><a href="#">Home Improvement</a></li>
-                        <li><a href="#">DSP Comparison</a></li>
-                    </ul>
-                </div>
+
             </div>
-            <div class="footer-bottom border-top border-dark-subtle pt-4 text-center text-white-50 small">
-                <p>&copy; 2026 Havmor Media. All rights reserved.</p>
+
+            <div class="footer-bottom">
+                <span>© 2026 HomeFix. All Rights Reserved.</span>
+
+                <span>
+                    Made for better homes
+                    <i class="ri-heart-3-fill"></i>
+                </span>
             </div>
+
         </div>
     </footer>
 
-    <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- GSAP & ScrollTrigger CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
-    <!-- Custom JS -->
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        "use strict";
 
-    // ==========================================
-    // 1. NAVBAR SCROLL EFFECT
-    // ==========================================
-    const navbar = document.getElementById('mainNavbar');
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 40) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
+/* =========================================================
+   HOMEFIX GLOBAL JAVASCRIPT
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+    initPageLoader();
+    initHeader();
+    initMobileMenu();
+    initSmoothScroll();
+    initFaqAccordion();
+    initScrollReveal();
+    initCounters();
+    initGsapAnimations();
+});
+
+/* =========================================================
+   PAGE LOADER
+========================================================= */
+
+function initPageLoader() {
+    const loader = document.querySelector(".page-loader");
+
+    if (!loader) {
+        return;
+    }
+
+    window.addEventListener("load", function () {
+        window.setTimeout(function () {
+            loader.classList.add("loaded");
+        }, 350);
     });
+}
 
-    // ==========================================
-    // 2. HERO PARTICLES GENERATOR
-    // ==========================================
-    const particlesContainer = document.getElementById('heroParticles');
-    const particleCount = 28;
+/* =========================================================
+   STICKY HEADER
+========================================================= */
 
-    if (particlesContainer) {
-        for (let i = 0; i < particleCount; i++) {
-            const particle = document.createElement('div');
-            particle.classList.add('particle');
-            
-            const size = Math.random() * 3 + 2; // 2px to 5px
-            const leftPos = Math.random() * 100; // 0% to 100%
-            const duration = Math.random() * 12 + 8; // 8s to 20s
-            const delay = Math.random() * 8; // 0s to 8s
-            
-            particle.style.width = `${size}px`;
-            particle.style.height = `${size}px`;
-            particle.style.left = `${leftPos}%`;
-            particle.style.animationDuration = `${duration}s`;
-            particle.style.animationDelay = `${delay}s`;
-            
-            particlesContainer.appendChild(particle);
+function initHeader() {
+    const header = document.querySelector(".site-header");
+
+    if (!header) {
+        return;
+    }
+
+    function updateHeader() {
+        if (window.scrollY > 30) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
         }
     }
 
-    // ==========================================
-    // 3. GSAP & SCROLLTRIGGER INITIALIZATION
-    // ==========================================
+    updateHeader();
+
+    window.addEventListener("scroll", updateHeader, {
+        passive: true
+    });
+}
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+function initMobileMenu() {
+    const menuToggle = document.querySelector("#menuToggle");
+    const mobileMenu = document.querySelector("#mobileMenu");
+    const mobileLinks = document.querySelectorAll(".mobile-nav-link");
+
+    if (!menuToggle || !mobileMenu) {
+        return;
+    }
+
+    function closeMenu() {
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+        menuToggle.innerHTML = '<i class="ri-menu-4-line"></i>';
+
+        mobileMenu.classList.remove("open");
+        document.body.classList.remove("menu-open");
+    }
+
+    function openMenu() {
+        menuToggle.setAttribute("aria-expanded", "true");
+        menuToggle.setAttribute("aria-label", "Close navigation menu");
+        menuToggle.innerHTML = '<i class="ri-close-line"></i>';
+
+        mobileMenu.classList.add("open");
+        document.body.classList.add("menu-open");
+    }
+
+    menuToggle.addEventListener("click", function () {
+        const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+
+        if (isOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+
+    mobileLinks.forEach(function (link) {
+        link.addEventListener("click", closeMenu);
+    });
+
+    window.addEventListener("resize", function () {
+        if (window.innerWidth > 991) {
+            closeMenu();
+        }
+    });
+}
+
+/* =========================================================
+   SMOOTH INTERNAL SCROLL
+========================================================= */
+
+function initSmoothScroll() {
+    const internalLinks = document.querySelectorAll('a[href^="#"]');
+
+    internalLinks.forEach(function (link) {
+        link.addEventListener("click", function (event) {
+            const targetId = link.getAttribute("href");
+
+            if (!targetId || targetId === "#") {
+                return;
+            }
+
+            const target = document.querySelector(targetId);
+
+            if (!target) {
+                return;
+            }
+
+            event.preventDefault();
+
+            const header = document.querySelector(".site-header");
+            const headerHeight = header ? header.offsetHeight : 0;
+            const targetPosition =
+                target.getBoundingClientRect().top +
+                window.scrollY -
+                headerHeight -
+                20;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth"
+            });
+        });
+    });
+}
+
+/* =========================================================
+   FAQ ACCORDION
+========================================================= */
+
+function initFaqAccordion() {
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    if (!faqItems.length) {
+        return;
+    }
+
+    faqItems.forEach(function (item) {
+        const question = item.querySelector(".faq-question");
+
+        if (!question) {
+            return;
+        }
+
+        question.addEventListener("click", function () {
+            const wasActive = item.classList.contains("active");
+
+            faqItems.forEach(function (faqItem) {
+                faqItem.classList.remove("active");
+            });
+
+            if (!wasActive) {
+                item.classList.add("active");
+            }
+        });
+    });
+}
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+function initScrollReveal() {
+    const revealElements = document.querySelectorAll(
+        ".reveal-up, .reveal-image"
+    );
+
+    if (!revealElements.length) {
+        return;
+    }
+
+    if (!("IntersectionObserver" in window)) {
+        revealElements.forEach(function (element) {
+            element.classList.add("is-visible");
+        });
+
+        return;
+    }
+
+    const revealObserver = new IntersectionObserver(
+        function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+            });
+        },
+        {
+            threshold: 0.12,
+            rootMargin: "0px 0px -50px 0px"
+        }
+    );
+
+    revealElements.forEach(function (element) {
+        revealObserver.observe(element);
+    });
+}
+
+/* =========================================================
+   NUMBER COUNTERS
+========================================================= */
+
+function initCounters() {
+    const counters = document.querySelectorAll("[data-counter]");
+
+    if (!counters.length) {
+        return;
+    }
+
+    if (!("IntersectionObserver" in window)) {
+        counters.forEach(function (counter) {
+            counter.textContent = counter.dataset.counter;
+        });
+
+        return;
+    }
+
+    const counterObserver = new IntersectionObserver(
+        function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+            });
+        },
+        {
+            threshold: 0.7
+        }
+    );
+
+    counters.forEach(function (counter) {
+        counterObserver.observe(counter);
+    });
+}
+
+function animateCounter(counter) {
+    const target = Number(counter.dataset.counter);
+
+    if (Number.isNaN(target)) {
+        return;
+    }
+
+    const duration = 1000;
+    const startTime = performance.now();
+
+    function updateCounter(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easedProgress = 1 - Math.pow(1 - progress, 3);
+
+        counter.textContent = Math.floor(target * easedProgress);
+
+        if (progress < 1) {
+            window.requestAnimationFrame(updateCounter);
+        } else {
+            counter.textContent = target;
+        }
+    }
+
+    window.requestAnimationFrame(updateCounter);
+}
+
+/* =========================================================
+   GSAP ANIMATIONS
+========================================================= */
+
+function initGsapAnimations() {
+    if (
+        typeof gsap === "undefined" ||
+        typeof ScrollTrigger === "undefined"
+    ) {
+        return;
+    }
+
     gsap.registerPlugin(ScrollTrigger);
 
-    // Hero Entry Animation
-    const heroTl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 1 } });
-    
-    heroTl.from('.hero-content .eyebrow', { opacity: 0, y: 20, delay: 0.2 })
-          .from('.hero-title', { opacity: 0, y: 30 }, '-=0.8')
-          .from('.hero-desc', { opacity: 0, y: 20 }, '-=0.8')
-          .from('.hero-cta-group', { opacity: 0, y: 20 }, '-=0.8')
-          .from('#heroDashboard', { opacity: 0, scale: 0.95, y: 30 }, '-=0.8');
+    const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
 
-    // Section Titles Fade-Up
-    gsap.utils.toArray('.section-title').forEach(title => {
-        gsap.from(title, {
-            scrollTrigger: {
-                trigger: title,
-                start: 'top 85%',
-                toggleActions: 'play none none none'
-            },
-            opacity: 0,
-            y: 30,
-            duration: 0.8,
-            ease: 'power3.out'
-        });
-    });
+    if (reduceMotion) {
+        return;
+    }
 
-    // Principles Stagger
-    gsap.from('.principle-col', {
-        scrollTrigger: {
-            trigger: '.principles-wrap',
-            start: 'top 80%',
-        },
-        opacity: 0,
-        y: 40,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'power3.out'
-    });
+    const heroContent = document.querySelector(".hero-content");
+    const heroVisual = document.querySelector(".hero-visual");
 
-    // Core Services Stagger Reveal
-    gsap.from('.service-row-item', {
-        scrollTrigger: {
-            trigger: '.services-list-container',
-            start: 'top 80%',
-        },
-        opacity: 0,
-        y: 20,
-        duration: 0.6,
-        stagger: 0.08,
-        ease: 'power2.out'
-    });
-
-    // Flow Step Nodes Sequence
-    gsap.from('.flow-step-node', {
-        scrollTrigger: {
-            trigger: '.flow-engine-container',
-            start: 'top 75%',
-        },
-        opacity: 0,
-        x: -20,
-        duration: 0.6,
-        stagger: 0.15,
-        ease: 'power3.out'
-    });
-
-    // Funnel Bars Width Expansion
-    gsap.utils.toArray('.funnel-stage').forEach((stage, idx) => {
-        gsap.from(stage.querySelector('.funnel-bar'), {
-            scrollTrigger: {
-                trigger: '.funnel-container',
-                start: 'top 80%',
-            },
-            scaleX: 0.8,
-            opacity: 0,
-            duration: 0.7,
-            delay: idx * 0.1,
-            ease: 'power3.out'
-        });
-    });
-
-    // AI Interactive Matrix Orbit Nodes
-    gsap.to('.matrix-node.child', {
-        y: 'random(-6, 6)',
-        x: 'random(-6, 6)',
-        repeat: -1,
-        yoyo: true,
-        duration: 2.5,
-        ease: 'sine.inOut',
-        stagger: 0.3
-    });
-
-    // Timeline Steps Reveal
-    gsap.from('.timeline-step', {
-        scrollTrigger: {
-            trigger: '.timeline-wrapper',
-            start: 'top 80%',
-        },
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'power3.out'
-    });
-
-    // ==========================================
-    // 4. ANIMATED PERFORMANCE NUMBERS (COUNTER)
-    // ==========================================
-    const statCards = document.querySelectorAll('.stat-val');
-
-    statCards.forEach(stat => {
-        const targetVal = parseFloat(stat.getAttribute('data-target'));
-        const isDecimal = stat.getAttribute('data-decimal') === '1';
-
-        ScrollTrigger.create({
-            trigger: stat,
-            start: 'top 85%',
-            once: true,
-            onEnter: () => {
-                gsap.to(stat, {
-                    innerText: targetVal,
-                    duration: 2,
-                    ease: 'power2.out',
-                    snap: { innerText: isDecimal ? 0.1 : 1 },
-                    onUpdate: function () {
-                        if (isDecimal) {
-                            stat.innerText = parseFloat(stat.innerText).toFixed(1);
-                        } else {
-                            stat.innerText = Math.floor(stat.innerText);
-                        }
-                    }
-                });
+    if (heroContent && heroVisual) {
+        const heroTimeline = gsap.timeline({
+            defaults: {
+                ease: "power3.out"
             }
         });
-    });
 
-    // ==========================================
-    // 5. SMOOTH ANCHOR LINK SCROLLING
-    // ==========================================
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            if (targetId !== '#' && targetId.length > 1) {
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    e.preventDefault();
-                    const navOffset = 70;
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - navOffset;
+        heroTimeline
+            .fromTo(
+                heroContent,
+                {
+                    opacity: 0,
+                    y: 35
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.85
+                }
+            )
+            .fromTo(
+                heroVisual,
+                {
+                    opacity: 0,
+                    x: 35,
+                    scale: 0.96
+                },
+                {
+                    opacity: 1,
+                    x: 0,
+                    scale: 1,
+                    duration: 1
+                },
+                "-=0.55"
+            );
+    }
 
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
+    const sectionLabels = gsap.utils.toArray(
+        ".section-heading-row, .section-heading-centered"
+    );
+
+    sectionLabels.forEach(function (heading) {
+        gsap.fromTo(
+            heading,
+            {
+                opacity: 0,
+                y: 30
+            },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.85,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: heading,
+                    start: "top 86%",
+                    once: true
                 }
             }
-        });
+        );
     });
 
-});
+    const showcaseItems = gsap.utils.toArray(".showcase-item");
+
+    showcaseItems.forEach(function (item, index) {
+        gsap.fromTo(
+            item,
+            {
+                opacity: 0,
+                y: 30
+            },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                delay: index * 0.08,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top 88%",
+                    once: true
+                }
+            }
+        );
+    });
+}
     </script>
+
 </body>
 </html>
